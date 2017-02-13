@@ -1,0 +1,54 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="atti_assenso_edit" title="" type="Page Template"><![CDATA[<div tal:on-error="structure container/handleError">
+   <tal:block tal:define="fieldname options/fieldname;
+                       doc python: context.REQUEST.PARENTS[0];
+                       v options/fieldvalue;
+                       value python: doc.getItem(fieldname,{});
+                       db python: context.getParentDatabase();
+                       fNames python: value.keys();
+                       ll python: doc.getItem(fieldname.replace('allegati_',''),[]);
+                       htmlAttr python:doc.getForm().getFormField(fieldname).HTMLAttributesFormula() or '';">
+
+        <tal:rep tal:repeat="l python: ll">
+            <tal:block1 tal:define="fldId python:'%s_%s' %(l[1],fieldname);
+                                    fldName python: '%s[%s]' %(fieldname,l[1]);
+                                    mod_ril python: l[4];
+                                    str1 python: '%s_' %l[1];
+                                    str2 python:'_%s_' %l[1]">
+                                       
+                    <tal:cond1 tal:condition="python: mod_ril=='3'" tal:define="global lbl python: 'Allegato del %s rilasciato da %s n. %s del %s' %(l[3],l[2],l[4],l[5])">
+                        <label class="required" tal:attributes="for fldId" tal:content="lbl"/>
+                    </tal:cond1>
+                    <tal:cond1 tal:condition="python: mod_ril=='1'" tal:define="global lbl python: 'Autocertificazione del %s' %l[1]" >
+                        <label class="required" tal:attributes="for fldId" tal:content="lbl"/>
+                    </tal:cond1>
+                    <tal:cond1 tal:condition="python: mod_ril=='2'" tal:define="global lbl python: 'Documenti necessari alla richiesta del %s' %l[1]">
+                        <label class="required" tal:attributes="for fldId" tal:content="lbl"/>
+                    </tal:cond1> 
+                    
+                    <tal:widget tal:condition="python:options['field'].getSettings('parameters')" >
+                        <input type="file" data-tooltip="Firmato digitalmente" data-plugin="iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun Allegato","maxsize":"3","filetype":["p7m"]}' tal:attributes="id fldId; name fldName;" />
+                    </tal:widget>
+                    <tal:widget tal:condition="python:not options['field'].getSettings('parameters')" >
+                        <input type="file" data-tooltip="Firmato digitalmente" data-plugin="iolUploadFile" data-plugin-options='{"emptyMessage":"Nessun Allegato","maxsize":"3","filetype":["p7m"]}' tal:attributes="id fldId; name fldName;" multiple=""/>
+                    </tal:widget> 
+                <tal:block2 tal:repeat="attachment fNames">
+                   <ul>
+                        <tal:cond tal:condition="python:test(attachment.startswith(str1) or (str2 in attachment),True,False)">
+                        <li>
+                            <a href="#" tal:attributes="href python:'getfile?filename='+attachment" 
+                                tal:content="attachment">filename</a>
+                             <a href="#" tal:attributes="href string:deleteAttachmentIol?field=${options/fieldname}&filename=$attachment">
+                                <img alt="Delete file" src="delete_icon.gif" />
+                             </a>
+                         </li>
+                        </tal:cond>
+                    </ul>
+                </tal:block2> 
+            </tal:block1>
+        </tal:rep>
+                           
+    </tal:block></div>]]></resource>
+  </design>
+</plominodatabase>

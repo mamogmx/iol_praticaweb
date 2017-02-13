@@ -1,0 +1,132 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="base_sub_pratica" title="Sub Form con dati della richiesta iol" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_pratica</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progressivo_pratica" title="Progressivo Pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progressivo_pratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolApp import IolApp
+
+doc = context
+return IolApp(doc).NuovoNumeroPratica() or 1]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="numero_pratica" title="Numero Pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_pratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="anno_pratica" title="Anno della richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">anno_pratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFPlomino.PlominoUtils import Now,DateToString
+
+return int(DateToString(Now(),'%Y'))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="iol_tipo_proc" title="Sportello a cui inviare la pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_proc</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.REQUEST.get('iol_tipo_proc','sue')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXT</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="wf_iol" title="Stato della pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">wf_iol</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.wf_getInfoFor('review_state')]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="invio_pec" title="Pec alla quale inviare le comunicazioni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">invio_pec</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('pec',''):
+    return [context.getItem('pec','')]
+else:
+    if context.getItem('consenso_pec',False)==True:
+        return [context.getItem('progettista_pec','')]
+    else:
+        return [context.getItem('fisica_pec',''),context.getItem('progettista_pec','')]]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

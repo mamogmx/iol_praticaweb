@@ -1,0 +1,162 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_doc_firmati" title="Sub Form con documenti firmati digitalmente" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_doc_firmati</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Documentazione">
+<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<div class="row-fluid">
+<div class="span5">
+<span class="plominoLabelClass">comunicazione_digitale</span> <span class="plominoFieldClass">comunicazione_digitale</span>
+</div>
+<span class="plominoHidewhenClass">start:hw_doc_sicurezza</span><div class="span5">
+<span class="plominoLabelClass">autocertificazione_sicurezza_digitale</span> <span class="plominoFieldClass">autocertificazione_sicurezza_digitale</span>
+</div>
+<span class="plominoHidewhenClass">end:hw_doc_sicurezza</span>
+</div>
+<div class="row-fluid">
+<span class="plominoHidewhenClass">start:hw_doc_relazione_ass</span><div class="span5">
+<span class="plominoLabelClass">asseverata_digitale</span> <span class="plominoFieldClass">asseverata_digitale</span>
+</div>
+<span class="plominoHidewhenClass">end:hw_doc_relazione_ass</span> <span class="plominoHidewhenClass">start:hw_doc_imprese</span><div class="span5">
+<span class="plominoLabelClass">autocertificazioni_imprese_digitale</span> <span class="plominoFieldClass">autocertificazioni_imprese_digitale</span>
+</div>
+<span class="plominoHidewhenClass">end:hw_doc_imprese</span>
+</div>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_doc_sicurezza" title="Nascondi quando documenti sicurezza non necessari (servono per DIA,CILA e SCIA)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_doc_sicurezza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_tipo_app','') in ['cila','scia','suapcila','suapscia','dia']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_doc_relazione_ass" title="Nascondi quando relazione asseverata non necessaria (serve per DIA e SCIA)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_doc_relazione_ass</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('iol_tipo_app','') in ['scia','suapscia','dia']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_doc_imprese" title="Nascondi quando documenti imprese non necessari (quando ci sono imprese esecutrici)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_doc_imprese</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('lavori_economia_opt','') != 'impresa']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="asseverata_digitale" title="Relazione asseverata" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">asseverata_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "Allegare il documento in formato .PDF firmato digitalmente"
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>type</name>
+<value><string>SINGLE</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="comunicazione_digitale" title="Comunicazione firmata digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>type</name>
+<value><string>SINGLE</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="autocertificazione_sicurezza_digitale" title="Autocertificazione sicurezza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autocertificazione_sicurezza_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>type</name>
+<value><string>SINGLE</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="autocertificazioni_imprese_digitale" title="Autocertificazioni impresa/e" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autocertificazioni_imprese_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "Allegare le autocertificazioni, firmate digitalmente, di tutte le imprese coinvolte"
+''']]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

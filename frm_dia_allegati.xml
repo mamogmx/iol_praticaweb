@@ -1,0 +1,72 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_dia_allegati" title="Documentazione Allegata - DIA" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_dia_allegati</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoSubformClass">sub_info_allegati</span></p>
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
+<p><span class="plominoSubformClass">sub_allegati_standard</span></p>
+<p><span class="plominoSubformClass">sub_allegati_relazionetecnica</span></p>
+<p><span class="plominoSubformClass">sub_allegati_inquinamentoacustico</span></p>
+<p><span class="plominoSubformClass">sub_allegati_materialirisulta</span></p>
+<p><span class="plominoSubformClass">sub_allegati_normativaantincendio</span></p>
+<p><span class="plominoSubformClass">sub_allegati_normativaigienicosanitaria</span></p>
+<p><span class="plominoSubformClass">sub_allegati_amianto</span></p>
+<p><span class="plominoSubformClass">sub_allegati_interventistrutturali</span></p>
+<p><span class="plominoSubformClass">sub_allegati_scarichiidrici</span></p>
+<p><span class="plominoSubformClass">sub_allegati_vincoli</span></p>
+<p><span class="plominoSubformClass">sub_allegati_altro</span></p>
+<p><span class="plominoSubformClass">sub_sending_message</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[iolSending.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

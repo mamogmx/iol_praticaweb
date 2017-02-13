@@ -1,0 +1,46 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="xList" title="" type="Script (Python)"><![CDATA[## Script (Python) "xList"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=field='',sezione='',foglio='',via=''
+##title=
+##
+from Products.CMFPlomino.PlominoUtils import json_dumps
+result=[]
+
+if field=='foglio':
+    prm1=context.REQUEST.get('sezione','') or sezione
+    for res in context.elenco_fogli(sezione=prm1).dictionaries():
+        result.append({'id':res['foglio'],'text':res['foglio']})
+
+elif field=='mappale':
+    prm1=context.REQUEST.get('sezione','') or sezione
+    prm2=context.REQUEST.get('foglio','') or foglio
+    for res in context.elenco_mappali(sezione=prm1,foglio=prm2).dictionaries():
+        result.append({'id':res['mappale'],'text':res['mappale'],'geom':res['geom']})
+
+elif field=='civico':
+    prm1=context.REQUEST.get('via','') or via
+    for res in context.elenco_civici(via=prm1).dictionaries():
+        result.append({'id':res['civico'],'text':res['civico'],'geom':res['geom']})
+        
+elif field=='tipopratica':
+    result=['|']
+    for res in context.elenco_tipopratica().dictionaries():
+        result.append('%s|%s' %(res['nome'],res['id']))
+    return result
+        
+elif field=='tipointervento':
+    result=['|']
+    for res in context.elenco_tipointervento().dictionaries():
+        result.append('%s|%s' %(res['nome'],res['id']))
+    return result        
+
+return json_dumps(result)
+]]></resource>
+  </design>
+</plominodatabase>

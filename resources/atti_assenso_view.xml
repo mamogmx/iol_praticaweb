@@ -1,0 +1,37 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="atti_assenso_view" title="" type="Page Template"><![CDATA[<tal:block tal:define="fieldname options/fieldname;
+                       doc python: context.REQUEST.PARENTS[0];
+                       value options/fieldvalue;
+                       db python: context.getParentDatabase();
+                       ll python: doc.getItem(fieldname.replace('allegati_',''),[]);
+                       fNames python: value.keys()">
+                       
+    <tal:rep tal:repeat="l python: ll">
+        <fieldset tal:define="mod_ril python: l[2];">
+                    <tal:cond1 tal:condition="python: mod_ril=='rilasciato'" tal:define="global lbl python: 'Allegato del %s rilasciato da %s n. %s del %s' %(l[1],l[3],l[4],l[5])">
+                        <legend tal:content="lbl"/>
+                    </tal:cond1>
+                    <tal:cond1 tal:condition="python: mod_ril=='autocertificazione'" tal:define="global lbl python: 'Autocertificazione del %s' %l[1]" >
+                        <legend tal:content="lbl"/>
+                    </tal:cond1>
+                    <tal:cond1 tal:condition="python: mod_ril=='richiesta'" tal:define="global lbl python: 'Documenti necessari alla richiesta del %s' %l[1]">
+                        <legend tal:content="lbl"/>
+                    </tal:cond1> 
+            
+            <ul>
+            <tal:rep1 tal:define="str1 python: '%s_' %l[0];str2 python:'_%s_' %l[0]" tal:repeat="fname python: fNames">
+                <tal:cond tal:condition="python:test(fname.startswith(str1) or (str2 in fname),True,False)">
+                    <li><a tal:attributes="href python:'getfile?filename='+fname" target="_new"  tal:content="fname"/></li>
+                </tal:cond>
+            </tal:rep1>
+            </ul>    
+            <tal:cond1 tal:condition="python: not l">
+                <p><b>Nessun allegato caricato</b></p>
+            </tal:cond1>
+        </fieldset>
+    </tal:rep>
+                           
+</tal:block>]]></resource>
+  </design>
+</plominodatabase>

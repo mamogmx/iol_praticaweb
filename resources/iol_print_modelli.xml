@@ -1,0 +1,16 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="iol_print_modelli" title="" type="Page Template"><![CDATA[<ul><li tal:define="current options/fieldvalue;
+                      selection options/selection;"
+    tal:repeat="v selection">
+    <tal:block tal:define="l python:v.split('|');
+                           model python:l[1];">
+                      
+            <a tal:attributes="href string:@@printdoc?model=${model}" target="new">
+                <img tal:condition="python:'&pdf=1' in l[1]" src="++resource++plomino.printdocuments/pdf-firma.jpg" />
+                <img tal:condition="python:'&pdf=1' not in l[1]" src="++resource++plomino.printdocuments/doc-firma.png" />
+                <span  tal:content="python:l[0]"></span>
+           </a>
+    </tal:block></li></ul>]]></resource>
+  </design>
+</plominodatabase>

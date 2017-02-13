@@ -1,0 +1,175 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_relazionetecnica" title="Subform Allegati Relazione Tecnica di Asseverazione" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_relazionetecnica</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Barriere Architettoniche</legend> <span class="plominoHidewhenClass">start:hw_no_barriere_architettoniche</span> <span class="plominoLabelClass">allegati_elabor_barriere_architettoniche</span> <span class="plominoFieldClass">allegati_elabor_barriere_architettoniche</span><p><span class="plominoHidewhenClass">end:hw_no_barriere_architettoniche</span></p>
+<span class="plominoHidewhenClass">start:hw_no_richiesta_deroga_barriere_architettoniche</span> <span class="plominoLabelClass">allegati_richiesta_deroga_barriere_architettoniche</span> <span class="plominoFieldClass">allegati_richiesta_deroga_barriere_architettoniche</span> <span class="plominoHidewhenClass">end:hw_no_richiesta_deroga_barriere_architettoniche</span> <span class="plominoHidewhenClass">start:hw_no_deroga_barriere_architettoniche</span> <span class="plominoLabelClass">allegati_deroga_barriere_architettoniche</span> <span class="plominoFieldClass">allegati_deroga_barriere_architettoniche</span><p><span class="plominoHidewhenClass">end:hw_no_deroga_barriere_architettoniche</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_barrarch</span></p>
+<div class="text-label">Nessun documento da allegare</div>
+<p><span class="plominoHidewhenClass">end:hw_no_barrarch</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Progettazione Impianti</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_progetto_impianti</span></p>
+<span class="plominoLabelClass">allegato_progetto_impianti</span> <span class="plominoFieldClass">allegato_progetto_impianti</span> <span class="plominoHidewhenClass">end:hw_no_progetto_impianti</span><p><span class="plominoHidewhenClass">start:hw_progetto_impianti</span></p>
+<div class="text-label">Nessun documento da allegare</div>
+<p><span class="plominoHidewhenClass">end:hw_progetto_impianti</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Consumi Energetici</legend> <span class="plominoHidewhenClass">start:hw_no_consumi_energetici</span> <span class="plominoLabelClass">allegato_relaz_consumi_energetici</span> <span class="plominoFieldClass">allegato_relaz_consumi_energetici</span> <span class="plominoHidewhenClass">end:hw_no_consumi_energetici</span><p><span class="plominoHidewhenClass">start:hw_consumi_energetici</span></p>
+<div class="text-label">Nessun documento da allegare</div>
+<p><span class="plominoHidewhenClass">end:hw_consumi_energetici</span></p>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegati_elabor_barriere_architettoniche" title="Elaborati relativi al superamento delle barriere architettoniche" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_elabor_barriere_architettoniche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_richiesta_deroga_barriere_architettoniche" title="Richiesta di deroga alla normativa per l'abbatimento delle barriere architettoniche" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_richiesta_deroga_barriere_architettoniche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_deroga_barriere_architettoniche" title="Deroga barriere architettoniche:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_deroga_barriere_architettoniche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_progetto_impianti" title="Progetto degli impianti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_progetto_impianti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_relaz_consumi_energetici" title="Relazione tecnica sui consumi energetici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_relaz_consumi_energetici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_barriere_architettoniche" title="Nascondi quando no barriere architettoniche (intervento non soggetto art.82 e seguenti dpr 380/2011)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_barriere_architettoniche</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('barriere_architettoniche_opt','1') in ['2','4']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_deroga_barriere_architettoniche" title="Nascondi quando non è presente la deroga alle barriere architettoniche" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_barriere_architettoniche</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_deroga_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_richiesta_deroga_barriere_architettoniche" title="Nascondi quando non si richiede la deroga alle barriere architettoniche" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_richiesta_deroga_barriere_architettoniche</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_deroga_opt','2')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_progetto_impianti" title="Nascondi quando no progetto impianti  (intervento non comporta installazione trasformazione impianti tecologici dm 37/2008)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_progetto_impianti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('impianti_sicurezza_progetto_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_consumi_energetici" title="Nascondi quando no consumi energetici (intervento non soggetto dlgs 192/2005 o 28/2011)" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_consumi_energetici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_barrarch" title="Nascondi quando non  interessato barriere architettoniche" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_barrarch</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_opt','1')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_consumi_energetici" title="Nascondi quando interessato da consumi energetici" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_consumi_energetici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('risparmio_energetico_opt','1')=='1' and context.getItem('fonti_rinnovabili_opt','1')=='1')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_progetto_impianti" title="Nascondi quando interessato da progetto impianti" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_progetto_impianti</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('impianti_sicurezza_progetto_opt','1')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

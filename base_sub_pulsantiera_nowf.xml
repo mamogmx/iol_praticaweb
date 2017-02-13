@@ -1,0 +1,128 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="base_sub_pulsantiera_nowf" title="Pulsantiera per comunicazioni generiche" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_pulsantiera_nowf</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="iol-control-buttons">
+<span class="plominoActionClass">btn_chiudi</span> <span class="plominoActionClass">btn_modifica</span> <span class="plominoActionClass">btn_edit_protocollo</span> <span class="plominoActionClass">btn_salva</span> <span class="plominoActionClass">btn_elimina</span>
+</div>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="btn_salva" title="Salva" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_salva</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+db = context.getParentDatabase()
+pm = getToolByName(context, 'portal_membership')
+db = context.getParentDatabase()
+roles_in_context = pm.getAuthenticatedMember().getRolesInContext(db)
+permessi = context.hasUserRole( db.getCurrentUserId(), '[iol-manager]') or 'Manager' in roles_in_context
+
+#['frm_scia_completata','frm_scia_protocollo','frm_cila_completata','frm_cila_protocollo','frm_suapcila_completata']:
+
+if not context.isEditMode():
+    return True
+elif context.getItem('Form','').endswith('presentata'):
+    return not (context.hasUserRole( db.getCurrentUserId(), '[iol-manager]') or  'Manager' in roles_in_context)
+else:
+    return False]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_edit_protocollo" title="Modifica il Protocollo" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_edit_protocollo</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+url = "%s/EditDocument" %(doc.absolute_url())
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+db = context.getParentDatabase()
+pm = getToolByName(context, 'portal_membership')
+db = context.getParentDatabase()
+roles_in_context = pm.getAuthenticatedMember().getRolesInContext(db)
+#Permessi di Istruttore o Manager
+permessi = context.hasUserRole( db.getCurrentUserId(), '[iol-manager]') or 'Manager' in roles_in_context
+if not permessi:
+    return True
+else:
+    return context.isEditMode() or context.getItem('numero_protocollo','')=='' or context.getItem('wf_iol','')=='protocollata']]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_chiudi" title="Chiudi" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_chiudi</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return '%s/cruscotto-praticaweb' %(context.portal_url())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_modifica" title="Modifica i Dati" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_modifica</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+tipo_pratica = plominoDocument.getItem('iol_tipo_richiesta','')
+forms = dict(
+    inizio_lavori ='frm_iniziolavori_base',
+    fine_lavori = 'frm_finelavori_base',
+    integrazione = 'frm_integrazione_base'
+)
+return '%s/EditDocument?openwithform=%s' %(plominoDocument.absolute_url(),forms[tipo_pratica])]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+
+forms = dict(
+    inizio_lavori ='frm_iniziolavori_completata',
+    fine_lavori = 'frm_finelavori_completata',
+    integrazione = 'frm_integrazione_completata'
+)
+
+if plominoDocument.getForm().getFormName() in forms.values():
+    return False
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_elimina" title="Elimina" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_elimina</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['%s/%s/delete' %(plominoDocument.getParentDatabase().absolute_url(),plominoDocument.getId())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[if not context.isNewDocument():
+    if context.wf_getInfoFor('wf_completata'):
+        return context.wf_getInfoFor('wf_presentata')
+    elif context.wf_getInfoFor('wf_presentata'):
+        return True
+    else:
+        return False
+
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

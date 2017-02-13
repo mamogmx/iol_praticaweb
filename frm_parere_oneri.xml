@@ -1,0 +1,115 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_parere_oneri" title="Contributo di Costruzione - Parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_parere_oneri</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_f1'):
+    wftool.doActionFor(doc,'f1_oneri_to_allegati')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">RICEVUTA DI VERSAMENTO DEI DIRITTI DI SEGRETERIA</legend>
+<div class="alert alert-info">
+<h5>Pagamento dei diritti di segreteria pari a Euro 00,00 .</h5>
+<h5>Ricevuta del versamento effettuato presso:</h5>
+<h5>1) </h5>
+<h5>2) </h5>
+<h5>3) </h5>
+<h5></h5>
+<h5>In ogni caso con causale: "Attestazione avvenuto pagamento dei diritti di segreteria - Nominativo - Indirizzo Immobile".</h5>
+<h5></h5>
+</div>
+<span class="plominoLabelClass">parere_ricevuta_versamento</span><span class="plominoFieldClass">parere_ricevuta_versamento</span><div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">parere_marca_bollo</span><span class="plominoFieldClass">parere_marca_bollo</span>
+</div></div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="parere_ricevuta_versamento" title="Ricevuta/e versamento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">parere_ricevuta_versamento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+        </element>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="documenti_autorizzazione" title="documenti_autorizzazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">documenti_autorizzazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="parere_marca_bollo" title="Codice univoco della Marca da bollo di euro 16,00" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">parere_marca_bollo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

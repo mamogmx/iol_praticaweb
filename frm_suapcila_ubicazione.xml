@@ -1,0 +1,101 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_suapcila_ubicazione" title="Ubicazione Intervento - SUAP CILA" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_suapcila_ubicazione</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_b1'):
+    wftool.doActionFor(doc,'b1_ubicazione_to_dati')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">UBICAZIONE DELL'INTERVENTO</legend> <span class="plominoSubformClass">sub_ubicazioni_elenco</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">REGIME VINCOLISTICO</legend> <span class="plominoSubformClass">sub_vincoli</span>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[http://maps.google.com/maps/api/js?v=3.21&sensor=false&libraries=drawing,geometry,places
+markerclusterer.js
+iolGoogleMap.js
+services/controller_combo_civici.js
+services/controller_combo_particelle.js
+services/controller_combo_particelle_nceu.js
+services/controller_overlays.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar_cila</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar_cila</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="elenco_civici_print" title="elenco_civici_print" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_civici_print</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[elenco = context.getItem('elenco_civici') or []
+vie = context.services.elencoVie()
+label_vie = [i.split('|')[0] for i in vie]
+value_vie = [i.split('|')[1] for i in vie]
+
+if len(elenco):
+    elenco_vie = []
+    for idx,row in enumerate(elenco):
+        cod_via = row[0]
+        
+        if cod_via in value_vie:
+            label = label_vie[value_vie.index(cod_via)]
+            civico = row[1]
+            interno = row[2]
+            ubicaz = '%s %s/%s' %(label,civico,interno)  
+            elenco_vie.append(ubicaz)
+    return elenco_vie]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

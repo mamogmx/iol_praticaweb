@@ -1,0 +1,325 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_cila_intervento" title="SubForm Qualfica Intervento" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_cila_intervento</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div>
+<span class="plominoLabelClass">qualifica_interventi_opt</span><span class="plominoFieldClass">qualifica_interventi_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_data_inizio_lavori</span></p>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">data_inizio_lavori</span><span class="plominoFieldClass">data_inizio_lavori</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_data_inizio_lavori</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_qualifica_interventi_ultimazione</span></p>
+<div>
+<span class="plominoLabelClass">qualifica_interventi_data_inizio_lavori</span><span class="plominoFieldClass">qualifica_interventi_data_inizio_lavori</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_qualifica_interventi_ultimazione</span></p>
+<div>
+<span class="plominoLabelClass">aggiornamento_catastale_opt</span><span class="plominoFieldClass">aggiornamento_catastale_opt</span>
+</div>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DESTINAZIONE D'USO</legend>
+<div>
+<span class="plominoLabelClass">immobile_destinazione</span><span class="plominoFieldClass">immobile_destinazione</span>
+</div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_qualifica_intervento_no_data" title="hw_qualifica_intervento_no_data" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_qualifica_intervento_no_data</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if 'art21bis_versamento_data' in context.getItem('qualifica_interventi_opt',''):
+    return False
+else:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="qualifica_interventi_opt" title="La presente comunicazione riguarda:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualifica_interventi_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[if 'atti_acquisiti' in context.getItem('atti_assenso_tipo','') and 'data' in context.getItem('qualifica_interventi_opt',''):
+    return 'La selezione nella sezione "Atti di Assenso" non è compatibile con la selezione effettuata nella sezione "Qualifica dell\'intervento"']]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>res = dict(sue= [
+'''Interventi di manutenzione straordinaria di cui all'art 7 e all'art. 21bis comma 01 della l.r. 6 giugno 2008, n. 16 e s.m.i.|1''',
+'''Intervento in corso di esecuzione, con pagamento di sanzione ai sensi dell'art.21 bis comma 03 L.R. 16/2008. ALLEGARE LA RICEVUTA DI VERSAMENTO DI EURO 333,00 E INDICARE LA DATA DI INIZIO LAVORI|2''',
+'''Intervento già realizzato, senza presentazione di comunicazione di inizio lavori. ALLEGARE LA RICEVUTA DI VERSAMENTO DELLA SANZIONE PECUNIARIA DI EURO 1.000,00 ai sensi dell'art.21 bis comma 03 L.R. 16/2008 E INDICARE LA DATA REALIZZAZIONE DEI LAVORI|3''',
+'''Che l'ultimazione dei lavori costituirà oggetto di apposita comunicazione nel termine stabilito dall'articolo 21bis, comma 01 della l.r.n. 16/2008 e s.m.|4''',
+],
+suap = [
+'''Interventi di manutenzione straordinaria di cui all'art 7 e all'art. 21bis comma 01 della l.r. 6 giugno 2008, n. 16 e s.m.i.|1''',        
+'''Interventi relativi ad attività produttive di cui all' articolo 7 e all'allegato 1 della l.r. n.10/2012 e s.m e che i lavori avranno inizio in data:|5''',
+'''Interventi relativi ad attività produttive di cui all' articolo 7 e all'allegato 1 della l.r. n.10/2012 e s.m e che i lavori avranno inizio dopo la comunicazione dello sportello unico, dell'avvenuta acquisizione degli atti presupposti|6''',
+'''Attività che rientrano nell'ambito del procedimento automatizzato ai sensi degli articoli 7 e 8 della l.r. n.10/2012 e s.m|7'''])
+invio = context.getItem('iol_tipo_proc','') or context.REQUEST.get('iol_tipo_proc','sue') 
+return res[invio]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="qualifica_interventi_data_inizio_lavori" title="Intervento realizzato in data" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualifica_interventi_data_inizio_lavori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-110Y", "maxDate": "+17Y", "dateFormat": "dd/mm/yy", "yearRange": "-110:+20", "defaultDate":"+0Y"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="aggiornamento_catastale_opt" title="L'intervento:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">aggiornamento_catastale_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Non richiede aggiornamento catastale|1''',
+'''Richiede aggiornamento catastale ai cui relativi adempimenti si provvederà direttamente presso i competenti Uffici dell'Agenzia delle Entrate|2''',
+'''Richiede aggiornamento catastale e che, ai sensi dell'articolo 21, comma 01 della l.r. n. 16/2008 e s.m., si allega alla comunicazione di fine lavori la documentazione per la variazione catastale al fine del relativo inoltro all'Agenzia delle Entrate da parte del Comune|3'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="qualifica_interventi_ultimazione" title=" " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualifica_interventi_ultimazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Che l'ultimazione dei lavori costituirà oggetto di apposita comunicazione nel termine stabilito dall'art 21 bis,  comma 01 L.R. 16/2008|ultimazione''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_qualifica_interventi_ultimazione" title="hw_no_qualifica_interventi_ultimazione" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_qualifica_interventi_ultimazione</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('qualifica_interventi_opt','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="data_inizio_lavori" title="Data  di inizio dei lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_inizio_lavori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "maxDate": "1Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+10"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_data_inizio_lavori" title="Nascondi quando lavori già terminati o non prevista" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_data_inizio_lavori</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.getItem('qualifica_interventi_opt','') in ['2','5']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="immobile_destinazione" title="Destinazione d'uso dell'unità immobiliare oggetto di intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">immobile_destinazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_intervento" title="Tipologia di Intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('iol_tipo_proc','sue')=='sue':
+    return ['1']
+else:
+    return ['2']]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Interventi di manutenzione straordinaria di cui all'art 7 e all'art. 21bis comma 01 della l.r. 6 giugno 2008, n. 16 e s.m.i.|1''',
+'''Attività che rientrano nell'ambito del procedimento automatizzato ai sensi degli articoli 7 e 8 della l.r. n.10/2012 e s.m|2'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

@@ -1,0 +1,234 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_dia_intervento" title="sub_dia_qualificazione_intervento" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_dia_intervento</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">QUALIFICAZIONE DELL'INTERVENTO</legend>
+<div>
+<span class="plominoLabelClass">qualificazione_intervento</span><span class="plominoFieldClass">qualificazione_intervento</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_qualificazione_art25</span></p>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">qualificazione_num_edilizio</span><span class="plominoFieldClass">qualificazione_num_edilizio</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">qualificazione_data_edilizio</span><span class="plominoFieldClass">qualificazione_data_edilizio</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_qualificazione_art25</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TIPOLOGIA DI INTERVENTO</legend>
+<div>
+<span class="plominoLabelClass">tipologia_intervento</span> <span class="plominoFieldClass">tipologia_intervento</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DESTINAZIONE D'USO</legend>
+<div>
+<span class="plominoLabelClass">immobile_destinazione</span><span class="plominoFieldClass">immobile_destinazione</span>
+</div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="qualificazione_intervento" title="la presente denuncia riguarda" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualificazione_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''Interventi di cui all’articolo 23, comma 1 della l.r. 6 giugno 2008, n. 16  e s.m.(Interventi urbanistico-edilizi soggetti a DIA obbligatoria)|1''',
+'''Interventi di cui all’articolo 23, comma 2 della l.r. 6 giugno 2008, n. 16  e s.m. disciplinati da strumenti urbanistici attuativi o piani urbanistici operativi efficaci ovvero regolati da specifiche previsioni di dettaglio contenute nel vigente strumento urbanistico generale o nel PUC (Interventi urbanistico-edilizi soggetti a DIA alternativa al permesso di costruire)|2''',
+'''Interventi di cui all’articolo 23, comma 2 della l.r. 6 giugno 2008, n. 16  e s.m. già assentiti sotto il profilo paesistico-ambientale mediante rilascio di autorizzazione a norma dell’art. 146 del D.lgs. n. 42/2004 e s.m. (Interventi urbanistico-edilizi soggetti a DIA alternativa al permesso di costruire)|3''',
+'''Interventi urbanistico-edilizi relativi ad attività produttive di cui all’articolo 9 e all’Allegato 2 della l.r. 5 aprile 2012, n. 10 e s.m.|4''',
+'''Interventi di recupero di locali sottotetto di cui all’articolo 2, della l.r. 6 agosto 2001, n. 24  e s.m. non comportanti modificazioni della sagoma dell’edificio esistente|5''',
+'''Interventi di ampliamento di edifici esistenti di cui agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|6''',
+'''Varianti in corso d’opera di cui all’articolo 25, comma 3 della l.r. 6 giugno 2008, n. 16  e s.m. relative ad opere oggetto di titolo edilizio rilasciato con atto:|7'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="qualificazione_num_edilizio" title="Numero titolo edilizio" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualificazione_num_edilizio</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="qualificazione_data_edilizio" title="Data titolo edilizio" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">qualificazione_data_edilizio</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipologia_intervento" title="La presente denuncia riguarda:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipologia_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Interventi di restauro e risanamento conservativo , come definiti dagli articoli 8 e 9 della l.r. n. 16/2008 e s.m. , comportanti modifiche all'esterno dell'edificio volte all'inserimento o al rinnovo di elementi accessori e degli impianti che siano idonei alla conservazione ed alla funzionalità dell'edificio ed anche rispondenti ai requisiti ed  agli standard previsti dalle normative di settore e di risparmio energetico;|1''',
+'''Interventi di ristrutturazione edilizia, come definiti dall'articolo 10 della l.r. n. 16/2008 e s.m., non rientranti nei casi e nei limiti di cui all'articolo 21 bis, comma 1, lettere e) ed e bis) della medesima l.r. , ivi compresi quelli di  demolizione e successiva ricostruzione con variazione della sagoma di immobili ricadenti nelle aree delle zone omogenee A o delle zone od ambiti ad esse assimilabili che siano state escluse dall'applicazione della SCIA con apposito provvedimento comunale assunto ai sensi dell'art. 30, comma 4 del DL 21 giugno 2013, n. 69 conv. in L. 9 agosto 2013, n. 98.;|2''',
+'''Interventi comportanti mutamenti della destinazione d'uso aventi ad oggetto immobili compresi nelle zone omogenee A o nelle zone o ambiti ad esse assimilabili e non rientranti nei casi di cui all' articolo 21 bis, comma 1, lettera f della l.r. n. 16/2008 e s.m.;|3''',
+'''Opere di natura pertinenziale come definite all'articolo 17 della l.r. n. 16/2008 e s.m. , comportanti creazione di volumetria (e sempreché le stesse siano specificamente disciplinate dalla strumentazione urbanistica comunale a norma del comma 4 del medesimo articolo);|4''',
+'''Realizzazione di impianti tecnologici, anche comportanti la realizzazione di volumi tecnici, diversi da quelli al servizio di edifici o di attrezzature esistenti;|5''',
+'''Realizzazione di opere di urbanizzazione primaria o secondaria ad iniziativa privata specificamente disciplinate dalla strumentazione urbanistica comunale ovvero localizzate in aree destinate a servizi pubblici o di interesse pubblico dalla strumentazione urbanistica comunale e compatibili con la relativa normativa;|6''',
+'''Realizzazione di serre e di manufatti accessori funzionali alla conduzione del fondo specificamente disciplinati dalla strumentazione urbanistica comunale;|7''',
+'''Interventi su patrimonio edilizio esistente o di nuova costruzione diversi da quelli sopra indicati, ma disciplinati da strumenti urbanistici attuativi o piani urbanistici operativi vigenti ovvero da specifiche previsioni di dettaglio contenute nel vigente strumento urbanistico generale o nel PUC;|8''',
+'''Interventi su patrimonio edilizio esistente o di nuova costruzione diversi da quelli sopra indicati, ma già assentiti sotto il profilo paesistico-ambientale mediante rilascio della prescritta autorizzazione ai sensi dell'art.  146 del D.lgs. n. 42/2004 e s.m.|9''',
+'''Interventi di recupero di locali sottotetto non comportanti modificazioni della sagoma dell'edificio esistente in deroga alle previsioni dello strumento urbanistico comunale in conformità alla l.r. 6 agosto 2001, n. 24  e s.m.;|10''',
+'''Interventi di ampliamento di edifici esistenti in deroga alle previsioni dello strumento urbanistico comunale in conformità agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|11''','''Interventi in variante a precedente titolo edilizio di cui all'articolo 25, comma 3 l.r. n. 16/2008 e s.m.|12''']</string></value>
+</member>
+<member>
+<name>separator</name>
+<value><string>&lt;p&gt;</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="immobile_destinazione" title="Destinazione d'uso dell'unità immobiliare oggetto di intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">immobile_destinazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>['Residenza (art. 7, 1°c, lett.a)|RESIDENZIALE','Ospitalità e ricettività alberghiera ..(art. 7, 1°c, lett.b)|TURISTICA','Distribuzione al dettaglio (art. 7, 1°c, lett.c) e uffici (art. 7, 1°c, lett.d)|COMMERCIALE  DIREZIONALE','Industria, artigianato, movim. e distrib. all''ingrosso di merci (art.7,1°c,lett.e)|INDUSTRIALE','Autorimesse, rimessaggi, depositi e simili (art. 7, 1°c, lett.f)|PARK DEPOSITI','Servizi di uso privato (art. 7, 1°c, lett.g)|SERVIZI PRIVATI','Turismo convenzionato (art. 15 bis)|TURISMO CONVENZIONATO','Servizi Turistici (art. 15 bis)|SERVIZI TURISTICI']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_qualificazione_art25" title="hw_no_qualificazione_art25" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_qualificazione_art25</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('qualificazione_intervento','')!='c7']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

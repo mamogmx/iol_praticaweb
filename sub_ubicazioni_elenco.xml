@@ -1,0 +1,271 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_ubicazioni_elenco" title="Sub Form con Ubicazione" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_ubicazioni_elenco</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[from gisweb.utils import ondelete_parent
+
+ondelete_parent(plominoDocument)]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoLabelClass">ubicazioni_mappa</span><span class="plominoFieldClass">ubicazioni_mappa</span></p>
+<div id="layerbox">
+<span class="plominoLabelClass">livelli</span><span class="plominoFieldClass">livelli</span>
+</div>
+<div class="row-fluid"><div class="span12">
+<span class="plominoLabelClass">elenco_civici</span><span class="plominoFieldClass">elenco_civici</span>
+</div></div>
+<div class="row-fluid"><div class="span12">
+<span class="plominoLabelClass">elenco_nct</span><span class="plominoFieldClass">elenco_nct</span>
+</div></div>
+<div class="row-fluid"><div class="span12">
+<span class="plominoLabelClass">elenco_nceu</span><span class="plominoFieldClass">elenco_nceu</span>
+</div></div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">BOTTOM</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[http://maps.google.com/maps/api/js?sensor=false&libraries=drawing,geometry,places
+markerclusterer.js
+iolGoogleMap.js
+services/controller_combo_civici.js
+services/controller_combo_particelle.js
+services/controller_combo_particelle_nceu.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="elenco_civici" title="Civici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_civici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">datagrid_edit_comune</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('elenco_civici')=='[]':
+    return "E' necessario inserire almeno un indirizzo"]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>frm_ubicazione_civico</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Via" },
+    { "sTitle": "Civico" },
+    { "sTitle": "Interno" }    
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 400,
+        "height": 350
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="elenco_nct" title="Dati catastali N.C.T" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_nct</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">datagrid_edit_comune</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('elenco_nct')=='[]':
+    return "Dati catastali N.C.T campo obbligatorio"]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>frm_ubicazione_nct</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Sezione","bVisible":false },
+    { "sTitle": "Foglio" },
+    { "sTitle": "Mappale" },
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 550,
+        "height": 350
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="elenco_nceu" title="Dati catastali N.C.E.U." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_nceu</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">datagrid_edit_comune</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>frm_ubicazione_nceu</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>nceu_sezione,nceu_foglio,nceu_mappale,nceu_subalterno</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Sezione" ,"bVisible":false},
+    { "sTitle": "Foglio" },
+    { "sTitle": "Mappale" },
+    { "sTitle": "Subalterno" }
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 400,
+        "height": 350
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="ubicazioni_mappa" title="La mappa Google" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ubicazioni_mappa</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">TEXTFieldEdit</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-edit-mode = %s
+data-base-url = %s
+data-plugin='iolGoogleMap' 
+data-plugin-options='{"scaleControl": true,"minZoom": 8, "zoom":12, "center": [43.97,8], "scrollwheel": false,"mapTypeId":"","coordsrid":3003}'
+data-map-layers = 'livelli'
+data-geocoding='find_location'
+''' % (1 if not context.isDocument() or context.isEditMode() else 0, context.getParentDatabase().absolute_url())]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXT</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="livelli" title="Livelli" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">livelli</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[['prg_zone']]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-map-layers = 
+'[{"name":"OSM","type":"TMS","maxZoom":18,"minZoom":8,"opacity":0.8,"url":"http://tile.openstreetmap.org","alt":"OpenStreetMap"},
+{"name":"sezioni","type":"WMS","maxZoom":18,"minZoom":8,"opacity":0.8,"url":"http://imperia.praticaweb.it/cgi-bin/mapserv?map=/apps/GisClient-2/mapset/map/imperia.map&LAYERS=sezioni_2&TRANSPARENT=TRUE","alt":"Sezioni"},
+{"name":"particelle","type":"WMS","maxZoom":18,"minZoom":8,"opacity":0.8,"url":"http://imperia.praticaweb.it/cgi-bin/mapserv?map=/apps/GisClient-2/mapset/map/imperia.map&LAYERS=particelle_488&TRANSPARENT=TRUE","alt":"Particelle"},
+{"name":"fabbricati","type":"WMS","maxZoom":18,"minZoom":8,"opacity":0.8,"url":"http://imperia.praticaweb.it/cgi-bin/mapserv?map=/apps/GisClient-2/mapset/map/imperia.map&LAYERS=fabbricati_489&TRANSPARENT=TRUE","alt":"Fabbricati"},
+{"name":"zonizzazione","type":"WMS","maxZoom":18,"minZoom":8,"opacity":0.8,"url":"http://imperia.praticaweb.it/cgi-bin/mapserv?map=/apps/GisClient-2/mapset/map/imperia.map&LAYERS=zonizzazione&TRANSPARENT=TRUE","alt":"Zonizzazione"}]'
+data-map-types = "OSM,CATASTO,DEM,roadmap,terrain,satellite,hybrid"
+data-base-type = "OSM"
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Sezioni Catasto|sezioni','Particelle Catasto|particelle','Fabbricati Catasto|fabbricati','Zonizzazione PRG|zonizzazione']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

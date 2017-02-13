@@ -1,0 +1,160 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_parere_completata" title="Riepilogo Istanza - Parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_parere_completata</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFPlomino.PlominoUtils import StringToDate, json_loads
+
+doc = context
+frm = doc.wf_getInfoFor("wf_formname")
+app = doc.getItem("iol_tipo_app","default")
+if not doc.wf_getInfoFor('wf_presentata') and frm=='completata':  
+    doc.setItem('Form','frm_%s_stampa' %(app))
+    
+    info = json_loads(doc.printModelli(doc.getParentDatabase().getId()))
+    
+    model = info['comunicazione_parere.docx']['model']
+    field = info['comunicazione_parere.docx']['field']
+    
+    
+    grp = 'autorizzazione'
+    if not doc.getItem('documenti_autorizzazione'):
+        context.createDoc(model=model,field=field,grp=grp,redirect_url=context.absolute_url())
+    
+    context.setItem('Form','frm_%s_completata' %(app))
+
+
+    
+if context.wf_getInfoFor('wf_presentata') and context.getItem('documenti_distinta') and 'application/pdf' not in context.getItem('documenti_distinta').values():
+    context.convertToPdf(file_type='documenti_distinta')
+    
+if not context.wf_getInfoFor('wf_presentata') and context.getItem('documenti_autorizzazione') and 'application/pdf' not in context.getItem('documenti_autorizzazione').values():
+    context.convertToPdf(file_type='documenti_autorizzazione')    
+    
+if plominoDocument.isEditMode() and context.wf_getInfoFor('wf_presentata'):
+    plominoDocument.setItem('Form','frm_parere_protocollo')
+    plominoDocument.REQUEST.RESPONSE.redirect("%s/EditDocument" %plominoDocument.absolute_url())
+
+if plominoDocument.isEditMode() and not context.wf_getInfoFor('wf_presentata'):
+    plominoDocument.setItem('Form','frm_parere_firma')
+    plominoDocument.REQUEST.RESPONSE.redirect("%s/EditDocument" %plominoDocument.absolute_url())]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_doc_modello_edit</span></p>
+<p><span class="plominoSubformClass">sub_doc_generati</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_modello_edit</span></p>
+<div><span class="plominoFieldClass">printInfoComunicazioni</span></div>
+<p><span class="plominoSubformClass">sub_doc_firmati</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_dichiarazioni_invio</span></p>
+<p><span class="plominoSubformClass">sub_dichiarazioni_invio</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_dichiarazioni_invio</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
+<p><span class="plominoSubformClass">sub_protocollo</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
+<p><span class="plominoSubformClass">sub_parere_richiedenti</span></p>
+<p><span class="plominoSubformClass">sub_parere_ubicazione</span></p>
+<p><span class="plominoSubformClass">sub_parere_dati</span></p>
+<p><span class="plominoSubformClass">sub_parere_altri_soggetti</span></p>
+<p><span class="plominoSubformClass">sub_parere_allegati</span></p>
+<p><span class="plominoSubformClass">sub_parere_oneri</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">True</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[http://maps.google.com/maps/api/js?sensor=false&libraries=drawing,geometry,places
+markerclusterer.js
+iolGoogleMap.js
+services/controller_combo_civici.js
+services/controller_combo_particelle.js
+services/controller_combo_particelle_nceu.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_protocollo" title="hw_no_protocollo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_protocollo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not  context.getItem('numero_protocollo','')!='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_dichiarazioni_invio" title="hw_no_dichiarazioni_invio" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_dichiarazioni_invio</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.wf_getInfoFor('review_state')=='completata_scia':
+     return False
+else:
+     return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_modello" title="hw_no_doc_modello" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_modello</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('documenti_autorizzazione',{})!={}:
+    return context.isEditMode()    
+else:
+    return not context.isEditMode()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_modello_edit" title="Nascondi in modalità edit" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_modello_edit</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.isEditMode()]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="printInfoComunicazioni" title="printInfoComunicazioni" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">printInfoComunicazioni</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if not context.isEditMode() and not context.wf_getInfoFor('wf_presentata'):
+     if not (context.getItem('asseverata_digitale',{})!={} and  context.getItem('comunicazione_digitale',{})!={}): 
+         return '''<h4 class="alert alert-info">Se lo si desidera è possibile firmare digitalmente la comunicazione prima dell'invio della domanda.<br>Per allegare i documenti cliccare <a href="%s/EditDocument">qui</a></h4>''' %(context.absolute_url())
+     else:
+         return '''<h4 class="alert alert-info">Se lo si desidera è possibile firmare digitalmente la comunicazione prima dell'invio della domanda.<br>Per modificare i documenti allegati cliccare <a href="%s/EditDocument">qui</a></h4>''' %(context.absolute_url())]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">WORKFLOWFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_modello_distinta" title="hw_no_modello_distinta" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_modello_distinta</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+iDoc = IolDocument(context)
+if iDoc.verificaRuolo('iol-manager') or iDoc.verificaRuolo('iol-reviewer'):
+    return False
+else:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

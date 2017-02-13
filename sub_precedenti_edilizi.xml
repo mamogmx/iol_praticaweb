@@ -1,0 +1,278 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_precedenti_edilizi" title="Sub Form regolarità urbanistica e precedenti edilizi" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_precedenti_edilizi</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+<legend class="scheduler-border">REGOLARITA URBANISTICA E PRECEDENTI EDILIZI</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_pdc</span></p>
+<fieldset><legend class="required">Che le opere riguardano</legend></fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_pdc</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_scia_dia</span></p>
+<fieldset><legend class="required">che lo stato attuale dell'immobile risulta:</legend></fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_scia_dia</span></p>
+<div><span class="plominoFieldClass">regolarita_immobile_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_regolarita_titoli</span></p>
+<p><span class="plominoLabelClass">elenco_titoli_edilizi</span><span class="plominoFieldClass">elenco_titoli_edilizi</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_regolarita_titoli</span></p>
+<div>
+<span class="plominoLabelClass">regolarita_interventi_incorso</span> <span class="plominoFieldClass">regolarita_interventi_incorso</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_regolarita_interventi_incorso</span></p>
+<div class="row-fluid">
+<div class="span4">
+<span class="plominoLabelClass">tipo_titolo</span><span class="plominoFieldClass">tipo_titolo</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">numero_titolo</span><span class="plominoFieldClass">numero_titolo</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_titolo</span><span class="plominoFieldClass">data_titolo</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_regolarita_interventi_incorso</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="regolarita_immobile_opt" title="lo stato attuale dell’immobile risulta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">regolarita_immobile_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+if tipo=='pdc':
+    return [
+'''un intervento di nuova costruzione su area libera|3''',
+'''un immobile/unità immobiliare esistente e che lo stato attuale dell'immobile risulta pienamente conforme alla documentazione dello stato di fatto legittimato dal seguente/i  titolo/i pratica edilizia (o, in assenza, dal primo accatastamento)|1''',
+'''un immobile/unità immobiliare esistente e non sono stati reperiti titoli abilitativi essendo l'immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|2'''
+]
+else:
+    return ['''pienamente conforme alla documentazione dello stato di fatto legittimato dal seguente/i  titolo/i pratica edilizia (o, in assenza, dal primo accatastamento)|1''','''non sono stati reperiti titoli abilitativi essendo l'immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_regolarita_titoli" title="hw_no_regolarita_titoli" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_regolarita_titoli</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('regolarita_immobile_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="elenco_titoli_edilizi" title="Titoli edilizi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">elenco_titoli_edilizi</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>sub_titolo_edilizi</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Titolo" },
+    { "sTitle": "Numero"},
+    { "sTitle": "Data"},
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 600,
+        "height": 400
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="tipo_titolo" title="Titolo edilizio" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">tipo_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Selezionare Titolo|','Permesso di costruire|permesso_costruire','Denuncia Inizio attività|dia','Segnalazione certificata Inizio Attività|scia','Comunicazione inizio dei Lavori asseverata|cila']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_titolo" title="Numero" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_titolo" title="del" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_titolo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_regolarita_interventi_incorso" title="hw_no_regolarita_interventi_incorso" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_regolarita_interventi_incorso</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('regolarita_interventi_incorso',0)!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="regolarita_interventi_incorso" title="che inoltre" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">regolarita_interventi_incorso</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''Non sono state presentate pratiche|1''','''per lo stesso immobile sono in corso interventi / sono state presentate pratiche per interventi|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_pdc" title="Nascondi quando non è Permesso di costruire" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pdc</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not plominoDocument.getItem('iol_tipo_app','scia') in ['pdc']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_scia_dia" title="Nascondi quando non è SCIA DIA" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_scia_dia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not plominoDocument.getItem('iol_tipo_app','scia') in ['dia','scia','suapscia']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

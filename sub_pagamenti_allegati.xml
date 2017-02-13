@@ -1,0 +1,145 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_pagamenti_allegati" title="Sub Form con ricevute e prospetti di pagamento" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_pagamenti_allegati</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border">
+<legend class="scheduler-border">Prospetti e Ricevute di Pagamento</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_versamento_contributo_importo</span></p>
+<h4>Gli interventi sono soggetti al versamento del contributo di costruzione quantificato come da elaborato allegato e pertanto si è provveduto ad effettuare e allegare il versamento</h4>
+<div class="row-fluid">
+<div class="span2">
+<span class="plominoLabelClass">versamento_contributo_importo</span><span class="plominoFieldClass">versamento_contributo_importo</span>
+</div>
+<div class="span5">
+<span class="plominoLabelClass">versamento_contributo_allegato</span><span class="plominoFieldClass">versamento_contributo_allegato</span>
+</div>
+<div class="span5">
+<span class="plominoLabelClass">versamento_contributo_elaborato</span><span class="plominoFieldClass">versamento_contributo_elaborato</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_versamento_contributo_importo</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">scia_ricevuta_versamento</span> <span class="plominoFieldClass">scia_ricevuta_versamento</span>
+</div></div>
+<span class="plominoSubformClass">sub_info_pagamenti</span>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="scia_ricevuta_versamento" title="Ricevuta/e versamento dei diritti di segreteria" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">scia_ricevuta_versamento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+        </element>
+        <element id="versamento_contributo_elaborato" title="Elaborato contributo di costruzione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">versamento_contributo_elaborato</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="versamento_contributo_allegato" title="Ricevuta versamento contributo di costruzione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">versamento_contributo_allegato</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_scia_monetizzazione_posteggio" title="Ricevuta versamento per monetizzazione posto auto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_scia_monetizzazione_posteggio</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]}''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_versamento_contributo_importo" title="hw_no_versamento_contributo_importo" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_versamento_contributo_importo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    return str(context.getItem('contributo_costruzione_pagamento_opt','0'))!='1'
+except:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="versamento_contributo_importo" title="Importo contributo di costruzione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">versamento_contributo_importo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>format</name>
+<value><string>%1.2f</string></value>
+</member>
+<member>
+<name>type</name>
+<value><string>FLOAT</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

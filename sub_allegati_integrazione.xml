@@ -1,0 +1,209 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_integrazione" title="SubForm con Allegati Integrazione" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_integrazione</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="ALLEGATI">
+<legend class="scheduler-border">ALLEGATI ALLA DOCUMENTAZIONE</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_di_esecutore</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">di_esecutore</span> <span class="plominoFieldClass">di_esecutore</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_di_esecutore</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_di_direttore</span></p>
+<div class="row-fluid"><div class="span6">
+<span class="plominoLabelClass">di_direttore</span> <span class="plominoFieldClass">di_direttore</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_di_direttore</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_di_progettista_strutt</span></p>
+<div class="row-fluid"><div class="span6">
+<span class="plominoLabelClass">di_progettista_strutt</span> <span class="plominoFieldClass">di_progettista_strutt</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_di_progettista_strutt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_di_direttore_strutt</span></p>
+<div class="row-fluid"><div class="span6">
+<span class="plominoLabelClass">di_direttore_strutt</span> <span class="plominoFieldClass">di_direttore_strutt</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_di_direttore_strutt</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_di_altri_tecnici</span></p>
+<div class="row-fluid"><div class="span6">
+<span class="plominoLabelClass">di_altri_tecnici</span> <span class="plominoFieldClass">di_altri_tecnici</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_di_altri_tecnici</span></p>
+<div class="row-fluid"><div class="span8">
+<span class="plominoLabelClass">descrizione_allegati</span><span class="plominoFieldClass">descrizione_allegati</span>
+</div></div>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">allegato_altro_integrazione</span><span class="plominoFieldClass">allegato_altro_integrazione</span>
+</div></div>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegato_altro_integrazione" title="allegati integrativi" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_altro_integrazione</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="descrizione_allegati" title="descrizione allegati" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_allegati</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>4</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="di_esecutore" title="Documento d'identità degli esecutori dei lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">di_esecutore</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_di_esecutore" title="HW nascondi documento d'identità esecutore lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_di_esecutore</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="di_progettista_strutt" title="Documento d'identità del progettista strutturale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">di_progettista_strutt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_di_progettista_strutt" title="HW nascondi documento d'identità progettista strutturale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_di_progettista_strutt</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('opere_strutturali_opt','1')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="di_direttore" title="Documento d'identità del direttore lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">di_direttore</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_di_direttore" title="HW nascondi documento d'identità direttore lavori" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_di_direttore</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_lavori_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="di_direttore_strutt" title="Documento d'identità del direttore lavori strutturali" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">di_direttore_strutt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_di_direttore_strutt" title="HW nascondi documento d'identità direttore lavori strutturali" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_di_direttore_strutt</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('direttore_strutturale_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="di_altri_tecnici" title="Documento d'identità di altri tecnici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">di_altri_tecnici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_di_altri_tecnici" title="HW nascondi documento d'identità Altri Tecnici" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_di_altri_tecnici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('altri_tecnici_opt','2')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

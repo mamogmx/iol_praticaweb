@@ -1,0 +1,436 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_parere_dati" title="Dati della Richiesta - Parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_parere_dati</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_c1'):
+    wftool.doActionFor(doc,'c1_dati_to_altri_soggetti')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TIPOLOGIA DI PARERE/DEROGA</legend>
+<div class="required">Chiede</div>
+<div><span class="plominoFieldClass">deroga_parere_estetico_opt</span></div>
+<div>
+<span class="plominoLabelClass">deroga_art19_opt</span><span class="plominoFieldClass">deroga_art19_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_art19</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">deroga_art19</span><span class="plominoFieldClass">deroga_art19</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_deroga_art19</span></p>
+<div>
+<span class="plominoLabelClass">deroga_art42_opt</span><span class="plominoFieldClass">deroga_art42_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_art42</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">deroga_art42</span><span class="plominoFieldClass">deroga_art42</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_deroga_art42</span></p>
+<div>
+<span class="plominoLabelClass">deroga_art1_opt</span><span class="plominoFieldClass">deroga_art1_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_art1</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">deroga_art1</span><span class="plominoFieldClass">deroga_art1</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_deroga_art1</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">deroga_altro_opt</span><span class="plominoFieldClass">deroga_altro_opt</span>
+</div></div>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_altro</span></p>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">deroga_altro</span><span class="plominoFieldClass">deroga_altro</span>
+</div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_deroga_altro</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DESCRIZIONE DELLE OPERE</legend>
+<div>
+<span class="plominoLabelClass">descrizione_opere</span><span class="plominoFieldClass">descrizione_opere</span>
+</div>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="richiesta_parere" title="Chiede" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">richiesta_parere</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''parere preventivo in ordine all'aspetto estetico dell'intervento nei casi previsti dalle norme di livello puntuale del PUC  o in caso di intervento non espressamente disciplinato dalla normativa  di PUC sopraccitata|estetico''','''deroga ai sensi dell'art. 19 del titolo IV del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_19''','''deroga ai sensi dell'art. 42 del titolo V del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_42''','''deroga alla disciplina di livello puntuale paesistico ai sensi dell'art. 1 dell'elaborato St.5 del PUC in riferimento all'articolo|deroga_paesistico''' ]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="articolo_deroga" title="numero articolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">articolo_deroga</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="deroga_art1" title="Articolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art1</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="deroga_art42" title="Articolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art42</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="deroga_art19" title="Articolo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art19</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_deroga_art19" title="hw_no_deroga_art19" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_art19</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'deroga_art_19' not in context.getItem('deroga_art19_opt')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_deroga_art42" title="hw_no_deroga_art42" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_art42</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'deroga_art_42' not in context.getItem('deroga_art42_opt')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_deroga_art1" title="hw_no_deroga_art1" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_art1</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'deroga_paesistico' not in  context.getItem('deroga_art1_opt')]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="deroga_parere_estetico_opt" title="Deroga parere estetico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_parere_estetico_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''parere preventivo in ordine all'aspetto estetico dell'intervento nei casi previsti dalle norme di livello puntuale del PUC  o in caso di intervento non espressamente disciplinato dalla normativa  di PUC sopraccitata|estetico''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="deroga_art19_opt" title=" " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art19_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''deroga ai sensi dell'art. 19 del titolo IV del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_19''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="deroga_art42_opt" title=" " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art42_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''deroga ai sensi dell'art. 42 del titolo V del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_42''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="deroga_art1_opt" title=" " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_art1_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''deroga alla disciplina di livello puntuale paesistico ai sensi dell'art. 1 dell'elaborato St.5 del PUC in riferimento all'articolo|deroga_paesistico''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="descrizione_opere" title="Descrizione sommaria delle opere" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_opere</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[tipologie = ['deroga_parere_estetico_opt','deroga_art19_opt','deroga_art42_opt','deroga_art1_opt','deroga_altro_opt']
+res = False
+for t in tipologie:
+    res = res or bool(context.REQUEST.get(t,''))
+if not res:
+    return "E' obbligatorio selezionare almeno una tipologia di parere/deroga"]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
+</member>
+<member>
+<name>size</name>
+<value><string>3</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_deroga_altro" title="hw_no_deroga_altro" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_altro</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'altro' not in context.getItem('deroga_altro_opt',[])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="deroga_altro" title="Descrizione altra richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_altro</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="deroga_altro_opt" title=" " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">deroga_altro_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=hw_no_deroga_altro']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Altro|altro']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

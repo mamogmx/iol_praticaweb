@@ -1,0 +1,408 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="base_sub_pulsantiera" title="base_sub_pulsantiera" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_pulsantiera</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<div class="iol-control-buttons">
+<span class="plominoActionClass">btn_chiudi</span> <span class="plominoActionClass">btn_modifica</span><span class="plominoActionClass">btn_elimina</span><span class="plominoActionClass">btn_salva</span> <span class="plominoActionClass">btn_a1</span> <span class="plominoActionClass">btn_b1</span> <span class="plominoActionClass">btn_c1</span> <span class="plominoActionClass">btn_d1</span> <span class="plominoActionClass">btn_d2</span> <span class="plominoActionClass">btn_d3</span><span class="plominoActionClass">btn_e1</span> <span class="plominoActionClass">btn_g1</span> <span class="plominoActionClass">btn_f1</span> <span class="plominoActionClass">btn_f2</span> <span class="plominoActionClass">btn_h1</span> <span class="plominoActionClass">btn_c2</span> <span class="plominoActionClass">btn_l1</span><span class="plominoActionClass">btn_inviapw</span>
+</div>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="btn_salva" title="Salva" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_salva</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[db = context.getParentDatabase()
+permessi = context.hasUserRole( db.getCurrentUserId(), '[iol-manager]')
+
+#['frm_scia_completata','frm_scia_protocollo','frm_cila_completata','frm_cila_protocollo','frm_suapcila_completata']:
+
+if not context.isEditMode():
+    return True
+elif context.getItem('Form').endswith('completata'):
+    return False
+
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_a1" title="Salva e Compila la Sezione Ubicazione" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_a1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    
+    res = not IolDocument(plominoDocument).isActionSupported('a1_richiedenti_to_ubicazione')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_b1" title="Salva e Compila la Sezione Dati " type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_b1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['dati']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('b1_ubicazione_to_dati')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_c1" title="Salva e Compila la Sezione Altri Soggetti" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_c1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['richiedenti']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('c1_dati_to_altri_soggetti')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_d1" title="Salva e Compila la Sezione Sicurezza" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_d1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    return True
+else:
+    return not IolDocument(plominoDocument).isActionSupported('d1_altri_soggetti_to_sicurezza')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_d2" title="Salva e Compila la Sezione Oneri" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_d2</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['oneri']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+  
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('d2_altri_soggetti_to_oneri')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_e1" title="Salva e Compila la Sezione Oneri" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_e1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['oneri']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('e1_sicurezza_to_oneri')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_f1" title="Salva e Compila la Sezione Allegati" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_f1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['allegati']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('f1_oneri_to_allegati')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_g1" title="Salva e Completa la Domanda" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_g1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    return True
+else:       
+    return not IolDocument(plominoDocument).isActionSupported('g1_completa')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_h1" title="Presenta la domanda" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_h1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return "%s/presentaDomanda" %(plominoDocument.absolute_url())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if context.isEditMode():
+    return True
+else:
+    return not IolDocument(plominoDocument).isActionSupported('h1_presenta')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_dati" title="Modifica i dati della richiesta" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_dati</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">LINK</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_dati'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_dati')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_allegati" title="Modifica i dati della sezione allegati" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_allegati</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_allegati'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_allegati')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_altri_soggetti" title="Modifica i dati della sezione altri soggetti" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_altri_soggetti</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_altri_soggetti'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_altri_soggetti')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_completata" title="Completa la pratica" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_completata</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_completata'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_completata')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_oneri" title="Modifica i dati della sezione oneri" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_oneri</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_oneri'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_oneri')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_richiedenti" title="Modifica i dati della sezione richiedenti" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_richiedenti</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_richiedenti'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_richiedenti')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_ubicazione" title="Modifica i dati della sezione ubicazione" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_ubicazione</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[doc = plominoDocument
+action = 'vai_ubicazione'
+url = "%s/content_status_modify?workflow_action=%s" %(doc.absolute_url(),action)
+return url]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+return not IolDocument(plominoDocument).isActionSupported('vai_ubicazione')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_chiudi" title="Chiudi" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_chiudi</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return '%s/cruscotto-praticaweb' %(context.portal_url())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_i1" title="Protocolla" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_i1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['altri_soggetti']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    return True
+else:
+    return not IolDocument(plominoDocument).isActionSupported('i1_protocolla')]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_modifica" title="Modifica" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_modifica</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['%s/%s/EditDocument' %(plominoDocument.getParentDatabase().absolute_url(),plominoDocument.getId())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[permessi = context.verificaRuolo('iol-manager') or context.verificaRuolo('iol-reviewer')
+allPermessi = context.verificaRuolo('iol-manager') or context.verificaRuolo('iol-reviewer') or context.verificaRuolo('Owner')
+
+if context.isNewDocument() or context.wf_getInfoFor('review_state')=='completata':
+    return True
+elif context.wf_getInfoFor('review_state')=='completata' and allPermessi and not context.isEditMode():
+    return False
+elif not context.isEditMode() and permessi and plominoDocument.wf_getInfoFor('review_state')=='presentata':
+    return False
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_annulla" title="Annulla" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_annulla</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['%s/%s/resources/annullaFirma?doc=%s' %(plominoDocument.getParentDatabase().absolute_url(),plominoDocument.getId(),plominoDocument.getId())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[permessi = context.verificaRuolo('iol-manager') or context.verificaRuolo('iol-reviewer')
+
+if context.isNewDocument():
+    return True
+elif context.isEditMode() and (context.getItem('Form') in ['frm_scia_completata'] or context.getItem('Form').endswith('firma') or context.getItem('Form').endswith('protocollo')):
+    return False
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_inviapw" title="Invia agli Istruttori" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_inviapw</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[return "%s/inviaPraticaweb" %plominoDocument.absolute_url()]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[if plominoDocument.isEditMode():
+    return True
+
+if plominoDocument.wf_getInfoFor('review_state')=='presentata' and plominoDocument.getItem('numero_protocollo',''):
+    return False
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_elimina" title="Elimina" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_elimina</id>
+          <ActionType type="Products.Archetypes.Field.StringField">REDIRECT</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">BUTTON</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['%s/%s/delete' %(plominoDocument.getParentDatabase().absolute_url(),plominoDocument.getId())]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[if not context.isNewDocument() and not context.getItem('Form').endswith('firma'):
+    if context.wf_getInfoFor('wf_completata') :
+        return context.wf_getInfoFor('wf_presentata')
+   
+    else:
+        return False       
+
+else:
+    return True]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_d3" title="Salva e Compila la Sezione Allegati" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_d3</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['allegati']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True  
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('d3_altri_soggetti_to_allegati')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_f2" title="Salva e Compila la Sezione Oneri" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_f2</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA['oneri']]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('f2_allegati_to_oneri')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_c2" title="Salva e Compila la Sezione relazione asseverata" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_c2</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('c2_dati_to_asseverata')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+        <element id="btn_l1" title="Salva e Compila la Sezione Altri Soggetti" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_l1</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+
+if not plominoDocument.isEditMode():
+    res = True
+else:
+    res = not IolDocument(plominoDocument).isActionSupported('l1_asseverata_to_altri_soggetti')
+return res]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">True</InActionBar>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

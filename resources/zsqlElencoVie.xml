@@ -1,0 +1,5 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="zsqlElencoVie" title="Elenco delle Vie" type="Z SQL Method"/>
+  </design>
+</plominodatabase>

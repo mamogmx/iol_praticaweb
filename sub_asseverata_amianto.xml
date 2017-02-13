@@ -1,0 +1,194 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_amianto" title="Subform Relazione Asseverata Amianto" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_amianto</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Amianto">
+<legend class="scheduler-border">Amianto</legend>
+<div>
+<span class="plominoLabelClass">amianto_opt</span><span class="plominoFieldClass">amianto_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_amianto</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Piano di Lavoro di demolizione o rimozione dell'amianto </legend>
+<div><span class="plominoFieldClass">amianto_edifici_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_amianto_estremi</span></p>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">numero_protocollo_amianto</span><span class="plominoFieldClass">numero_protocollo_amianto</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_protocollo_amianto</span><span class="plominoFieldClass">data_protocollo_amianto</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_amianto_estremi</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_amianto</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="amianto_opt" title="Le opere in relazione alla presenza di amianto:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">amianto_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['non interessano parti di edifici con presenza di fibre di amianto|1','''interessano parti di edifici con presenza di fibre di amianto e che e' stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell'amianto|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="amianto_edifici_opt" title="Piano di Lavoro di demolizione o rimozione dell'amianto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">amianto_edifici_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>a = '''sarà allegato alla presente relazione di asseverazione|1'''
+b = '''e stato presentato con atto:|2'''
+c = '''sarà allegato alla comunicazione di inizio lavori ai sensi dell'art.26, comma 5, l.r.16/2008 e s.m.|3'''
+d = '''il Piano di Lavoro di demolizione o rimozione dell'amianto sarà presentato prima dell'inizio dei lavori|4'''
+try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+    
+if tipo == 'pdc':
+    return [a,d]
+elif tipo == 'scia':
+    return [a,b]
+elif tipo == 'dia':
+    return [a,b,c]
+else:
+    return []
+</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_protocollo_amianto" title="Numero protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_protocollo_amianto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_protocollo_amianto" title="Data protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_protocollo_amianto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_amianto" title="hw_no_amianto" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_amianto</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('amianto_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_amianto_estremi" title="hw_no_amianto_estremi" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_amianto_estremi</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('amianto_edifici_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

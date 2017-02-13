@@ -1,0 +1,177 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_esecutore_comunicazione" title="Impresa Esecutrice" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_esecutore_comunicazione</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnCreateChild(redirect='elenco_altri_tecnici')]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnSaveChild(redirect=True)]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnDeleteChild(redirect='elenco_altri_tecnici')]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="ESECUTORE">
+<legend class="scheduler-border required">Ditta Esecutrice dei Lavori</legend>
+<div><span class="plominoFieldClass">esecutore_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_esecutore_opt</span></p>
+<p><span class="plominoLabelClass">altri_esecutori_grid</span><span class="plominoFieldClass">altri_esecutori_grid</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_esecutore_opt</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="esecutore_opt" title="Selezionare per modificare ditta esecutrice dei lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '1']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'Lavori in economia o impresa/e esecutrice/i già comunicate|1',
+'Aggiungere esecutore dei lavori|2'
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_esecutore_opt" title="hw_no_esecutore_opt" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_esecutore_opt</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('esecutore_opt','1') == '1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="esecutore_modifica_opt" title="Selezionare per modificare l'esecutore" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">esecutore_modifica_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="altri_esecutori_grid" title="Altre imprese esecutrici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">altri_esecutori_grid</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>sub_esecutore</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_inps,esecutore_inail,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "app."},
+    { "sTitle": "Cognome"},
+    { "sTitle": "Nome"},
+    { "sTitle": "Denominazione"},
+    { "sTitle": "P.iva"},
+    { "sTitle": "Cod.fiscale"},
+    { "sTitle": "e-mail"},
+    { "sTitle": "Pec"},
+    { "sTitle": "Inps"},
+    { "sTitle": "Inail"}
+   
+    
+   
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 1000,
+        "height": 800
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

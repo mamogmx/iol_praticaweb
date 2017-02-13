@@ -1,0 +1,112 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_progettista_strutt" title="SubForm Progettista opere strutturali" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_progettista_strutt</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnCreateChild(redirect='elenco_altri_tecnici')]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnSaveChild(redirect=True)]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[plominoDocument.doclinkOnDeleteChild(redirect='elenco_altri_tecnici')]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div>
+<span class="plominoLabelClass">opere_strutturali_opt</span> <span class="plominoFieldClass">opere_strutturali_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_opere_strutt</span></p>
+<fieldset class="scheduler-border vvvv-content-title" title="Progettista">
+<legend class="scheduler-border">Progettista delle opere strutturali</legend>
+<p><span class="plominoSubformClass">base_sub_progettista_strutt</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_opere_strutt</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progettista_strutt_search" title="Elenco dei nominativi presenti in archivio" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progettista_strutt_search</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-autocompleteform-options="{url:\'fetch_data\',placeholder:\'Elenco:....\',allowClear:true,minimumInputLength:0,id:function(e){return e.progettista_strutt_cf;},formatResult: function(name){return\' \'+name.progettista_strutt_denominazione+\' \'+\' (pi: \'+name.progettista_strutt_piva+\') \'; },formatSelection:function(name){return name.progettista_strutt_denominazione; },data:function(term,page){return{forms:\'base_sub_tecnico\',distinct:\'progettista_strutt_cf,progettista_strutt_indirizzo\',fisica_cf:$(\'#fisica_cf\').val(),page:page,size:10}}}"']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>size</name>
+<value><string>255</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="opere_strutturali_opt" title="Opere strutturali:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">opere_strutturali_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return 'data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return [
+'''La tipologia delle opere da realizzare richiede la nomina di un progettista delle opere strutturali|1''',
+'''La tipologia delle opere da realizzare non richiede la nomina di un progettista delle opere strutturali|2'''
+]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_opere_strutt" title="Nascondi se non sono previste opere strutturali" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_opere_strutt</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return plominoDocument.getItem('opere_strutturali_opt','0')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

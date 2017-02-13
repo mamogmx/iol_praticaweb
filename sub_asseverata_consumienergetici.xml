@@ -1,0 +1,203 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_consumienergetici" title="Subform Relazione Asseverata Consumi Energetici" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_consumienergetici</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Consumi energetici">
+<legend class="scheduler-border">Consumi energetici</legend>
+<div>
+<span class="plominoLabelClass">risparmio_energetico_opt</span><span class="plominoFieldClass">risparmio_energetico_opt</span>
+</div>
+<div>
+<span class="plominoLabelClass">fonti_rinnovabili_opt</span><span class="plominoFieldClass">fonti_rinnovabili_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_prescrizioni_fonti_rinnovabili</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Fonti rinnovabili</legend>
+<div><span class="plominoFieldClass">prescrizioni_fonti_rinnovabili_opt</span></div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_prescrizioni_fonti_rinnovabili</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="risparmio_energetico_opt" title=" L’intervento, in materia di risparmio energetico:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">risparmio_energetico_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non e' soggetto al deposito del progetto e della relazione tecnica di cui all'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005|1''','''e' soggetto al deposito del progetto e della relazione tecnica di cui all' articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla vigente normativa regionale (legge regionale n. 22/2007 e s.m. e regolamento regionale 13 novembre 2012 n. 6 e s.m.)|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="relazione_comuni_energetici" title="relazione_comuni_energetici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">relazione_comuni_energetici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla vigente normativa regionale (legge regionale n. 22/2007 e s.m. e regolamento regionale 13 novembre 2012 n. 6 e s.m.)|1''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="fonti_rinnovabili_opt" title="L’intervento, in relazione agli obblighi in materia di fonti rinnovabili:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">fonti_rinnovabili_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non e' soggetto all'applicazione del d.lgs. n. 28/2011, in quanto non riguarda edifici di nuova costruzione o edifici sottoposti ad una ristrutturazione rilevante|1''','''e' soggetto all'applicazione del d.lgs. n. 28/2011|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="prescrizioni_fonti_rinnovabili_opt" title="Pertanto:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">prescrizioni_fonti_rinnovabili_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''il rispetto delle prescrizioni in materia di utilizzo di fonti di energia rinnovabili e' indicato negli elaborati progettuali e nella relazione tecnica prevista dall'articolo 125 del d.P.R. n. 380/2001 e dal d.lgs. n. 192/2005 in materia di risparmio energetico|1''','''l'impossibilita' tecnica di ottemperare, in tutto o in parte, agli obblighi previsti, e' evidenziata nella relazione tecnica dovuta ai sensi dell'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, con l'indicazione della non fattibilita' di tutte le diverse opzioni tecnologiche disponibili|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_risparmio_energetico_progetto" title="hw_no_risparmio_energetico_progetto" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_risparmio_energetico_progetto</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_prescrizioni_fonti_rinnovabili" title="hw_no_prescrizioni_fonti_rinnovabili" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_prescrizioni_fonti_rinnovabili</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('fonti_rinnovabili_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

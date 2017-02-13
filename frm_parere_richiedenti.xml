@@ -1,0 +1,207 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_parere_richiedenti" title="Titolari - Parere" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_parere_richiedenti</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.frm_onCreateDocument()]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_a1'):
+    wftool.doActionFor(doc,'a1_richiedenti_to_ubicazione')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+user=context.getCurrentUser().getMemberId()
+groups_tool = getToolByName(context, 'portal_groups')
+
+if 'Manager' not in context.getRoles(): 
+    if 'PlominoEditor' not in context.getRoles():
+        if 'utenti-praticaweb' not in [i.getId() for i in groups_tool.getGroupsByUserId(user)]:
+            return context.redirectTo('%s/utente-non-autorizzato-alla-presentazione-di-istanze-online' %(context.portal_url()))]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pratica</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Richiedente">
+<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend> <span class="plominoSubformClass">base_sub_fisica</span> <span class="plominoSubformClass">base_sub_fisica_recapiti</span> <span class="plominoSubformClass">base_sub_fisica_domicilio</span> <span class="plominoSubformClass">base_sub_giuridica</span><p><span class="plominoHidewhenClass">start:hw_no_condominio</span> <span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_condominio</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_proprietario</span> <span class="plominoSubformClass">sub_proprietario</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_proprietario</span></p>
+<div>
+<span class="plominoLabelClass">anagrafica_soggetti</span> <span class="plominoFieldClass">anagrafica_soggetti</span>
+</div>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">FIRMA DIGITALE</legend> <span class="plominoSubformClass">sub_firma_digitale</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DICHIARAZIONE DI CONSENSO PEC</legend> <span class="plominoFieldClass">consenso_pec</span><span class="plominoLabelClass">consenso_pec</span>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFPlomino.PlominoUtils import Now,DateToString,userFullname
+doc = plominoDocument
+db = doc.getParentDatabase()
+data = DateToString(doc.getItem('data_pratica',Now()),'%d/%m/%Y')
+title = "Istanza n. %s del %s (%s)" %(doc.getId(),data,userFullname(db,db.getCurrentUser().id)) 
+return title]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">True</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.imperia.IolApp import IolApp
+from Products.CMFPlomino.PlominoUtils import Now,DateToString
+doc = plominoDocument
+numero = str(IolApp(doc).NuovoNumeroPratica()).zfill(6)
+anno = DateToString(Now(),'%Y')
+return 'PARERE-%s-%s' %(numero,anno)]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="anagrafica_soggetti" title="Altri cointestatari/richiedenti" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">anagrafica_soggetti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>sub_fisica_giuridica</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>fisica_cognome,fisica_nome,fisica_comune_nato,fisica_cf,fisica_comune, fisica_indirizzo,fisica_civico,fisica_email,fisica_pec,fisica_telefono,giuridica_qualita,giuridica_denominazione,fisica_cellulare,fisica_fax,fisica_data_nato,fisica_sesso,giuridica_piva,giuridica_cf,giuridica_comune,giuridica_provincia,giuridica_cap,giuridica_localita,giuridica_indirizzo,giuridica_civico,giuridica_email, giuridica_pec,giuridica_telefono,giuridica_cellulare,giuridica_fax,fisica_app, fisica_titolo,fisica_provincia_nato,fisica_provincia,fisica_cap</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Cognome" },
+    { "sTitle": "Nome"},    
+    { "sTitle": "Comune nascita"},    
+    { "sTitle": "Cod. fiscale"}, 
+    { "sTitle": "Comune residenza"},
+    { "sTitle": "Indirizzo residenza"},
+    { "sTitle": "Civico"},
+    { "sTitle": "E-mail"},
+    { "sTitle": "Pec"},   
+    { "sTitle": "Telefono"} ,
+    { "sTitle": "in qualità"},
+    { "sTitle": "denominazione"}
+    
+   
+  
+    
+    
+
+    
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 1000,
+        "height": 800
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="consenso_pec" title="Il richiedente acconsente che ogni comunicazione e/o richiesta di integrazione venga inviata esclusivamente con modalità telematica alla casella PEC del progettista" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">consenso_pec</id>
+          <FieldType type="Products.Archetypes.Field.StringField">BOOLEAN</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_condominio" title="hw_no_condominio" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_condominio</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[if context.getItem('fisica_titolo')=='Amministratore condominiale':
+    return False
+else:
+    return True]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_proprietario" title="hw_no_proprietario" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_proprietario</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('fisica_titolo')  in ['Amministratore condominiale','Proprietario','']]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="iol_tipo_app" title="Tipo Applicazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_app</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'parere']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="iol_tipo_richiesta" title="Tipologia Richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_richiesta</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'comunicazione']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

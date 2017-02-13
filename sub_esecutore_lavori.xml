@@ -1,0 +1,260 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_esecutore_lavori" title="sub_esecutore_lavori" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_esecutore_lavori</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div>
+<span class="plominoLabelClass">lavori_economia_opt</span><span class="plominoFieldClass">lavori_economia_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_lavori_in_economia_opt</span></p>
+<div class="alert alert-info"><h5>I lavori saranno eseguiti in economia ad opera diretta della sottoscritta committenza e, per quanto eccedesse i limiti delle sue capacità, avvalendosi di personale per il quale saranno attivate le forme assicurative temporanee previste dalle norme regolamentari vigenti. In ogni caso le prestazioni d’opera in argomento non potranno riguardare interventi sugli impianti, in quanto eseguibili solo da personale qualificato e a ciò abilitato. Considerato che nelle persone della sottoscritta committenza giungerà ad identificarsi anche quella di responsabile di cantiere, si dichiara che la gestione dei materiali di risulta avverrà nel rispetto delle disposizioni previste dal DLgs. n.152/06 e s. m. e i. con conseguente personale assunzione della relativa responsabilità. Nell’eventualità che per i lavori edilizi ci si avvalesse anche, o in via sostitutiva, di imprese e/o artigiani, si adempirà preventivamente a quanto previsto dall’art. 90 comma 9 del DLgs. 9 aprile 2008, n.81 e s.m. e i, visto anche l’art. 43 comma 1 del DPR n.445/2000 e s.m. e i. La relativa dichiarazione (art.90 comma 9 lett. c) sarà integrata da tutti elementi identificativi indispensabili per l’acquisizione d’Ufficio, da parte di Codesto Sportello Unico, del DURC (Art.43 comma 1 ultimo periodo del DPR 445/2000 e s.m. e i.).</h5></div>
+<p><span class="plominoHidewhenClass">end:hw_no_lavori_in_economia_opt</span></p>
+<p><span class="plominoSubformClass">base_sub_esecutore</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="lavori_economia_opt" title="Dichiara:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">lavori_economia_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['Che i lavori saranno eseguiti in economia ad opera diretta della sottoscritta committenza;|1','Che i lavori saranno eseguiti da un impresa;|2']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="allegato_copia_notifica_preliminare" title="si allega copia della notifica preliminare" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_copia_notifica_preliminare</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['''data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["pdf","jpg","png","p7m"]} data-mandatory''']]></HTMLAttributesFormula>
+        </element>
+        <element id="dichiara_non obbligatorieta_notifica preliminare" title="Dichiara" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiara_non obbligatorieta_notifica preliminare</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-mandatory']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['La non obbligatorietà della notifica preliminare in relazione al tipo di cantiere necessario per il caso di specie']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="dichiara_avvenuta_verifica_durc" title="Dichiara" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiara_avvenuta_verifica_durc</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-mandatory']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['L’avvenuta verifica del DURC (punto 1 lettera ‘c’ dell’allegato XVII al DLgs. 81/2008 e s.m. e i.) e dell’ulteriore documentazione di cui alle lettere a) e b) dell’art.90 comma 9 del DLgs n.81/2008 e s.m. e i. (art.90 comma 9 lett. c)']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="dichiara_lavori_eseguita_inproprio" title="I sottoscritti dichiarano di essere consapevoli" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">dichiara_lavori_eseguita_inproprio</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['dell’obbligo della preventiva comunicazione dei nominativi delle eventuali imprese subentranti impegnate per l’esecuzione dei lavori|1','dell’obbligo dell’invio della documentazione prevista dall’art. 90 del Decreto Legislativo 9 aprile 2008, n. 81 e s.m.i., e dell’autocertificazione dell’impresa esecutrice contenente i dati indispensabili al reperimento delle informazioni per l’acquisizione d’ufficio del DURC|2','che l’assenza o incompleta compilazione dei dati richiesti costituisce carenza di elemento fondamentale agli effetti della validità della SCIA la quale pertanto non produrrà alcun effetto ciò indipendentemente da eventuali formali comunicazioni in merito da parte del Comune|3']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="altri_esecutori_grid_old" title="Altre imprese esecutrici (To Delete)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">altri_esecutori_grid_old</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATAGRID</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>associated_form</name>
+<value><string>sub_esecutore</string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_inail,esecutore_inps,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
+</member>
+<member>
+<name>jssettings</name>
+<value><string>"aoColumns": [
+    { "sTitle": "Cognome" },
+    { "sTitle": "Nome"},
+    { "sTitle": "Denominazione"},
+    { "sTitle": "P.iva"},
+    { "sTitle": "Cod.fiscale"},
+    { "sTitle": "e-mail"},
+    { "sTitle": "Pec"},
+    { "sTitle": "Albo/Collegio"},
+    { "sTitle": "Albo sede"},
+    { "sTitle": "Albo numero"}
+    
+   
+],
+"bPaginate": false,
+"bLengthChange": false,
+"bFilter": false,
+"bSort": false,
+"bInfo": false,
+"bAutoWidth": false,
+"plominoDialogOptions": {
+        "width": 1000,
+        "height": 800
+    }
+</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_lavori_in_economia_opt" title="hw_no_lavori_in_economia_opt" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_lavori_in_economia_opt</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('lavori_economia_opt')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

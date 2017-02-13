@@ -1,0 +1,54 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="base_sub_invio" title="base_sub_invio" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">base_sub_invio</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<div class="alert alert-info">
+<h4 style="text-align: center; ">La richiesta è stata completata e può essere inviata.</h4>
+<h5 style="text-align: center; ">Puoi tornare alla pagina iniziale o uscire dalla compilazione e tornare ad inviare la richiesta in un altro momento. Potrai trovare la richiesta compilata in <b> "Le mie istanze" </b> e inviarla in un secondo tempo.</h5>
+<h5 style="text-align: center; ">Per abilitare l'invio della richiesta occorre <span style="text-decoration: underline; ">caricare i files eventualmente richiesti e accettare le avvertenze e l'informativa sulla privacy</span>. Si consiglia di verificare la correttezza dei dati prima di procedere con l'invio.</h5>
+<span class="plominoActionClass">btn_send_action</span><hr>
+</div>
+<div id="iol-sending-message" title="Invio della richiesta"><div class="row-fluid">
+<div class="span6"><img src="../../../++resource++iol.document/send.jpg"></div>
+<div class="span6"><span class="sending-message">Invio della richiesta in corso...l'operazione potrebbe richiedere qualche minuto.</span></div>
+</div></div>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[/++resource++iol.document/iolSending.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="btn_send_action" title="Invia Richiesta" type="PlominoAction">
+          <id type="Products.Archetypes.Field.StringField">btn_send_action</id>
+          <ActionType type="Products.Archetypes.Field.StringField">SAVE</ActionType>
+          <ActionDisplay type="Products.Archetypes.Field.StringField">SUBMIT</ActionDisplay>
+          <Content type="Products.Archetypes.Field.TextField"><![CDATA[]]></Content>
+          <Hidewhen type="Products.Archetypes.Field.TextField"><![CDATA[]]></Hidewhen>
+          <InActionBar type="Products.Archetypes.Field.BooleanField">False</InActionBar>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

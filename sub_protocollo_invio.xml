@@ -1,0 +1,67 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_protocollo_invio" title="Sub Form con protocollo e invio pratica a PraticaWeb" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_protocollo_invio</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_view</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Protocollo">
+<legend class="scheduler-border">Dati di protocollazione</legend>
+<p><span class="plominoSubformClass">sub_protocollo</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_view</span></p>
+<p><span class="plominoHidewhenClass">start:hw_edit</span></p>
+<p><span class="plominoSubformClass">sub_invio_istruttori</span></p>
+<p><span class="plominoHidewhenClass">end:hw_edit</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="hw_edit" title="Nascondi quando in edit" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_edit</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+if context.isEditMode():
+    return True
+else:
+    pm = getToolByName(context, 'portal_membership')
+    db = context.getParentDatabase()
+    roles_in_context = pm.getAuthenticatedMember().getRolesInContext(db)
+    return not (db.hasUserRole( db.getCurrentUserId(), '[iol-manager]') or 'Manager' in roles_in_context) or context.getItem('wf_iol','')=='protocollata']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_view" title="Nascondi quando in view" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_view</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+if not context.isEditMode():
+    return True
+else:
+    pm = getToolByName(context, 'portal_membership')
+    db = context.getParentDatabase()
+    roles_in_context = pm.getAuthenticatedMember().getRolesInContext(db)
+    return not (db.hasUserRole( db.getCurrentUserId(), '[iol-manager]') or 'Manager' in roles_in_context)]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

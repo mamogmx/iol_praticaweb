@@ -1,0 +1,92 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_pdc_asseverata" title="Relazione Tecnica di Asseverazione - PdC" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_pdc_asseverata</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_l1'):
+    wftool.doActionFor(doc,'l1_asseverata_to_altri_soggetti')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_barrierearchitettoniche</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_sicurezzaimpianti</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_consumienergetici</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_inquinamentoacustico</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_materialirisulta</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_prevenzioneincendi</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_amianto</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_conformitaigienicosanitaria</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_interventistrutturali</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_qualitaambientaleterreni</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">DICHIARAZIONI RELATIVE AI VINCOLI</legend>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TUTELA STORICO-PAESAGGISTICA</legend>
+<p><span class="plominoSubformClass">sub_asseverata_autorizzazionepaesaggistica</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_autorizzazionearcheologica</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_areaprotetta</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TUTELA ECOLOGICA/AMBIENTALE</legend>
+<p><span class="plominoSubformClass">sub_asseverata_vincoloidrogeologico</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_vincoloidraulico</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_sitinatura2000</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_rispettocimiteriale</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_incidenterilevante</span></p>
+<p><span class="plominoSubformClass">sub_asseverata_altritutelaecologica</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">TUTELA FUNZIONALE</legend>
+<p><span class="plominoSubformClass">sub_asseverata_tutelafunzionale</span></p>
+</fieldset>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[resources/controller_atti_assenso.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

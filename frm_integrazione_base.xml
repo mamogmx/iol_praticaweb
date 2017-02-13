@@ -1,0 +1,154 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_integrazione_base" title="Invio documentazione integrativa" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_integrazione_base</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.frm_onCreateDocument()]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
+from Products.CMFPlomino.PlominoUtils import json_loads,StringToDate
+from Products.CMFCore.utils import getToolByName
+from iol.gisweb.ceriale.IolPraticaWeb import IolWSPraticaWeb
+
+doc = context
+
+url = "http://webservice.gisweb.it/wspraticaweb/ceriale.wsPraticaweb.php?wsdl"
+
+wsDoc = IolWSPraticaWeb(context,url)
+#wsDoc.infoProcedimento()
+  
+r = wsDoc.infoPratica()
+richiedenti = ""
+for a in r["richiedenti"]:
+    if "ragsoc" in a.keys():
+        richiedenti += a["ragsoc"]
+    elif "cognome" in a.keys():
+        richiedenti += "%s %s " %(a["cognome"],a["nome"]) 
+doc.setItem("search_richiedente",richiedenti.strip())
+progettisti = ""
+for a in r["progettisti"]:
+    if "ragsoc" in a.keys():
+        progettisti += a["ragsoc"]
+    elif "cognome" in a.keys():
+        progettisti += "%s %s " %(a["cognome"],a["nome"]) 
+doc.setItem("search_progettista",progettisti.strip())
+try:
+    doc.setItem('data_protocollo_origine',StringToDate(r["procedimento"]["data_prot"]),'%d/%m/%Y')
+except:
+    doc.setItem('data_protocollo_origine',r["procedimento"]["data_prot"])    
+doc.setItem('numero_protocollo_origine',r["procedimento"]["protocollo"])
+doc.setItem('numero_pratica',r["procedimento"]["numero"])
+doc.setItem('descrizione_intervento','Integrazione documenti della pratica numero %s' %r["procedimento"]["numero"])
+doc.setItem('descrizione_intervento_origine',r["procedimento"]["oggetto"])
+
+l = list()
+doc.setItem('ind',len(r["indirizzi"]))
+for i in r["indirizzi"]:
+    tmp = list()
+    tmp.append(i["via"])
+    tmp.append(i["civico"])
+    tmp.append('')
+    tmp.append('')
+    tmp.append('')
+    l.append(tmp)
+#################################################################    
+    
+    doc.setItem('elenco_civici',l)
+doc.setItem('Form','frm_integrazione_completata')]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+user=context.getCurrentUser().getMemberId()
+groups_tool = getToolByName(context, 'portal_groups')
+
+if 'Manager' not in context.getRoles(): 
+    if 'PlominoEditor' not in context.getRoles():
+        if 'utenti-praticaweb' not in [i.getId() for i in groups_tool.getGroupsByUserId(user)]:
+            return context.redirectTo('%s/utente-non-autorizzato-alla-presentazione-di-istanze-online' %(context.portal_url()))]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoSubformClass">base_sub_pulsantiera_nowf</span></p>
+<p><span class="plominoSubformClass">base_sub_pratica</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Ricerca">
+<legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_ricerca_pratica</span>
+</fieldset>
+<p><span class="plominoSubformClass">sub_soggetto_comunicazioni</span></p>
+<p><span class="plominoSubformClass">sub_esecutore_comunicazione</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_pdc_dia</span></p>
+<p><span class="plominoSubformClass">sub_direttore_lavori_comunicazione</span></p>
+<p><span class="plominoSubformClass">sub_direttore_strutturale_comunicazione</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_pdc_dia</span></p>
+<p><span class="plominoSubformClass">sub_allegati_integrazione</span></p>
+<p><span class="plominoSubformClass">sub_info_allegati</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.imperia.IolApp import IolApp
+from Products.CMFPlomino.PlominoUtils import Now,DateToString
+doc = plominoDocument
+numero = str(IolApp(doc).NuovoNumeroPratica()).zfill(6)
+anno = DateToString(Now(),'%Y')
+return 'INTEGRA-%s-%s' %(numero,anno)]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="iol_tipo_richiesta" title="Tipologia Richiesta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_richiesta</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'integrazione']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">True</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="iol_tipo_pratica" title="iol_tipo_pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">iol_tipo_pratica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'integrazione']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="descrizione_intervento" title="descrizione_intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTED</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_pdc_dia" title="Nascondi quando non è pdc o dia o scia" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pdc_dia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('iol_tipo_app','') in ['pdc','dia','scia'])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

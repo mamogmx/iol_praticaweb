@@ -1,0 +1,13 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="iol_docview" title="" type="Page Template"><![CDATA[<div tal:define="
+    db python:context.getParentDatabase();
+    docId options/doc/id;
+    currentDoc python:db.getDocument(docId);
+    formName options/fieldvalue;
+    renderForm python: db.getForm(formName);
+    html_content python: renderForm.displayDocument(currentDoc)"
+    tal:attributes="id string:IOLDocument_${docId}" 
+    tal:content="structure string: ${html_content}" > Documento in view </div>]]></resource>
+  </design>
+</plominodatabase>

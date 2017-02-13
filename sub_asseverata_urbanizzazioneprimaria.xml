@@ -1,0 +1,94 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_urbanizzazioneprimaria" title="Subform Relazione Asseverata Opere di Urbanizzazione Primaria" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_urbanizzazioneprimaria</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Opere di urbanizzazione primaria e secondaria">
+<legend class="scheduler-border">Opere di urbanizzazione primaria e/o secondaria</legend>
+<div>
+<span class="plominoLabelClass">opere_urbanizzazione_opt</span><span class="plominoFieldClass">opere_urbanizzazione_opt</span>
+</div>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="opere_urbanizzazione_opt" title="L’area / immobile oggetto di intervento, in quanto a opere di urbanizzazione:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">opere_urbanizzazione_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>a = '''e' dotata delle opere di urbanizzazione primaria e/o secondaria|1'''
+b = '''e' dotata delle opere di urbanizzazione primaria|1'''
+c = '''non e' dotata delle opere di urbanizzazione primaria e/o secondaria e la loro attuazione e' gia' prevista|2'''
+d = '''non e' dotata delle opere di urbanizzazione primaria e la loro attuazione e' prevista dall'amministrazione comunale nel corso del prossimo triennio|2'''
+e = '''non e' dotata delle opere di urbanizzazione primaria e/o secondaria per cui si impegna ad eseguire direttamente le opere di urbanizzazione specificate nel progetto e nello schema di convenzione ad esso allegato|3'''
+
+try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+result = dict(
+    scia=[a,c,e],
+    dia= [b,d],
+    pdc=[],
+    default=['''Manca la configurazione per il tipo %s|0''' %tipo]
+)
+if not tipo in result.keys():
+    tipo='default'
+return result[tipo]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

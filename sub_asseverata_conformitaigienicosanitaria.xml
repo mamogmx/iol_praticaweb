@@ -1,0 +1,252 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_conformitaigienicosanitaria" title="Subform Relazione Asseverata Conformita Igienico Sanitaria" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_conformitaigienicosanitaria</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Conformità igienico-sanitaria">
+<legend class="scheduler-border">Conformità igienico-sanitaria</legend>
+<div>
+<span class="plominoLabelClass">igienico_sanitari_opt</span><span class="plominoFieldClass">igienico_sanitari_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_igienico_sanitari</span></p>
+<div>
+<span class="plominoLabelClass">valutazioni_tecniche_igienico_sanitari_opt</span><span class="plominoFieldClass">valutazioni_tecniche_igienico_sanitari_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_valutazioni_tecniche_igienico</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Parere igienico-sanitario</legend>
+<div><span class="plominoFieldClass">parere_igienico_sanitario_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_parere_igienico_sanitario</span></p>
+<div class="row-fluid">
+<div class="span6">
+<span class="plominoLabelClass">ente_igienico_sanitari</span><span class="plominoFieldClass">ente_igienico_sanitari</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">numero_protocollo_igienico_sanitari</span><span class="plominoFieldClass">numero_protocollo_igienico_sanitari</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">data_protocollo_igienico_sanitari</span><span class="plominoFieldClass">data_protocollo_igienico_sanitari</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_parere_igienico_sanitario</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_valutazioni_tecniche_igienico</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_igienico_sanitari</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="igienico_sanitari_opt" title="L'intervento in materia igienico-sanitaria:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">igienico_sanitari_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non e' assoggettato alla verifica del rispetto dei requisiti igienico-sanitari|1''','''e' assoggettato alla verifica del rispetto dei requisiti igienico-sanitari|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="valutazioni_tecniche_igienico_sanitari_opt" title="valutazioni tecnico-discrezionali " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">valutazioni_tecniche_igienico_sanitari_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non comporta valutazioni tecnico-discrezionali e pertanto se ne autocertifica la conformita' in merito ai requisiti igienico-sanitari definiti dai regolamenti locali|1''','''comporta valutazioni tecnico-discrezionali|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="parere_igienico_sanitario_opt" title="Parere igienico-sanitario" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">parere_igienico_sanitario_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+result = dict(
+    
+    scia=['''si allega la documentazione necessaria per il rilascio del parere igienico-sanitario|1''','''il parere igienico-sanitario è stato rilasciato con atto:|2'''],
+    dia=['''si allega la documentazione necessaria per il rilascio del parere igienico-sanitario|1''','''il parere igienico-sanitario è stato rilasciato con atto:|2'''],
+    pdc=['''si allega la documentazione necessaria per il rilascio del parere igienico-sanitario|1'''],
+    default=['''Manca la configurazione per il tipo %s|0''' %tipo]
+)
+if not tipo in result.keys():
+    tipo='default'
+return result[tipo]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_protocollo_igienico_sanitari" title="Numero protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_protocollo_igienico_sanitari</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_protocollo_igienico_sanitari" title="Data protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_protocollo_igienico_sanitari</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="ente_igienico_sanitari" title="Ente rilascio provvedimento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">ente_igienico_sanitari</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_igienico_sanitari" title="Nascondi quando non assoggettato alla verifica del rispetto dei requisiti igienico-sanitari" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_igienico_sanitari</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('igienico_sanitari_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_valutazioni_tecniche_igienico" title="Nascondi quando non comporta valutazioni tecnico discrezionali" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_valutazioni_tecniche_igienico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('valutazioni_tecniche_igienico_sanitari_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_parere_igienico_sanitario" title="Nascondi quando il parere non è stato rilasciato" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_parere_igienico_sanitario</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('parere_igienico_sanitario_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

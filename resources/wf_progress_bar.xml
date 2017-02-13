@@ -1,0 +1,27 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="wf_progress_bar" title="" type="Page Template"><![CDATA[<style>
+.nav > .active{
+    background-color:#dddddd !important;
+}
+    
+.nav > .link-disabled > a{
+    color: #aaaaaa !important;
+    cursor : not-allowed !important
+}
+.nav > .active > a {
+    color:#205c90 !important;
+}
+</style>
+
+<tal:defs tal:on-error="context/handleError" tal:define="doc python:context.REQUEST.PARENTS[0];
+    wfData python: doc.restrictedTraverse('@@wfWizardInfo')();
+">
+
+<script type="text/javascript" charset="utf-8"tal:content="structure string:
+    var wfdata = ${wfData};
+
+    
+"></script></tal:defs>]]></resource>
+  </design>
+</plominodatabase>

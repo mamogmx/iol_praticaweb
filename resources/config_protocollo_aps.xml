@@ -1,0 +1,37 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="config_protocollo_aps" title="" type="Script (Python)"><![CDATA[## Script (Python) "config_protocollo_aps"
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=
+##title=
+##
+diz = {
+  "wsUrl": "http://test.hypersic.net/wsprotocollo/serviceprotocollo.asmx?WSDL",
+  "login": {
+    "username":"APS",
+    "password":"TestInAPS",
+    "codice_a00":1,
+    "codice_ente":1
+  },
+  "destinatario": {
+    "Denominazione":"HALLEY TEST",
+    "CodiceAmministrazione":1010,
+    "IndirizzoTelematico":"comune@prova.it",
+    "UnitaOrganizzativa":5,
+    "CodiceTitolario":751
+  },  
+  "mittente": {
+    "Nome":"fisica_nome",
+    "Cognome":"fisica_cognome",
+    "CodiceFiscale":"fisica_cf",
+    "IndirizzoTelematico":"fisica_email"
+  }
+}
+return diz
+]]></resource>
+  </design>
+</plominodatabase>

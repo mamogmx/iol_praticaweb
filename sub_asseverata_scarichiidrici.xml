@@ -1,0 +1,260 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_scarichiidrici" title="Subform Relazione Asseverata Scarichi Idrici" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_scarichiidrici</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Scarichi idrici">
+<legend class="scheduler-border">Scarichi idrici </legend>
+<div>
+<span class="plominoLabelClass">scarichi_idrici_opt</span><span class="plominoFieldClass">scarichi_idrici_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_scarichi</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Autorizzazione allo scarico</legend>
+<div>
+<span class="plominoLabelClass">autorizzazione_scarichi_opt</span><span class="plominoFieldClass">autorizzazione_scarichi_opt</span>
+</div>
+<div>
+<span class="plominoLabelClass">scarichi_idrici_autorizzazione_opt</span><span class="plominoFieldClass">scarichi_idrici_autorizzazione_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_estremi_autorizzazione_scarichi</span></p>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">numero_protocollo_scarichi_idrici</span><span class="plominoFieldClass">numero_protocollo_scarichi_idrici</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_protocollo_scarichi_idrici</span><span class="plominoFieldClass">data_protocollo_scarichi_idrici</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_estremi_autorizzazione_scarichi</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_scarichi</span></p>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="scarichi_idrici_opt" title="L’intervento, in relazione agli eventuali scarichi idrici previsti nel progetto" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">scarichi_idrici_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>try:
+    tipo = context.getItem('iol_tipo_proc','') or context.REQUEST.get('iol_tipo_proc','sue')
+except:
+    tipo=''
+if tipo == 'sue':
+    return ['''non necessita di autorizzazione allo scarico|1''','''necessita di autorizzazione|3''']
+
+else:
+    return ['''non necessita di autorizzazione allo scarico|1''','''necessita di autorizzazione allo scarico e la stessa è stata richiesta / ottenuta nell’ambito di altre autorizzazioni o valutazioni ambientali (AUA, AIA, VIA)|2''','''necessita di autorizzazione|3''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="autorizzazione_scarichi_opt" title="Tipo di autorizzazione allo scarico:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autorizzazione_scarichi_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>a = '''scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1'''
+b = '''scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006 della l.r. n. 43/1995|2'''
+c = '''allaccio in pubblica fognatura ai sensi della l.r. n. 43/1995|3'''
+
+try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+result = dict(
+    scia=[a,b,c],
+    dia= [a,b,c],
+    pdc=[],
+    default=['''Manca la configurazione per il tipo %s|0''' %tipo]
+)
+if not tipo in result.keys():
+    tipo='default'
+return result[tipo]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="scarichi_idrici_autorizzazione_opt" title="Autorizzazione allo scarico, estremi dell'atto:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">scarichi_idrici_autorizzazione_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>a = '''si allega la documentazione necessaria ai fini del rilascio della stessa|1'''
+b = '''la relativa autorizzazione è stata ottenuta con atto:|2'''
+c = '''la relativa autorizzazione sarà allegata alla comunicazione di inizio lavori ai sensi dell'art.26, comma5 l.r. 16/2008 e s.m.|3'''
+
+try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+
+result = dict(
+    scia=[a,b],
+    dia= [a,b,c],
+    pdc=[a,b],
+    default=['''Manca la configurazione per il tipo %s|0''' %tipo]
+)
+if not tipo in result.keys():
+    tipo='default'
+return result[tipo]
+</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_protocollo_scarichi_idrici" title="Numero protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_protocollo_scarichi_idrici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_protocollo_scarichi_idrici" title="Data protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_protocollo_scarichi_idrici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_autorizzazione_scarichi" title="hw_no_autorizzazione_scarichi" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_scarichi</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('scarichi_idrici_opt','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_estremi_autorizzazione_scarichi" title="hw_no_estremi_autorizzazione_scarichi" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_estremi_autorizzazione_scarichi</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('scarichi_idrici_autorizzazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

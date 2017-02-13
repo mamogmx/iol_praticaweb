@@ -1,0 +1,136 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_finelavori_completa" title="SubForm con riepilogo della comunicazione di fine lavori" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_finelavori_completa</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_presentata</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Documentazione">
+<legend class="scheduler-border">DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<div class="row-fluid"><div class="span3">
+<span class="plominoLabelClass">comunicazione_digitale</span><span class="plominoFieldClass">comunicazione_digitale</span>
+</div></div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_presentata</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Protocollo">
+<legend class="scheduler-border">Dati di Protocollazione</legend>
+<p><span class="plominoSubformClass">sub_protocollo</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Ricerca">
+<legend class="scheduler-border">DATI DELLA PRATICA</legend> <span class="plominoSubformClass">sub_ricerca_pratica</span>
+</fieldset>
+<p><span class="plominoSubformClass">sub_soggetto_comunicazioni</span></p>
+<h5>Che i lavori oggetto della denuncia inizio attività in oggetto richiamata sono stati ultimati in data:</h5>
+<h5>(ai sensi del'art. 26 comma 10 della L.R. 16/08 la comunicazione di fine lavori deve pervenire entro sessanta giorni dall'avvenuta ultimazione dei lavori; in caso di mancata comunicazione della data di ultimazione lavori sarà applicata la sanzione amministrativa pecuniaria pari a € 1033,00)</h5>
+<div class="row-fluid"><div class="span4">
+<span class="plominoLabelClass">data_fine_lavori</span><span class="plominoFieldClass">data_fine_lavori</span>
+</div></div>
+<p><span class="plominoSubformClass">sub_allegati_finelavori</span></p>
+<div class="row-fluid"><h5>IL MANCATO TEMPESTIVO INVIO DELLA COMUNICAZIONE DI ULTIMAZIONE LAVORI COSTITUISCE VIOLAZIONE DELL'ART. 92 DEL VIGENTE REGOLAMENTO EDILIZIO SOGGETTA ALL'APPLICAZIONE DELLE PROCEDURE SANZIONARIE PREVISTE ALL'ART. 143 DEL REGOLAMENTO EDILIZIO. IN TALE EVENTUALITA LA COMUNICAZIONE DI ULTIMAZIONE DOVRA ESSERE TRASMESSA SOTTO FORMA DI AUTOCERTIFICAZIONE.</h5></div>
+<p><span class="plominoSubformClass">sub_info_allegati</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="descrizione_intervento" title="descrizione_intervento" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">descrizione_intervento</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'Comunicazione di inizio lavori della pratica numero %s' %(context.REQUEST.get('numero_pratica',''))]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_pdc_dia" title="Nascondi quando non è pdc o dia" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_pdc_dia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not (context.getItem('iol_tipo_app','') in ['pdc','dia'])]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="data_fine_lavori" title="data fine lavori" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_fine_lavori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+<member>
+<name>format</name>
+<value><string>%d/%m/%Y</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="comunicazione_digitale" title="Comunicazione firmata digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_presentata" title="Nascondi quando non è presentata" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_presentata</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return not context.wf_getInfoFor('review_state') in ["presentata","protocollata"]]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_protocollo" title="Nascondi quando non ancora protocollata" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_protocollo</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('numero_protocollo','')=='']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

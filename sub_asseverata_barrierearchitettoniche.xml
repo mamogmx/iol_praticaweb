@@ -1,0 +1,221 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_asseverata_barrierearchitettoniche" title="Subform Relazione Asseverata Barriere Architettoniche" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_asseverata_barrierearchitettoniche</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[<fieldset class="scheduler-border vvv-content-title" title="Barriere Architettoniche">
+<legend class="scheduler-border">Barriere Architettoniche</legend>
+<div>
+<span class="plominoLabelClass">barriere_architettoniche_opt</span><span class="plominoFieldClass">barriere_architettoniche_opt</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_art_77</span></p>
+<div class="row-fluid"><div class="span10 offset1"><span class="plominoFieldClass">requisiti_art_77</span></div></div>
+<p><span class="plominoHidewhenClass">end:hw_no_art_77</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_barriere_architettoniche_deroga</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Deroga</legend>
+<div><span class="plominoFieldClass">barriere_architettoniche_deroga_opt</span></div>
+<p><span class="plominoHidewhenClass">start:hw_no_barriere_architettoniche_si_deroga</span></p>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">numero_protocollo_barriere_architettoniche_deroga</span><span class="plominoFieldClass">numero_protocollo_barriere_architettoniche_deroga</span>
+</div>
+<div class="span4">
+<span class="plominoLabelClass">data_protocollo_barriere_architettoniche_deroga</span><span class="plominoFieldClass">data_protocollo_barriere_architettoniche_deroga</span>
+</div>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_barriere_architettoniche_si_deroga</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_barriere_architettoniche_deroga</span></p>
+</fieldset>
+</fieldset>]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="barriere_architettoniche_opt" title="L'intervento in materia di barriere architettoniche:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">barriere_architettoniche_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''non è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia)|1''','''interessa un edificio privato aperto al pubblico e che le opere previste sono conformi all’articolo 82 del d.P.R. n. 380/2001 o della corrispondente normativa regionale come da relazione e schemi dimostrativi allegati al progetto|2''','''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia (l.r. 12 giugno 1989, n. 15 e s.m.), non rispetta la normativa in materia di barriere architettoniche|3''','''e' soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia  e, come da relazione e schemi dimostrativi allegati all'istanza, soddisfa il requisito di:|4''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="requisiti_art_77" title="requisiti_art_77" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">requisiti_art_77</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''accessibilità|accesibilita''','''visitabilità|visibilita''','''adattabilità|adattabilita''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="barriere_architettoniche_deroga_opt" title="barriere_architettoniche_deroga_opt" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">barriere_architettoniche_deroga_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>return ['''si richiede la deroga, come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati|1''','''la relativa deroga è stata ottenuta con atto:|2''']</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="numero_protocollo_barriere_architettoniche_deroga" title="Numero protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">numero_protocollo_barriere_architettoniche_deroga</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="data_protocollo_barriere_architettoniche_deroga" title="Data protocollo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">data_protocollo_barriere_architettoniche_deroga</id>
+          <FieldType type="Products.Archetypes.Field.StringField">DATETIME</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">DATETIMEFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = 'iolDatePicker'
+data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-10Y", "dateFormat": "dd/mm/yy", "yearRange": "-10:+0"}'
+''']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_art_77" title="hw_no_art_77" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_art_77</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_opt','')!='4']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_barriere_architettoniche_deroga" title="hw_no_barriere_architettoniche_deroga" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_barriere_architettoniche_deroga</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_opt','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_barriere_architettoniche_si_deroga" title="hw_no_barriere_architettoniche_si_deroga" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_barriere_architettoniche_si_deroga</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_deroga_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">True</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

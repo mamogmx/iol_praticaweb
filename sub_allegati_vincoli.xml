@@ -1,0 +1,613 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_vincoli" title="Subform Allegati Vincoli" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_vincoli</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">VINCOLI</legend>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_paesaggistica</span></p>
+<span class="plominoLabelClass">allegati_autorizzazione_paesaggistica</span><span class="plominoFieldClass">allegati_autorizzazione_paesaggistica</span><p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_paesaggistica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_richiesta_autorizzazione_paesaggistica</span></p>
+<span class="plominoLabelClass">allegati_richiesta_autorizzazione_paesaggistica</span><span class="plominoFieldClass">allegati_richiesta_autorizzazione_paesaggistica</span><p><span class="plominoHidewhenClass">end:hw_no_richiesta_autorizzazione_paesaggistica</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_soprintendenza</span></p>
+<span class="plominoLabelClass">allegati_autorizzazione_soprintendenza</span><span class="plominoFieldClass">allegati_autorizzazione_soprintendenza</span><p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_soprintendenza</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_autorizzazione_soprintendenza</span></p>
+<span class="plominoLabelClass">allegati_rilascio_autorizzazione_soprintendenza</span><span class="plominoFieldClass">allegati_rilascio_autorizzazione_soprintendenza</span><p><span class="plominoHidewhenClass">end:hw_no_rilascio_autorizzazione_soprintendenza</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_parere_area_protetta</span></p>
+<span class="plominoLabelClass">allegati_parere_area_protetta</span> <span class="plominoFieldClass">allegati_parere_area_protetta</span><p><span class="plominoHidewhenClass">end:hw_no_parere_area_protetta</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_parere_area_protetta</span></p>
+<span class="plominoLabelClass">allegati_rilascio_parere_area_protetta</span><span class="plominoFieldClass">allegati_rilascio_parere_area_protetta</span><p><span class="plominoHidewhenClass">end:hw_no_rilascio_parere_area_protetta</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_vincolo_idrogeologico</span></p>
+<span class="plominoLabelClass">allegati_autorizzazione_vincolo_idrogeologico</span><span class="plominoFieldClass">allegati_autorizzazione_vincolo_idrogeologico</span><p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_vincolo_idrogeologico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_vincolo_idrogeologico</span></p>
+<span class="plominoLabelClass">allegati_rilascio_vincolo_idrogeologico</span><span class="plominoFieldClass">allegati_rilascio_vincolo_idrogeologico</span><p><span class="plominoHidewhenClass">end:hw_no_rilascio_vincolo_idrogeologico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_autorizzazione_vincolo_idraulico</span></p>
+<span class="plominoLabelClass">allegati_autorizzazione_vincolo_idraulico</span><span class="plominoFieldClass">allegati_autorizzazione_vincolo_idraulico</span><p><span class="plominoHidewhenClass">end:hw_no_autorizzazione_vincolo_idraulico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_vincolo_idraulico</span></p>
+<span class="plominoLabelClass">allegati_rilascio_vincolo_idraulico</span><span class="plominoFieldClass">allegati_rilascio_vincolo_idraulico</span><p><span class="plominoHidewhenClass">end:hw_no_rilascio_vincolo_idraulico</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_valutazione_incidenza</span></p>
+<span class="plominoLabelClass">allegati_valutazione_incidenza</span><span class="plominoFieldClass">allegati_valutazione_incidenza</span><p><span class="plominoHidewhenClass">end:hw_no_valutazione_incidenza</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_valutazione_incidenza</span></p>
+<p><span class="plominoLabelClass">allegati_rilascio_valutazione_incidenza</span><span class="plominoFieldClass">allegati_rilascio_valutazione_incidenza</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_rilascio_valutazione_incidenza</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_approvazione_progetto_zps</span></p>
+<p><span class="plominoLabelClass">allegati_approvazione_progetto_zps</span><span class="plominoFieldClass">allegati_approvazione_progetto_zps</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_approvazione_progetto_zps</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_deroga_cimiteriale</span></p>
+<p><span class="plominoLabelClass">allegati_deroga_cimiteriale</span><span class="plominoFieldClass">allegati_deroga_cimiteriale</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_deroga_cimiteriale</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_deroga_cimiteriale</span></p>
+<p><span class="plominoLabelClass">allegati_rilascio_deroga_cimiteriale</span><span class="plominoFieldClass">allegati_rilascio_deroga_cimiteriale</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_rilascio_deroga_cimiteriale</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_valutazione_ctr</span></p>
+<p><span class="plominoLabelClass">allegati_valutazione_ctr</span><span class="plominoFieldClass">allegati_valutazione_ctr</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_valutazione_ctr</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_doc_valutazione_ctr</span></p>
+<p><span class="plominoLabelClass">allegati_doc_valutazione_ctr</span><span class="plominoFieldClass">allegati_doc_valutazione_ctr</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_doc_valutazione_ctr</span></p>
+<p><span class="plominoLabelClass">allegati_nullaosta_alveo</span><span class="plominoFieldClass">allegati_nullaosta_alveo</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_altri_vincoli_ecologici</span></p>
+<p><span class="plominoLabelClass">allegati_altri_vincoli_ecologici</span><span class="plominoFieldClass">allegati_altri_vincoli_ecologici</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_altri_vincoli_ecologici</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_altri_vincoli_ecologici</span></p>
+<p><span class="plominoLabelClass">allegati_rilascio_altri_vincoli_ecologici</span><span class="plominoFieldClass">allegati_rilascio_altri_vincoli_ecologici</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_rilascio_altri_vincoli_ecologici</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_vincoli_tutela_funzionale</span></p>
+<p><span class="plominoLabelClass">allegati_vincoli_tutela_funzionale</span><span class="plominoFieldClass">allegati_vincoli_tutela_funzionale</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_vincoli_tutela_funzionale</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_rilascio_vincoli_tutela_funzionale</span></p>
+<p><span class="plominoLabelClass">allegati_rilascio_vincoli_tutela_funzionale</span><span class="plominoFieldClass">allegati_rilascio_vincoli_tutela_funzionale</span></p>
+<p><span class="plominoHidewhenClass">end:hw_no_rilascio_vincoli_tutela_funzionale</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Allegati relativi ad altri vincoli di tutela ecologica</legend> <span class="plominoFieldClass">allegati_vincoli_tutela_ecologica_dg</span>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Allegati relativi a vincoli per garantire il coerente uso del suolo e l’efficienza tecnica delle infrastrutture</legend> <span class="plominoFieldClass">allegati_vincoli_suolo_dg</span>
+</fieldset>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegati_autorizzazione_paesaggistica" title="Autorizzazione paesaggistica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_autorizzazione_paesaggistica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_richiesta_autorizzazione_paesaggistica" title="Documentazione necessaria per il rilascio dell'autorizzazione paesaggistica " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_richiesta_autorizzazione_paesaggistica</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_autorizzazione_soprintendenza" title="Autorizzazione/atto di assenso della Soprintendenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_autorizzazione_soprintendenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_autorizzazione_soprintendenza" title="Documentazione necessaria per il rilascio dell'autorizzazione di assenso della Soprintendenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_autorizzazione_soprintendenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_parere_area_protetta" title="Parere/nulla osta dell'ente competente per bene in area protetta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_parere_area_protetta</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_richiesta_parere_area_protetta" title="Documentazione per richiesta Parere/nulla osta dell'ente competente per bene in area protetta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_richiesta_parere_area_protetta</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_autorizzazione_vincolo_idrogeologico" title="Autorizzazione relativa al vincolo idrogeologico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_autorizzazione_vincolo_idrogeologico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_vincolo_idrogeologico" title="Documentazione necessaria per il rilascio dell'autorizzazione relativa al vincolo idrogeologico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_vincolo_idrogeologico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_parere_area_protetta" title="Documentazione necessaria per il rilascio del parere/nulla osta dell'ente competente per bene in area protetta" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_parere_area_protetta</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_autorizzazione_vincolo_idraulico" title="Autorizzazione relativa al vincolo idraulico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_autorizzazione_vincolo_idraulico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_vincolo_idraulico" title="Documentazione necessaria per il rilascio dell'autorizzazione relativa al vincolo idraulico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_vincolo_idraulico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_valutazione_incidenza" title="Valutazione d' incidenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_valutazione_incidenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_valutazione_incidenza" title="Documentazione necessaria per il rilascio della Valutazione d' incidenza" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_valutazione_incidenza</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_approvazione_progetto_zps" title="Documentazione necessaria all'approvazione del progetto in zona speciale di conservazione" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_approvazione_progetto_zps</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_deroga_cimiteriale" title="Deroga alla fascia di rispetto cimiteriale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_deroga_cimiteriale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_deroga_cimiteriale" title="Documentazione necessaria per la richiesta di deroga alla fascia di rispetto cimiteriale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_deroga_cimiteriale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_valutazione_ctr" title="Valutazione del progetto da parte del Comitato Tecnico Regionale per interventi in area di danno da incidente rilevante" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_valutazione_ctr</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_doc_valutazione_ctr" title="Documentazione necessaria alla valutazione del progetto da parte del Comitato Tecnico Regionale per interventi in area di danno da incidente rilevante" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_doc_valutazione_ctr</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_nullaosta_alveo" title="Nulla osta per accesso in alveo" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_nullaosta_alveo</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_altri_vincoli_ecologici" title="Atti di assenso relativi ad altri vincoli di tutela ecologico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_altri_vincoli_ecologici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_altri_vincoli_ecologici" title="Documentazione necessaria per il rilascio di atti di assenso relativi ad altri vincoli di tutela ecologica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_altri_vincoli_ecologici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_vincoli_tutela_funzionale" title="Atti di assenso relativi ai vincoli di tutela funzionale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_vincoli_tutela_funzionale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">atti_assenso_view</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">atti_assenso_edit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_rilascio_vincoli_tutela_funzionale" title="Documentazione necessaria per il rilascio di assenso relativi ai vincoli di tutela funzionale" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_rilascio_vincoli_tutela_funzionale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_vincoli_tutela_ecologica_dg" title="Documentazione per vincoli di tutela ecologia" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_vincoli_tutela_ecologica_dg</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">atti_assenso_view</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">atti_assenso_edit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[for k in context.REQUEST.keys():
+    if k.startswith("allegati_vincoli_tutela_ecologica_dg") and not context.REQUEST.get(k):
+        return "La documentazione per vincoli di tutela ecologia è obbligatorio"
+
+return ""]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegati_vincoli_suolo_dg" title="Documentazione per garantire il coerente uso del suolo e l'efficenza tecnica delle infrastrutture" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegati_vincoli_suolo_dg</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">atti_assenso_view</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">atti_assenso_edit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[for k in context.REQUEST.keys():
+    if k.startswith("allegati_vincoli_suolo_dg") and not context.REQUEST.get(k,'')!='':
+        return "La documentazione per garantire il coerente uso del suolo e l'efficenza tecnica delle infrastrutture è obbligatorio"
+
+return ""]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_autorizzazione_paesaggistica" title="hw_no_autorizzazione_paesaggistica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_paesaggistica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('procedimento_autorizzazione_paesaggistica_documentazione','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_richiesta_autorizzazione_paesaggistica" title="hw_no_richiesta_autorizzazione_paesaggistica" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_richiesta_autorizzazione_paesaggistica</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('procedimento_autorizzazione_paesaggistica_documentazione','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_autorizzazione_soprintendenza" title="hw_no_autorizzazione_soprintendenza" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_soprintendenza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('beni_archeologici_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_autorizzazione_soprintendenza" title="hw_no_rilascio_autorizzazione_soprintendenza" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_autorizzazione_soprintendenza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('beni_archeologici_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_parere_area_protetta" title="hw_no_parere_area_protetta" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_parere_area_protetta</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('area_protetta_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_parere_area_protetta" title="hw_no_rilascio_parere_area_protetta" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_parere_area_protetta</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('area_protetta_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_autorizzazione_vincolo_idrogeologico" title="hw_no_autorizzazione_vincolo_idrogeologico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_vincolo_idrogeologico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincolo_idrogeologico_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_vincolo_idrogeologico" title="hw_no_rilascio_vincolo_idrogeologico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_vincolo_idrogeologico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincolo_idrogeologico_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_autorizzazione_vincolo_idraulico" title="hw_no_autorizzazione_vincolo_idraulico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autorizzazione_vincolo_idraulico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincolo_idraulico_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_vincolo_idraulico" title="hw_no_rilascio_vincolo_idraulico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_vincolo_idraulico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincolo_idraulico_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_valutazione_incidenza" title="hw_no_valutazione_incidenza" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_valutazione_incidenza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('siti_natura_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_valutazione_incidenza" title="hw_no_rilascio_valutazione_incidenza" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_valutazione_incidenza</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('siti_natura_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_valutazione_ctr" title="hw_no_valutazione_ctr" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_valutazione_ctr</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('rischio_incidente_area1_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_doc_valutazione_ctr" title="hw_no_doc_valutazione_ctr" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_doc_valutazione_ctr</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('rischio_incidente_area1_documentazione_opt','')!='1' or context.getItem('rischio_incidente_opt','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_approvazione_progetto_zps" title="hw_no_approvazione_progetto_zps" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_approvazione_progetto_zps</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('siti_natura_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_deroga_cimiteriale" title="hw_no_deroga_cimiteriale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_deroga_cimiteriale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('fascia_cimiteriale_documentazione_opt','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_deroga_cimiteriale" title="hw_no_rilascio_deroga_cimiteriale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_deroga_cimiteriale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('fascia_cimiteriale_documentazione_opt','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_altri_vincoli_ecologici" title="hw_no_altri_vincoli_ecologici" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_altri_vincoli_ecologici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincoli_ecologici_immobili','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_altri_vincoli_ecologici" title="hw_no_rilascio_altri_vincoli_ecologici" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_altri_vincoli_ecologici</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincoli_ecologici_immobili','')!='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_vincoli_tutela_funzionale" title="hw_no_vincoli_tutela_funzionale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_vincoli_tutela_funzionale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincoli_suolo_immobili','')!='3']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_rilascio_vincoli_tutela_funzionale" title="hw_no_rilascio_vincoli_tutela_funzionale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_rilascio_vincoli_tutela_funzionale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('vincoli_suolo_immobili','')!='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

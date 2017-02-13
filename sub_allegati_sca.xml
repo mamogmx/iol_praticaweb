@@ -1,0 +1,312 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_allegati_sca" title="SubForm con Allegati per le Segnalazioni Certificate di Agibilità" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_allegati_sca</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Attestazione direttore lavori o professionista</legend>
+<p><span class="plominoLabelClass">allegato_sussistenza_condizioni</span> <span class="plominoFieldClass">allegato_sussistenza_condizioni</span></p>
+</fieldset>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Documentazione relativa agli impianti</legend>
+<p><span class="plominoLabelClass">allegato_conformita_impianti</span> <span class="plominoFieldClass">allegato_conformita_impianti</span></p>
+</fieldset>
+<!-- Risparmi Energetico --><fieldset class="scheduler-border">
+<legend class="scheduler-border">Documentazione relativa al contenimento energetico</legend>
+<p><span class="plominoLabelClass">allegato_conformita_risparmio_energetico</span> <span class="plominoFieldClass">allegato_conformita_risparmio_energetico</span></p>
+<p><span class="plominoLabelClass">allegato_dichiarazione_conformita_dlgs192</span> <span class="plominoFieldClass">allegato_dichiarazione_conformita_dlgs192</span></p>
+<p><span class="plominoHidewhenClass">start:hw_risparmio_energetico</span></p>
+<p><span class="plominoLabelClass">allegato_no_osservanza_consumi_energetici</span> <span class="plominoFieldClass">allegato_no_osservanza_consumi_energetici</span></p>
+<p><span class="plominoHidewhenClass">end:hw_risparmio_energetico</span></p>
+</fieldset>
+<!-- Cemento Armato --><fieldset class="scheduler-border">
+<legend class="scheduler-border">Documentazione relativa al collaudo statico di opere in cemento armato</legend>
+<p><span class="plominoLabelClass">allegato_certificato_statico</span> <span class="plominoFieldClass">allegato_certificato_statico</span></p>
+<p><span class="plominoLabelClass">allegato_regolare_esecuzione_lavori</span> <span class="plominoFieldClass">allegato_regolare_esecuzione_lavori</span></p>
+<p><span class="plominoLabelClass">allegato_conformita_progetto</span> <span class="plominoFieldClass">allegato_conformita_progetto</span></p>
+<p><span class="plominoHidewhenClass">start:hw_collaudo_statico</span></p>
+<p><span class="plominoLabelClass">allegato_no_obbligo_collaudo_statico</span> <span class="plominoFieldClass">allegato_no_obbligo_collaudo_statico</span></p>
+<p><span class="plominoHidewhenClass">end:hw_collaudo_statico</span></p>
+</fieldset>
+<!-- Barriere Architettoniche --><fieldset class="scheduler-border">
+<legend class="scheduler-border">Documentazione relativa al rispetto delle norme sulle barriere architettoniche</legend>
+<p><span class="plominoLabelClass">allegato_conformita_barriere_architettoniche</span> <span class="plominoFieldClass">allegato_conformita_barriere_architettoniche</span></p>
+<p><span class="plominoHidewhenClass">start:hw_barriere_architettoniche</span></p>
+<p><span class="plominoLabelClass">allegato_no_obbligo_barriere architettoniche</span> <span class="plominoFieldClass">allegato_no_obbligo_barriere architettoniche</span></p>
+<p><span class="plominoHidewhenClass">end:hw_barriere_architettoniche</span></p>
+</fieldset>
+<!-- Normativa materia acustica --><fieldset class="scheduler-border">
+<legend class="scheduler-border">Documentazione attestante il rispetto della normativa in materia acustica</legend>
+<p><span class="plominoLabelClass">allegato_isolamento_acustico</span> <span class="plominoFieldClass">allegato_isolamento_acustico</span></p>
+</fieldset>
+<!-- Versamenti --><fieldset class="scheduler-border">
+<legend class="scheduler-border">Versamenti</legend>
+<p><span class="plominoLabelClass">allegato_versamento_ds</span> <span class="plominoFieldClass">allegato_versamento_ds</span></p>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="allegato_sussistenza_condizioni" title="Attestazione del direttore lavori o, qualora non nominato, di un professionista abilitato che assevera la sussistenza delle condizioni di cui al comma 1 dell'articolo 24 del d.P.R. 380/01                                  " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_sussistenza_condizioni</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_conformita_impianti" title="Dichiarazione completa di certificato camerale delle imprese installatrici, che attestano la conformità degli impianti installati completi diegli allegati obbligatori indicati nelle stesse (art.7, comma 1 D.M. 22/01/2008 n. 37 e s.m.i. in materia di sicurezza impianti)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_conformita_impianti</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_conformita_risparmio_energetico" title="Dichiarazione dell'impresa esecutrice attestante la conformità degli impianti installati alle condizioni di risparmio energetico prescritte dalla disciplina vigente " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_conformita_risparmio_energetico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_dichiarazione_conformita_dlgs192" title="Dichiarazione asseverata dal Direttore dei Lavori di conformità al progetto e alla relazione tecnica attestante l'osservanza delle disposizioni del d.lgs. 192/2005 e s.m.i." type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_dichiarazione_conformita_dlgs192</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_no_osservanza_consumi_energetici" title="Dichiarazione sottoscritta da tecnico abilitato attestante la non obbligatorietà all’osservanza delle disposizioni in materia di contenimento dei consumi energetici" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_no_osservanza_consumi_energetici</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_certificato_statico" title="Copia del certificato di collaudo statico previsto dall'art. 67 comma 8 del d.P.R. n. 380/01 e s.m.i., per le opere realizzate in conglomerato cementizio armato normale / pre-compresso / struttura metallica " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_certificato_statico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_regolare_esecuzione_lavori" title="Dichiarazione di regolare esecuzione resa dal direttore dei lavori prevista dall'art. 67 comma 8 bis del d.P.R. n. 380/01 e s.m.i. (per gli interventi di riparazione e per gli interventi locali sulle costruzioni esistenti, come definiti dalla normativa tecnica)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_regolare_esecuzione_lavori</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_no_obbligo_collaudo_statico" title="Dichiarazione sottoscritta da tecnico abilitato attestante la non obbligatorietà al deposito del collaudo statico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_no_obbligo_collaudo_statico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_conformita_progetto" title="Dichiarazione sottoscritta dal Direttore dei Lavori, attestante che le opere sono state realizzate in conformità al progetto (depositato c/o Genio Civile) ed alla normativa antisismica " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_conformita_progetto</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_conformita_barriere_architettoniche" title="Dichiarazione di conformità asseverata, sottoscritta da tecnico abilitato, delle opere realizzate in materia di accessibilità e superamento delle barriere architettoniche indicata nell'art. 11 del d.M. LL.PP. n. 236/1989 e art. 77 del d.P.R. n. 380/2001 e s.m.i. per gli edifici privati, e art. 82 del d.P.R. n. 380/2001 e s.m.i. per gli edifici pubblici o privati aperti al pubblico" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_conformita_barriere_architettoniche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_no_obbligo_barriere architettoniche" title="Dichiarazione sottoscritta da tecnico abilitato attestante la non obbligatorietà di adeguamento delle opere in materia di accessibilità e superamento delle barriere architettoniche " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_no_obbligo_barriere architettoniche</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_isolamento_acustico" title="Relazione tecnica sulle verifiche di isolamento acustico degli edifici (D.P.C.M. 5 dicembre 1997)" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_isolamento_acustico</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}'
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="allegato_versamento_ds" title="Ricevuta di versamento dei diritti di segreteria" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">allegato_versamento_ds</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return '''
+data-plugin = "iolUploadFile" data-plugin-options='{"emptyMessage":"NoFiles","maxsize":"3","filetype":["jpg","png","pdf","p7m"]}'"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_risparmio_energetico" title="Nascondi quando non serve documentazione risparmio energetico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_risparmio_energetico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_risparmio_energetico" title="Nascondi quando serve documentazione risparmio energetico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_risparmio_energetico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_collaudo_statico" title="Nascondi quando non serve documentazione collaudo statico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_collaudo_statico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('collaudo_statico_opt','')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_collaudo_statico" title="Nascondi quando serve documentazione collaudo statico" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_collaudo_statico</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('risparmio_energetico_opt','')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_barriere_architettoniche" title="Nascondi quando non serve documentazione rbarriere architettoniche" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_barriere_architettoniche</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_opt','')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_barriere_architettoniche" title="Nascondi quando serve documentazione barriere architettoniche" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_barriere_architettoniche</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('barriere_architettoniche_opt','')=='2']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

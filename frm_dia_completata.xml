@@ -1,0 +1,232 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="frm_dia_completata" title="Riepilogo Istanza - DIA" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">frm_dia_completata</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('btn_send_action',''):
+    context.setItem('Form','frm_dia_presentata')
+    url = "%s/presentaDomanda" %context.absolute_url()
+    context.setItem('plominoredirecturl',url)]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoSubformClass">base_sub_pratica</span></p>
+<p><span class="plominoSubformClass">sub_condivisa_praticaweb</span></p>
+<p><span class="plominoFieldClass">progress_bar</span></p>
+<p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Documentazione">
+<legend class="scheduler-border">DOCUMENTI DA SCARICARE E FIRMARE DIGITALMENTE</legend>
+<div><span class="plominoFieldClass">documenti_da_scaricare</span></div>
+</fieldset>
+<fieldset class="scheduler-border vvv-content-title" title="Documentazione">
+<legend class="scheduler-border">ALLEGA I DOCUMENTI FIRMATI DIGITALMENTE</legend>
+<div class="row-fluid">
+<div class="span3">
+<span class="plominoLabelClass">comunicazione_digitale</span><span class="plominoFieldClass">comunicazione_digitale</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">rel_asseverata_digitale</span> <span class="plominoFieldClass">rel_asseverata_digitale</span>
+</div>
+<div class="span3">
+<span class="plominoLabelClass">autocertificazione_sicurezza_digitale</span> <span class="plominoFieldClass">autocertificazione_sicurezza_digitale</span>
+</div>
+<p><span class="plominoHidewhenClass">start:hw_no_autocertificazione_imprese_digitale</span></p>
+<div class="span3">
+<span class="plominoLabelClass">autocertificazioni_imprese_digitale</span><span class="plominoFieldClass">autocertificazioni_imprese_digitale</span>
+</div>
+<p><span class="plominoHidewhenClass">end:hw_no_autocertificazione_imprese_digitale</span></p>
+</div>
+</fieldset>
+<p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
+<fieldset class="scheduler-border vvv-content-title" title="Documentazione">
+<legend class="scheduler-border">Avvertenze</legend>
+<p><span class="plominoSubformClass">base_sub_invio_dichiarazioni</span></p>
+<p><span class="plominoSubformClass">base_sub_invio</span></p>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_comunicazione_digitale</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Dati di riepilogo della comunicazione</legend> <span class="plominoFieldClass">resoconto_finale</span>
+</fieldset>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[http://maps.google.com/maps/api/js?sensor=false&libraries=drawing,geometry
+iolGoogleMap.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="progress_bar" title="Barra Avanzamento " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">progress_bar</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">wf_progress_bar</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="documenti_da_scaricare" title="Documenti da scaricare e firmare digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">documenti_da_scaricare</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">iol_print_modelli</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>ll = ['Comunicazione DIA|comunicazione_dia.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_dia_stampa',
+      'Autocertificazione sicurezza|autocertificazione_sicurezza.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_dia_stampa',
+      'Relazione asseverata|rel_asseverata_dia.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=relazioni&amp;form=frm_dia_stampa']
+if context.getItem('lavori_economia_opt','impresa') =='2':
+    ll.append('Autocertificazione impresa esecutrice 1|autocertificazione_impresa.docx&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_dia_stampa')
+    esecutori = context.getItem('altri_esecutori_grid', [['dasd'],['dasdas'],['dfgdfgdf']])
+    for i,v in enumerate(esecutori):
+        ll.append('Autocertificazione impresa esecutrice %s|autocertificazione_impresa.docx&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_dia_stampa&amp;grid=altri_esecutori_grid&amp;grid_index=%s' %(i+2,i))
+        
+return ll</string></value>
+</member>
+<member>
+<name>selectionlist</name>
+<value><array><data>
+</data></array></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="comunicazione_digitale" title="Comunicazione firmata digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">comunicazione_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="rel_asseverata_digitale" title="Relazione Asseverata firmata digitalmente" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">rel_asseverata_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="autocertificazione_sicurezza_digitale" title="Autocertificazione sicurezza " type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autocertificazione_sicurezza_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "firmato digitalmente"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="autocertificazioni_imprese_digitale" title="Autocertificazione/i impresa" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">autocertificazioni_imprese_digitale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">ATTACHMENT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField">ATTACHMENTFieldEdit</FieldEditTemplate>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[return'''
+data-plugin = "iolUploadFile" data-plugin-options={"emptyMessage":"NoFiles","maxsize":"3","filetype":["p7m"]}
+data-tooltip = "Allegare le autocertificazioni, firmate digitalmente, di tutte le imprese coinvolte"
+''']]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_autocertificazione_imprese_digitale" title="hw_no_autocertificazione_imprese_digitale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_autocertificazione_imprese_digitale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('lavori_economia_opt','')=='1']]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="resoconto_finale" title="Resoconto finale della pratica" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">resoconto_finale</id>
+          <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#form di visualizzazione del documento di resoconto
+return 'sub_dia_completa']]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">iol_docview</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
+        </element>
+        <element id="hw_no_comunicazione_digitale" title="Nascondi quando manca la comunicazione digitale" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_comunicazione_digitale</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return context.getItem('comunicazione_digitale',{})=={}]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>

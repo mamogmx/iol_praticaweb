@@ -1,0 +1,51 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <resource id="wf_progress_bar_2" title="" type="Page Template"><![CDATA[<style>
+    #content ul{
+        list-style-type: none !important;
+    }
+</style><div tal:define="doc python:context.REQUEST.PARENTS[0];
+    base_url python: doc.absolute_url();
+    url_0 string:${base_url}/content_status_modify?workflow_action=vai_richiedenti;
+    url_1 string:${base_url}/content_status_modify?workflow_action=vai_ubicazione;
+    url_2 string:${base_url}/content_status_modify?workflow_action=vai_dati;
+    url_3 string:${base_url}/content_status_modify?workflow_action=vai_altri_soggetti;
+    url_4 string:${base_url}/content_status_modify?workflow_action=vai_allegati;
+    url_5 string:${base_url}/content_status_modify?workflow_action=vai_oneri;
+    url_6 string:${base_url}/content_status_modify?workflow_action=vai_completata;
+    cls_0 string:;
+    cls_1 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_ubicazione'),'','disabled');
+    cls_2 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_dati'),'','disabled');
+    cls_3 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_altri_soggetti'),'','disabled');
+    cls_4 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_allegati'),'','disabled');
+    cls_5 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_oneri'),'','disabled');
+    cls_6 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_completata'),'','disabled');
+    cls_7 python: test(doc.isDocument() and doc.wf_getInfoFor('wf_presentata'),'','disabled');
+
+">
+    <ul class="nav nav-tabs">
+        <li tal:attributes="class string:${cls_0}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_0}">Richiedenti</a></li>
+        <li tal:attributes="class string:${cls_1}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_1}">Ubicazione</a></li>
+        <li tal:attributes="class string:${cls_2}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_2}">Dati Pratica</a></li>
+        <li tal:attributes="class string:${cls_3}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_3}">Altri Soggetti</a></li>
+        <li tal:attributes="class string:${cls_4}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_4}">Allegati</a></li>
+        <li tal:attributes="class string:${cls_5}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_5}">Oneri</a></li>
+        <li tal:attributes="class string:${cls_6}"><a href="#" tal:attributes="data-plugins string:edit-document; data-url string:${url_6}">Completata</a></li>
+        <li tal:attributes="class string:${cls_7}"><a href="#" data-plugins="edit-document" data-url="">Presentata</a></li>
+    </ul> 
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("a[data-plugins='edit-document']").bind('click',function(e){
+            e.preventDefault();
+            var url = $(this).attr('data-url');
+            console.log(url);
+            if (url){
+                window.location=url;
+            }
+        })
+    });
+</script>]]></resource>
+  </design>
+</plominodatabase>

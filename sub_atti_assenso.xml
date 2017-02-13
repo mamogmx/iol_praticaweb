@@ -1,0 +1,146 @@
+<plominodatabase id="iol_praticaweb">
+  <design>
+    <element id="sub_atti_assenso" title="Sub Form Atti di Assenso" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_atti_assenso</id>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
+      <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
+<p><span class="plominoHidewhenClass">start:hw_no_dia</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">PRESENTAZIONE DELLA DENUNCIA DI INIZIO ATTIVITA</legend>
+<div>
+<span class="plominoLabelClass">atti_assenso_opt</span><span class="plominoFieldClass">atti_assenso_opt</span>
+</div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_dia</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_scia</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">PRESENTAZIONE DELLA SEGNALAZIONE CERTIFICATA DI INIZIO ATTIVITA</legend>
+<div>
+<span class="plominoLabelClass">atti_assenso_opt</span><span class="plominoFieldClass">atti_assenso_opt</span>
+</div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_scia</span></p>
+<p><span class="plominoHidewhenClass">start:hw_no_cila</span></p>
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">PRESENTAZIONE DELLA COMUNICAZIONE DI INIZIO LAVORI</legend>
+<div>
+<span class="plominoLabelClass">atti_assenso_opt</span><span class="plominoFieldClass">atti_assenso_opt</span>
+</div>
+</fieldset>
+<p><span class="plominoHidewhenClass">end:hw_no_cila</span></p>
+]]></FormLayout>
+      <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
+      <DocumentTitle type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentTitle>
+      <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
+      <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
+      <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
+      <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
+      <SearchView type="Products.Archetypes.Field.StringField"/>
+      <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
+      <Position type="Products.Archetypes.Field.IntegerField"/>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
+      <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
+      <elements>
+        <element id="atti_assenso_opt" title="L'inizio dei lavori:" type="PlominoField">
+          <id type="Products.Archetypes.Field.StringField">atti_assenso_opt</id>
+          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
+          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
+          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
+          <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
+          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
+          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
+          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
+          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA['data-dhw=1']]></HTMLAttributesFormula>
+          <params>
+<param>
+<value><struct>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
+</member>
+<member>
+<name>selectionlistformula</name>
+<value><string>a = '''in assenza di atti di assenso presupposti, in quanto l'intervento oggetto della denuncia non necessita di atti o pareri che non possono essere sostituiti dalle autocertificazioni, attestazioni e asseverazioni o certificazioni di tecnici abilitati. Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della denuncia, previa comunicazione ai sensi dell'articolo 26, comma 5 della l.r. n. 16/2008 e s.m..|1'''
+b = '''essendo già in possesso di tutti gli atti di assenso presupposti, comunque denominati, già rilasciati dalle competenti amministrazioni. Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della denuncia previa comunicazione ai sensi dell'articolo 26, comma 5 della l.r. n. 16/2008 e s.m.|3'''
+c = '''richiedendo contestualmente l'acquisizione d'ufficio degli atti di assenso presupposti, comunque denominati, alle competenti amministrazioni semprechè gli stessi non possano essere sostituiti dalle autocertificazioni, attestazioni e asseverazioni o certificazioni di tecnici abilitati. Il titolare dichiara di essere a conoscenza che l'attività oggetto della denuncia può essere iniziata, previa comunicazione ai sensi dell'articolo 26, comma 5 della l.r. n. 16/2008 e s.m., non prima di 30 giorni dall'avvenuta acquisizione degli atti di assenso presupposti, che sarà comunicata da parte dello sportello unico.|2'''
+d = '''optando per il differimento dell'efficacia della segnalazione certificata di inizio attività al decorso del termine di trenta giorni ai sensi dell'art.21 bis,comma 8 l.r. 16/2008 e s.m.|4'''
+e = '''essendo già in possesso di tutti gli atti di assenso presupposti, comunque denominati, già rilasciati dalle competenti amministrazioni|3'''
+
+f = '''l'inizio dei lavori per interventi di manutenzione straordinaria per la cui realizzazione non sono necessari altri atti di assenso (ad es. autorizzazione paesaggistica, autorizzazione per vincolo culturale/monumentale ecc.)|1'''
+g = '''per la cui realizzazione si richiede l'acquisizione d'ufficio, da parte dello sportello unico, degli atti di assenso necessari. Il titolare dichiara di essere a conoscenza che l'intervento può essere iniziato dopo la comunicazione da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presoppusti.|2'''
+try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+result = dict(
+    cila = [f,e,g],
+    scia=[a,e,c,d],
+    dia=[a,b,c],
+    default=['''Manca la configurazione per il tipo %s|0''' %tipo]
+)
+if not tipo in result.keys():
+    tipo='default'
+return result[tipo]</string></value>
+</member>
+<member>
+<name>dynamictableparam</name>
+<value><string>'bPaginate': true,
+'bLengthChange': true,
+'bFilter': true,
+'bSort': true,
+'bInfo': true,
+'bAutoWidth': false</string></value>
+</member>
+</struct></value>
+</param>
+</params>
+        </element>
+        <element id="hw_no_dia" title="Nascondi quando non è DIA" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_dia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+    
+return 'dia' != tipo]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_scia" title="Nascondi quando non è SCIA" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_scia</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+    
+return 'scia' != tipo]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+        <element id="hw_no_cila" title="Nascondi quando non è CILA" type="PlominoHidewhen">
+          <id type="Products.Archetypes.Field.StringField">hw_no_cila</id>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[try:
+    tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
+except:
+    tipo=''
+    
+return 'cila' != tipo]]></Formula>
+          <isDynamicHidewhen type="Products.Archetypes.Field.BooleanField">False</isDynamicHidewhen>
+        </element>
+      </elements>
+    </element>
+  </design>
+</plominodatabase>
