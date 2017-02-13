@@ -1,5 +1,0 @@
-<plominodatabase id="iol_praticaweb">
-  <design>
-    <resource id="zsqlElencoCivici" title="Elenco dei civici dato il codice via" type="Z SQL Method"/>
-  </design>
-</plominodatabase>

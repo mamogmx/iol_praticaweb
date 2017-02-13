@@ -86,7 +86,7 @@ return DateToString(Now(),'%d/%m/%Y')]]></Formula>
           <id type="Products.Archetypes.Field.StringField">comune</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'ceriale']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '[nome_comune]']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

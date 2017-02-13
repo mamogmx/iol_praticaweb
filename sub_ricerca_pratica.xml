@@ -84,10 +84,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolPraticaWeb  import IolWSPraticaWeb
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.[nome_comune].IolPraticaWeb  import IolWSPraticaWeb
 import random
 
-url = "http://webservice.gisweb.it/wspraticaweb/ceriale.wsPraticaweb.php?wsdl"
+url = "http://webservice.gisweb.it/wspraticaweb/[nome_comune].wsPraticaweb.php?wsdl"
 wsDoc = IolWSPraticaWeb(plominoDocument,url)
 res = wsDoc.trovaProcedimento()
 if res["success"] == 1 and res["id"]:
@@ -182,10 +182,10 @@ else:
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolPraticaWeb  import IolWSPraticaWeb
+          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.[nome_comune].IolPraticaWeb  import IolWSPraticaWeb
 import random
 
-url = "http://webservice.gisweb.it/wspraticaweb/ceriale.wsPraticaweb.php?wsdl"
+url = "http://webservice.gisweb.it/wspraticaweb/[nome_comune].wsPraticaweb.php?wsdl"
 wsDoc = IolWSPraticaWeb(plominoDocument,url)
 res = wsDoc.trovaProcedimento()
 if res["success"] == 1 and res["id"]:
