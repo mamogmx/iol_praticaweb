@@ -100,12 +100,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''parere preventivo in ordine all'aspetto estetico dell'intervento nei casi previsti dalle norme di livello puntuale del PUC  o in caso di intervento non espressamente disciplinato dalla normativa  di PUC sopraccitata|estetico''','''deroga ai sensi dell'art. 19 del titolo IV del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_19''','''deroga ai sensi dell'art. 42 del titolo V del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_42''','''deroga alla disciplina di livello puntuale paesistico ai sensi dell'art. 1 dell'elaborato St.5 del PUC in riferimento all'articolo|deroga_paesistico''' ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -203,12 +203,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''parere preventivo in ordine all'aspetto estetico dell'intervento nei casi previsti dalle norme di livello puntuale del PUC  o in caso di intervento non espressamente disciplinato dalla normativa  di PUC sopraccitata|estetico''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -239,12 +239,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''deroga ai sensi dell'art. 19 del titolo IV del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_19''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -275,12 +275,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''deroga ai sensi dell'art. 42 del titolo V del vigente Regolamento Edilizio in riferimento all'articolo|deroga_art_42''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -311,12 +311,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''deroga alla disciplina di livello puntuale paesistico ai sensi dell'art. 1 dell'elaborato St.5 del PUC in riferimento all'articolo|deroga_paesistico''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -352,12 +352,12 @@ if not res:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -410,12 +410,12 @@ if not res:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Altro|altro']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

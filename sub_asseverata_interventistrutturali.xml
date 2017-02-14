@@ -111,12 +111,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica|1''','''prevede la realizzazione di opere di conglomerato cementizio armato, normale e precompresso ed a struttura metallica|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -147,10 +147,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione relativa alla denuncia di cui all’articolo 65 del d.P.R. n. 380/2001|1'''
 b = '''la denuncia di cui all’articolo 65 del d.P.R. n. 380/2001 è già stata depositata con atto:|2'''
@@ -170,6 +166,10 @@ if not tipo in result.keys():
     tipo='default'
 return result[tipo]
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -239,10 +239,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''non prevede opere da denunciare o autorizzare ai sensi degli articoli 93 e 94 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r.. 21 luglio 1983, n. 29 e s.m. ; DGR n. 1184/2013; DGR n. 1662 e 1664 2013)|1'''
 b = '''prevede opere in zona sismica da denunciare ai sensi dell'articolo 93 del d.P.R. n. 380/2001 e della corrispondente normativa regionale (l.r.. 21 luglio 1983, n. 29 e s.m. ; DGR n. 1184/2013; DGR n. 1662 e 1664 2013)|2'''
@@ -262,6 +258,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -331,10 +331,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione relativa alla denuncia dei lavori in zona sismica|1'''
 b = '''la relativa denuncia dei lavori in zona sismica è già stata depositata con atto:|2'''
@@ -353,6 +349,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -422,10 +422,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria per il rilascio dell’autorizzazione sismica|1'''
 b = '''la relativa autorizzazione è già stata ottenuta con atto:|2'''
@@ -444,6 +440,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

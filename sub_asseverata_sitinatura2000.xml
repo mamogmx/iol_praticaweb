@@ -66,12 +66,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' soggetto a Valutazione d’incidenza|1''','''e' soggetto a Valutazione d’incidenza|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -107,10 +107,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria all’approvazione del progetto|1'''
 b = '''la valutazione è stata effettuata dall’ente gestore/competente con atto:|2'''
@@ -126,6 +122,10 @@ elif tipo == 'dia':
 else:
     return []
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

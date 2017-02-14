@@ -448,15 +448,15 @@ return iDoc.getLabels('aggiornamento_catastale_opt')]]></Formula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Maschile</string></value>
 <value><string>Femminile</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -596,12 +596,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>startingyear</name>
 <value><string>1900</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 <member>
 <name>format</name>
@@ -1588,12 +1588,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -2171,12 +2171,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -2198,12 +2198,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -2313,12 +2313,12 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>2</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -2371,10 +2371,6 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
 <value><string>frm_ubicazione_civico</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Via" },
@@ -2392,6 +2388,10 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
         "height": 450
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
 </member>
 </struct></value>
 </param>
@@ -2417,10 +2417,6 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
 <value><string>frm_ubicazione_nct</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione" },
@@ -2438,6 +2434,10 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
         "height": 450
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>nct_sezione,nct_foglio,nct_particella,nct_geometry</string></value>
 </member>
 </struct></value>
 </param>
@@ -2463,10 +2463,6 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
 <value><string>frm_ubicazione_nceu</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>nceu_sezione,nceu_foglio,nceu_mappale,nceu_subalterno</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Sezione" },
@@ -2485,6 +2481,10 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
         "height": 450
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>nceu_sezione,nceu_foglio,nceu_mappale,nceu_subalterno</string></value>
 </member>
 </struct></value>
 </param>
@@ -2519,12 +2519,12 @@ return iDoc.getLabels('rilascio_pareri_opt')]]></Formula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['SCIA|scia','DIA|dia','Permesso di costruire|permesso_costruire']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -2558,12 +2558,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>startingyear</name>
 <value><string>1950</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 <member>
 <name>format</name>
@@ -2589,12 +2589,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -2616,12 +2616,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>6</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>

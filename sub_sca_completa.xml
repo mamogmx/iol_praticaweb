@@ -27,9 +27,17 @@
 </fieldset>
 <p><span class="plominoHidewhenClass">end:hw_no_protocollo</span></p>
 <!--FORM RICHIEDENTE--><fieldset class="scheduler-border vvv-content-title" title="Richiedente">
-<legend class="scheduler-border">DATI ANAGRAFICI DEL RICHIEDENTE</legend>
+<legend class="scheduler-border">DATI ANAGRAFICI DEL TITOLARE DEL PERMESSO DI COSTRUIRE, SCIA O SUO SUCCESSORE O AVENTE CAUSA</legend>
 <p><span class="plominoSubformClass">base_sub_fisica</span></p>
 <p><span class="plominoSubformClass">base_sub_fisica_recapiti</span></p>
+<p><span class="plominoSubformClass">base_sub_fisica_domicilio</span></p>
+<p><span class="plominoSubformClass">base_sub_giuridica</span></p>
+<p><span class="plominoSubformClass">sub_condominio</span></p>
+<p><span class="plominoSubformClass">sub_generalita_proprietario</span></p>
+<p><span class="plominoSubformClass">sub_comproprietari</span></p>
+<p><span class="plominoSubformClass">sub_firma_digitale</span></p>
+<p><span class="plominoSubformClass">sub_consenso_pec</span></p>
+<p><span class="plominoSubformClass">sub_titolarita_intervento</span></p>
 </fieldset>
 <!-- END FORM -->
 <p> </p>
@@ -42,7 +50,11 @@
 <!-- FORM DATI RICHIESTA -->
 <p><span class="plominoSubformClass">sub_riferimento_pratica</span></p>
 <p><span class="plominoSubformClass">sub_dichiarazioni_sca</span></p>
-<!-- END FORM --> <!-- FORM ALLEGATI -->
+<!-- END FORM --> <!-- FORM ALTRI SOGGETTI--><fieldset class="scheduler-border vvvv-content-title" title="Direttore Lavori o Professionista Abilitato">
+<legend class="scheduler-border">Direttore Lavori o Professionista Abilitato</legend> <span class="plominoSubformClass">dlg_tecnico</span>
+</fieldset>
+<!-- END FORM __>
+<!-- FORM ALLEGATI -->
 <p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
 <p><span class="plominoSubformClass">sub_allegati_sca</span></p>
 <p><span class="plominoSubformClass">sub_allegati_altro</span></p>

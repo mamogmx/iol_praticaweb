@@ -71,10 +71,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_proc','') or context.REQUEST.get('iol_tipo_proc','sue')
@@ -85,6 +81,10 @@ if tipo == 'sue':
 
 else:
     return ['''non necessita di autorizzazione allo scarico|1''','''necessita di autorizzazione allo scarico e la stessa è stata richiesta / ottenuta nell’ambito di altre autorizzazioni o valutazioni ambientali (AUA, AIA, VIA)|2''','''necessita di autorizzazione|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -115,10 +115,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''scarico in pubblica fognatura ai sensi del d.lgs. n. 152/2006 e della l.r. n. 43/1995|1'''
 b = '''scarico in acque superficiali, sul suolo e negli strati superficiali del sottosuolo ai sensi del d.lgs. n. 152/2006 della l.r. n. 43/1995|2'''
@@ -137,6 +133,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -167,10 +167,6 @@ return result[tipo]</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria ai fini del rilascio della stessa|1'''
 b = '''la relativa autorizzazione è stata ottenuta con atto:|2'''
@@ -191,6 +187,10 @@ if not tipo in result.keys():
     tipo='default'
 return result[tipo]
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

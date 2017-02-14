@@ -69,10 +69,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''non sono soggette alla normativa relativa ai materiali da scavo (art. 41-bis D.L. n. 69 del 2013 e art. 184-bis d.lgs. n. 152 del 2006)|1''',
@@ -81,6 +77,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 '''riguardano interventi di demolizione di edifici o altri manufatti preesistenti e producono rifiuti la cui gestione e' disciplinata ai sensi della parte quarta del d.lgs. n. 152/ 2006|4''',
 '''comportano la produzione di materiali da scavo che saranno gestiti dall'interessato come rifiuti|5'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -111,10 +111,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''le opere comportano la produzione di materiali da scavo per un volume inferiore o uguale a 6000 mc ovvero (pur superando tale soglia) non sono soggette a VIA o AIA e pertanto si allega autocertificazione del titolare resa all'ARPA ai sensi del comma 2 dell'art. 41-bis D.L. n. 69 del 2013|1'''
 b = '''le opere comportano la produzione di materiali da scavo per un volume inferiore o uguale a 6000 mc ovvero (pur superando tale soglia) non sono soggette a VIA o AIA e pertanto si allega l'autocertificazione del titolare da rendersi all'ARPA ai sensi del comma 2 dell'art. 41-bis D.L. n. 69 del 2013 della D.G.R. n.1423/2013 sarà allegata alla comunicazione di inizio lavori|4'''
@@ -130,6 +126,10 @@ if tipo in ['pdc','dia']:
     return [d,c,b]
 else:
     return [a,c,d]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -160,12 +160,12 @@ else:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''si allega/si comunicano gli estremi del provvedimento di VIA o AIA, comprensivo dell'assenso al Piano di Utilizzo dei materiali da scavo|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -248,12 +248,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''allega autocertificazione del titolare (che i materiali da scavo saranno riutilizzati nello stesso luogo di produzione)|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

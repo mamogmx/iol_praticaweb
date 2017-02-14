@@ -63,16 +63,16 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
+<name>separator</name>
+<value><string>&lt;p class='pippo'&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
 <value><string>return ['contestualmente alla data di presentazione della presente SCIA|scia_data_inizio_presentazione','''trascorsi 30 giorni dalla data di presentazione della presente SCIA ai sensi del comma 8 dell'art.21bis della L.R. 16/08|scia_data_succ_presentazione''']</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;p class='pippo'&gt;</string></value>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -137,12 +137,12 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''la legittimazione giuridica dello stato di fatto dell'immobile oggetto d'intervento, con particolare riferimento agli aspetti urbanistico-edilizi|legittimazione_giuridica''','''Attualmente l'immobile non e' legittimo in tutte le sue parti - specificare|specificare''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -207,15 +207,15 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>che l'intervento è soggetto al rilascio del certificato di agibilità|si</string></value>
 <value><string>che l'intervento non è soggetto al rilascio del certificato di agibilità|no</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -246,10 +246,6 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>servito da impianto termico centralizzato|centralizzato</string></value>
@@ -257,6 +253,10 @@ except:
 <value><string>(casi particolari specificare)|altro</string></value>
 <value><string>intervento su immobile non plurifamiliare|no</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -287,12 +287,12 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>3</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>

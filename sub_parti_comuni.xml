@@ -57,10 +57,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''NON RIGUARDANO parti comuni|1'''
 b = '''riguardano parti comuni di un FABBRICATO CONDOMINIALE e sono state approvate dall'assemblea condominiale|2'''
@@ -82,6 +78,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

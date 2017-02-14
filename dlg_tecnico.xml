@@ -288,15 +288,15 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Maschile</string></value>
 <value><string>Femminile</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -436,12 +436,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>startingyear</name>
 <value><string>1900</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 <member>
 <name>format</name>
@@ -1131,10 +1131,6 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>SELECT</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Direttore lavori|direttore</string></value>
@@ -1146,6 +1142,10 @@ except:
 <value><string>Collaudatore C.A.|collaudatore_ca</string></value>
 <value><string>Altro|altro</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>SELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -51,15 +51,15 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 'Lavori in economia o impresa/e esecutrice/i già comunicate|1',
 'Aggiungere esecutore dei lavori|2'
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -95,12 +95,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Aggiungere nuova ditta esecutrice|nuovo_esecutore']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -135,10 +135,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <value><string>sub_esecutore</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_inps,esecutore_inail,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "app."},
@@ -166,6 +162,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_inps,esecutore_inail,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
 </member>
 </struct></value>
 </param>

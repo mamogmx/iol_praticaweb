@@ -56,10 +56,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <value><string>dlg_tecnico</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>tecnico_app,tecnico_cognome,tecnico_nome,tecnico_denominazione,tecnico_piva,tecnico_cf,tecnico_email,tecnico_pec,tecnico_albo,tecnico_albo_numero,tecnico_albo_prov,tecnico_sesso,tecnico_qualita,tecnico_qualita_altro,tecnico_comune_nato,tecnico_provincia_nato,tecnico_data_nato,tecnico_cod_cat_nato,tecnico_indirizzo,tecnico_civico,tecnico_comune,tecnico_provincia,tecnico_cap,tecnico_cciaa,tecnico_cciaa_numero,tecnico_cciaa_prov,tecnico_inail,tecnico_inps,tecnico_telefono,tecnico_cellulare,tecnico_fax,tecnico_comune_residenza,tecnico_provincia_residenza,tecnico_indirizzo_residenza,tecnico_civico_residenza,tecnico_legale_rappresentante,tecnico_abilitazioni,tecnico_cap_residenza</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     //{ "sTitle": "App." },
@@ -87,6 +83,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
     }
 </string></value>
 </member>
+<member>
+<name>field_mapping</name>
+<value><string>tecnico_app,tecnico_cognome,tecnico_nome,tecnico_denominazione,tecnico_piva,tecnico_cf,tecnico_email,tecnico_pec,tecnico_albo,tecnico_albo_numero,tecnico_albo_prov,tecnico_sesso,tecnico_qualita,tecnico_qualita_altro,tecnico_comune_nato,tecnico_provincia_nato,tecnico_data_nato,tecnico_cod_cat_nato,tecnico_indirizzo,tecnico_civico,tecnico_comune,tecnico_provincia,tecnico_cap,tecnico_cciaa,tecnico_cciaa_numero,tecnico_cciaa_prov,tecnico_inail,tecnico_inps,tecnico_telefono,tecnico_cellulare,tecnico_fax,tecnico_comune_residenza,tecnico_provincia_residenza,tecnico_indirizzo_residenza,tecnico_civico_residenza,tecnico_legale_rappresentante,tecnico_abilitazioni,tecnico_cap_residenza</string></value>
+</member>
 </struct></value>
 </param>
 </params>
@@ -107,12 +107,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Dichiara di aver incaricato in qualità di altri tecnici i seguenti soggetti|1','Dichiara che gli altri tecnici incaricati saranno individuati prima dell’inizio dei lavori;|2']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

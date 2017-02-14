@@ -60,12 +60,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''NON PREVEDE altri atti di assenso|no_atti''','''PREVEDE altri atti di assenso|si_atti''','''Optando per il differimento dell'efficacia della segnalazione certificata di inizio attivita' al decorso del termine di trenta giorni ai sensi dell'art. 21 bis, comma 8 l.r. 16/2008 e s.m.|differita''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -96,8 +96,8 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>separator</name>
+<value><string>&lt;br/&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -107,8 +107,8 @@ bootstrap-responsive.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;br/&gt;</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

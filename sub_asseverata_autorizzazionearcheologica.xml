@@ -66,12 +66,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' sottoposto a tutela|1''','''e' sottoposto a tutela|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -107,10 +107,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione/atto di assenso|1'''
 b = '''l'autorizzazione/atto di assenso e' stato rilasciato con atto:|2'''
@@ -125,6 +121,10 @@ elif tipo == 'dia':
 else:
     return []
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

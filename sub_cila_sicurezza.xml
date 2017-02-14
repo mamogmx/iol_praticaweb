@@ -133,10 +133,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Committente/Titolare|richiedente</string></value>
@@ -144,6 +140,10 @@
 <value><string>Direttore dei lavori|direttore</string></value>
 <value><string>Altro Responsabile dei lavori|altro</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -174,10 +174,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|non_ricade''','''ricade nell'ambito di applicazione del Titolo IV del d.lgs. n. 81/2008|ricade''']</string></value>
 </member>
@@ -185,6 +181,10 @@
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -220,15 +220,15 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>L'entità presunta del cantiere è inferiore a 200 uomini-giorno ed i lavori non comportano i rischi particolari di cui l'allegato XI del d.lgs. n. 81/2008 e di aver verificato il certificato di iscrizione alla Camera di commercio, il documento unico di regolarità contributiva, corredato da autocertificazione in ordine al possesso degli altri requisiti previsti dall'allegato XVII del d.lgs. n. 81/2008, e l'autocertificazione relativa al contratto collettivo applicato|meno-200</string></value>
 <value><string>L'entità presunta del cantiere è pari o superiore a 200 uomini-giorno o i lavori comportano i rischi particolari di cui all'allegato XI del d.lgs. n. 81/2008 e di aver verificato la documentazione di cui alle lettere a) e b) dell'art. 90 comma 9 prevista dal d.lgs. n. 81/2008 circa l'idoneità tecnico professionale della/e impresa/e esecutrice/i e dei lavoratori autonomi, l'organico medio annuo distinto per qualifica, gli estremi delle denunce dei lavoratori effettuate all'Istituto nazionale della previdenza sociale (INPS), all'Istituto nazionale assicurazione infortuni sul lavoro (INAIL) e alle casse edili, nonchè il contratto collettivo applicato ai lavoratori dipendenti, della/e impresa/e esecutrice/i|piu-200</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -259,10 +259,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''L’intervento non è soggetto all’invio della notifica|no-notifica''','''Allega alla presente comunicazione la notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|allega''','''Indica gli estremi della notifica, il cui contenuto sarà riprodotto su apposita tabella, esposta in canitere per tutta la durata dei lavori, in luogo visibile dall'esterno|indica''']</string></value>
 </member>
@@ -270,6 +266,10 @@
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

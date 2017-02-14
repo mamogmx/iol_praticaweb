@@ -53,7 +53,7 @@ title = "Istanza n. %s del %s (%s)" %(doc.getId(),data,userFullname(db,db.getCur
 return title]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">True</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
-      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.[nome_comune].IolApp import IolApp
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolApp import IolApp
 from Products.CMFPlomino.PlominoUtils import Now,DateToString
 doc = plominoDocument
 numero = str(IolApp(doc).NuovoNumeroPratica()).zfill(6)
@@ -116,7 +116,7 @@ bootstrap-responsive.css]]></ResourcesCSS>
           <id type="Products.Archetypes.Field.StringField">comune</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '[cod_belfiore]']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'C510']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -130,7 +130,7 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <member>
 <name>selectionlistformula</name>
 <value><string>return [
-'''[nome_comune]|[cod_belfiore]''']</string></value>
+'''ceriale|C510''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

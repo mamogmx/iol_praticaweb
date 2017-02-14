@@ -71,10 +71,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -88,6 +84,10 @@ if tipo=='pdc':
 ]
 else:
     return ['''pienamente conforme alla documentazione dello stato di fatto legittimato dal seguente/i  titolo/i pratica edilizia (o, in assenza, dal primo accatastamento)|1''','''non sono stati reperiti titoli abilitativi essendo l'immobile di remota costruzione e non interessato successivamente da interventi edilizi per i quali era necessario di munirsi di titoli abilitativi|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -127,10 +127,6 @@ else:
 <value><string>sub_titolo_edilizi</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Titolo" },
@@ -148,6 +144,10 @@ else:
         "height": 400
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>tipo_titolo,numero_titolo,data_titolo</string></value>
 </member>
 </struct></value>
 </param>
@@ -242,12 +242,12 @@ else:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Non sono state presentate pratiche|1''','''per lo stesso immobile sono in corso interventi / sono state presentate pratiche per interventi|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

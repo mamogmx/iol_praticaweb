@@ -48,15 +48,15 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Direttore lavori strutturali non necessario o già comunicato|1''',
 '''Comunico le generalità del direttore dei lavori strutturali|2'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

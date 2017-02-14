@@ -23,7 +23,7 @@ if doc.REQUEST.get('btn_f2'):
 <p><span class="plominoFieldClass">progress_bar</span></p>
 <p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
 <p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
-<p><span class="plominoSubformClass">sub_allegati_regolarizzazione</span></p>
+<p><span class="plominoSubformClass">sub_allegati_art22</span></p>
 <p><span class="plominoSubformClass">sub_allegati_altro</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>

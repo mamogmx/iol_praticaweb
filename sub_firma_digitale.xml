@@ -50,10 +50,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     app = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -61,9 +57,13 @@ except:
     app = ''
 
 if app in ['sca']:
-    return ['''Il titolare del titolo utilizzerà la propria firma digitale|1''','''Il titolare del titoloe firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del dichiarante|2''','''Tutti i documenti verranno firmati digitalmente dal solo dichiarante|3''']
+    return ['''Il titolare del titolo utilizzerà la propria firma digitale|1''','''Il titolare del titolo firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del direttore lavori/professionista abilitato|2''','''Tutti i documenti verranno firmati digitalmente dal solo direttore lavori/professionista abilitato|3''']
 else:
     return ['''Il richiedente utilizzerà la propria firma digitale|1''','''Il richiedente firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|2''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

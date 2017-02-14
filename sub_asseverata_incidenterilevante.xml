@@ -72,12 +72,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''nel comune non e' presente un'attività a rischio d'incidente rilevante|1''','''nel comune e' presente un'attività a rischio d'incidente rilevante e la relativa "area di danno" e' individuata nella pianificazione comunale|2''','''nel comune e' presente un'attivita' a rischio d'incidente rilevante e la relativa "area di danno" non e' individuata nella pianificazione comunale pertanto si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -108,12 +108,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''L'intervento non ricade nell'area di danno|1''','''l'intervento ricade in area di danno|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -144,10 +144,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale|1'''
 b = '''la valutazione del Comitato Tecnico Regionale e' stata rilasciata con atto:|2'''
@@ -166,6 +162,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -196,14 +196,14 @@ return result[tipo]</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria alla valutazione del progetto dal Comitato Tecnico Regionale|1'''
 
 return [a]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

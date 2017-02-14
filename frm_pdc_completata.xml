@@ -99,10 +99,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['Istanza di Permesso di Costruire|comunicazione_pdc.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_pdc_stampa',
       'Relazione asseverata|rel_asseverata_pdc.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=relazioni&amp;form=frm_pdc_stampa']
@@ -118,6 +114,10 @@ return ll</string></value>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

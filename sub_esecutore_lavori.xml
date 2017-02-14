@@ -53,12 +53,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Che i lavori saranno eseguiti in economia ad opera diretta della sottoscritta committenza;|1','Che i lavori saranno eseguiti da un impresa;|2']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -102,12 +102,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['La non obbligatorietà della notifica preliminare in relazione al tipo di cantiere necessario per il caso di specie']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -138,12 +138,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['L’avvenuta verifica del DURC (punto 1 lettera ‘c’ dell’allegato XVII al DLgs. 81/2008 e s.m. e i.) e dell’ulteriore documentazione di cui alle lettere a) e b) dell’art.90 comma 9 del DLgs n.81/2008 e s.m. e i. (art.90 comma 9 lett. c)']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -174,12 +174,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['dell’obbligo della preventiva comunicazione dei nominativi delle eventuali imprese subentranti impegnate per l’esecuzione dei lavori|1','dell’obbligo dell’invio della documentazione prevista dall’art. 90 del Decreto Legislativo 9 aprile 2008, n. 81 e s.m.i., e dell’autocertificazione dell’impresa esecutrice contenente i dati indispensabili al reperimento delle informazioni per l’acquisizione d’ufficio del DURC|2','che l’assenza o incompleta compilazione dei dati richiesti costituisce carenza di elemento fondamentale agli effetti della validità della SCIA la quale pertanto non produrrà alcun effetto ciò indipendentemente da eventuali formali comunicazioni in merito da parte del Comune|3']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -214,10 +214,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <value><string>sub_esecutore</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_inail,esecutore_inps,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Cognome" },
@@ -244,6 +240,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_app,esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_indirizzo,esecutore_civico,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_inail,esecutore_inps,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
 </member>
 </struct></value>
 </param>

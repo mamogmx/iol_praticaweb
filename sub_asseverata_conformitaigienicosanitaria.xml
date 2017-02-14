@@ -74,12 +74,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' assoggettato alla verifica del rispetto dei requisiti igienico-sanitari|1''','''e' assoggettato alla verifica del rispetto dei requisiti igienico-sanitari|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -110,12 +110,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non comporta valutazioni tecnico-discrezionali e pertanto se ne autocertifica la conformita' in merito ai requisiti igienico-sanitari definiti dai regolamenti locali|1''','''comporta valutazioni tecnico-discrezionali|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -146,10 +146,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -165,6 +161,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

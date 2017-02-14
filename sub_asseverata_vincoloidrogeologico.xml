@@ -69,12 +69,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' sottoposta a tutela|1''','''e' sottoposta a tutela e l'intervento rientra nei casi eseguibili senza autorizzazione|2''','''e' sottoposta a tutela ed e' necessario il rilascio dell'autorizzazione (articolo 61 comma 5  d.lgs. n. 152/2006,  r.d.l 3267/1923, l.r. 22 gennaio 1999, n. 4 e s.m. , l.r. 12 aprile 2011, n. 7)|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -110,10 +110,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria ai fini del rilascio dell'autorizzazione|1'''
 b = '''l'autorizzazione e' stata rilasciata con atto:|2'''
@@ -128,6 +124,10 @@ elif tipo == 'dia':
     return [a,b]
 else:
     return []</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

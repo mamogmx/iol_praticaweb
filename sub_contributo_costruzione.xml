@@ -70,10 +70,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -89,6 +85,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -124,10 +124,6 @@ return result[tipo]</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -148,6 +144,10 @@ return result[tipo]
 
 
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -200,10 +200,6 @@ return context.getItem('contributo_costruzione_opt','')!='1' or tipo in ['pdc','
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -222,6 +218,10 @@ return result[tipo]
 
 
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -252,14 +252,14 @@ return result[tipo]
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return[
 '''chiede di eseguire direttamente, a scomputo di quanto dovuto, le opere di urbanizzazione specificate nella proposta di progetto e nello schema di convenzione ad esso allegato da approvarsi prima del rilascio del permesso di costruire|1'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

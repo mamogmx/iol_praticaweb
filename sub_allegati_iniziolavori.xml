@@ -107,12 +107,12 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Copia della ricevuta di versamento degli oneri di costruzione alla denuncia sopracitata|ricevuta_versamento','''Documentazione in ottemperanza all'art.90 del D.Lgs 9 aprile 2008, n 81 e s.m.i.|art90''','''Autocertificazione della ditta esecutrice contenente i dati indispensabili al reperimento delle informazioni per l'acquisizione d'ufficio del DURC|durc''','Altro|altro']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

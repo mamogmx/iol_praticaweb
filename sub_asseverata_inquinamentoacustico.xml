@@ -53,12 +53,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non rientra nell'ambito di applicazione dell'articolo 8 della l. n. 447/1995|1''','''rientra nell'ambito di applicazione dell'articolo 8 della l. n. 447/1995, integrato con i contenuti dell'articolo 4 del d.P.R. n. 227/2011 e pertanto si allega:|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -89,12 +89,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''documentazione di impatto acustico  (art. 8, commi 2 e 4, legge n. 447/1995)|1''','''valutazione previsionale di clima acustico (art. 8, comma 3, legge n. 447/1995)|2''','''autocertificazione a firma del tecnico abilitato competente in acustica ambientale in cui si attesta il rispetto dei requisiti di protezione acustica in relazione alla zonizzazione acustica di riferimento (art. 8, comma 3-bis, legge n. 447/1995)|3''','''dichiarazione sostitutiva dell'atto di notorieta', a firma del titolare, relativa al rispetto dei limiti stabiliti dal documento di classificazione acustica del territorio comunale di riferimento ovvero, ove questo non sia stato adottato, ai limiti individuati dal d.P.C.M. 14 novembre 1997 (art. 4, commi 1 e 2, d.P.R. n. 227/2011)|4''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -69,12 +69,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non ricade in zona sottoposta a tutela|1''','''ricade in zona tutelata, ma le opere non comportano alterazione dei luoghi o dell'aspetto esteriore degli edifici ovvero non sono soggetti ad autorizzazione ai sensi dell'art. 149, d.lgs. n. 42/2004|2''','''ricade in zona tutelata e le opere comportano alterazione dei luoghi o dell'aspetto esteriore degli edifici|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -105,12 +105,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''e' assoggettato al procedimento semplificato di autorizzazione paesaggistica, in quanto di lieve entita', secondo quanto previsto dal d.P.R. n. 139/2010|1''','''e' assoggettato al procedimento ordinario di autorizzazione paesaggistica|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -180,10 +180,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la relazione paesaggistica e la documentazione necessaria ai fini del rilascio dell’autorizzazione paesaggistica|1'''
 b = '''autorizzazione paesaggistica e' stata rilasciata con atto:|2'''
@@ -201,6 +197,10 @@ else:
 
 
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

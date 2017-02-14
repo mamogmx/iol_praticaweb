@@ -128,10 +128,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''intervento ai sensi dell'art.39 l.r. 16/2008 e s.m..|6''',
@@ -141,6 +137,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 '''il rilascio, previo pagamento delle somme previste a titolo di oblazione ai sensi dell'art.49 l.r. 16/2008 e s.m., di accertamento di conformità relativo ad intervento realizzato in data:|4''',
 '''il rilascio, previo pagamento delle somme previste a titolo di oblazione ai sensi dell'art.43 l.r. 16/2008 e s.m., di accertamento di conformità relativo ad intervento realizzato in data:|5'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -171,8 +171,8 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>separator</name>
+<value><string>&lt;p&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -185,8 +185,8 @@ bootstrap-responsive.css]]></ResourcesCSS>
 ]</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;p&gt;</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -288,12 +288,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>TEXTAREA</string></value>
-</member>
-<member>
 <name>size</name>
 <value><string>8</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>TEXTAREA</string></value>
 </member>
 </struct></value>
 </param>
@@ -380,15 +380,15 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''in assenza di titolo edilizio (Permesso di Costruire/DIA obbligatoria/DIA alternativa al permesso di costruire per art.49 e SCIA/DIA obbligatoria di cui all'art.23 comma 1 lettera a per art. 43)|1''',
 '''in difformità rispetto alle opere progettate |2'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -74,10 +74,6 @@
 <value><string>frm_ubicazione_civico</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Via" },
@@ -95,6 +91,10 @@
         "height": 350
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>civico_via,civico_civico,civico_interno,civico_geometry</string></value>
 </member>
 </struct></value>
 </param>

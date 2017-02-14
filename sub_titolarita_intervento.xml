@@ -55,12 +55,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Che il richiedente ha la titolarità esclusiva all'esecuzione dell'intevento|1''','''Che il richiedente non ha la titolarità esclusiva all'esecuzione dell'intervento ma dispone comunque della dichiarazione di assenso dei terzi titolari di altri diritti reali o obbligatori|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

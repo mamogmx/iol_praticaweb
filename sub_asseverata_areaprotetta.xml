@@ -66,12 +66,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non ricade in area naturale protetta|1''','''ricade in area naturale protetta, ma non necessita di nulla osta dell'ente gestore|2''','''ricade in area naturale protetta e necessita di nulla osta dell’ente gestore e pertanto si allega la documentazione necessaria ai fini del rilascio del parere/nulla osta|3''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -107,10 +107,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria ai fini del rilascio del parere/nulla osta|1'''
 b = '''il parere/nulla osta è stato rilasciato con atto:|2'''
@@ -129,6 +125,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]    </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

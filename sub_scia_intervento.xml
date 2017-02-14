@@ -72,10 +72,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Interventi di cui all'articolo 21 bis, comma 1 della l.r. 6 giugno 2008, e s.m.|1''',
@@ -84,6 +80,10 @@
 '''Interventi urbanistico-edilizi relativi ad attivita' produttive di cui all'art 7 e all'allegato 1 della l.r. 5 aprile 2012, n. 10 e s.m.|2''',
 '''Varianti in corso d'opera di cui all' articolo 25, comma 1 della l.r. 6 giugno 2008, n. 16 e s.m. relative ad opere oggetto di titolo edilizio|3'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -153,8 +153,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>separator</name>
+<value><string>&lt;p&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -177,8 +177,8 @@ soggetti gestori delle reti (art. 21 bis, comma 1, lettera m) l.r. 16/2008 e s.m
 '''interventi relativi ad attività produttive (articolo 7 ed Allegato 1 lettere da a) a r bis) l.r. 10/2012 e s.m.|11''']</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;p&gt;</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -10,7 +10,7 @@ if context.getItem('numero_protocollo','')=='' and not doc.isEditMode():
     doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[if context.REQUEST.get('btn_send_action',''):
-    context.setItem('Form','frm_regolarizzazione_presentata')
+    context.setItem('Form','frm_art22_presentata')
     url = "%s/presentaDomanda" %context.absolute_url()
     context.setItem('plominoredirecturl',url)]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
@@ -27,9 +27,11 @@ if context.getItem('numero_protocollo','')=='' and not doc.isEditMode():
 </fieldset>
 <fieldset class="scheduler-border vvv-content-title" title="Documentazione">
 <legend class="scheduler-border">ALLEGA I DOCUMENTI FIRMATI DIGITALMENTE</legend>
-<div class="row-fluid"><div class="span4">
+<div class="row-fluid">
+<div class="span4">
 <span class="plominoLabelClass">comunicazione_digitale</span><span class="plominoFieldClass">comunicazione_digitale</span>
-</div></div>
+</div>
+</div>
 </fieldset>
 <p><span class="plominoHidewhenClass">start:hw_no_comunicazione_digitale</span></p>
 <fieldset class="scheduler-border vvv-content-title" title="Documentazione">
@@ -67,7 +69,7 @@ bootstrap-responsive.css]]></ResourcesCSS>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">DISPLAY</FieldMode>
           <Formula type="Products.Archetypes.Field.TextField"><![CDATA[#form di visualizzazione del documento di resoconto
-return 'sub_regolarizzazione_completa']]></Formula>
+return 'sub_art22_completa']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField">iol_docview</FieldReadTemplate>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -105,12 +107,8 @@ return 'sub_regolarizzazione_completa']]></Formula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
-<value><string>ll = ['Istanza di Comunicazione Art.22|comunicazione_regolarizzazione.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_regolarizzazione_stampa',
+<value><string>ll = ['Istanza di Comunicazione Art.22|comunicazione_art22.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_art22_stampa',
       ]
         
 return ll</string></value>
@@ -119,6 +117,10 @@ return ll</string></value>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

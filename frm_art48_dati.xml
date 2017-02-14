@@ -3,27 +3,25 @@
     <element id="frm_art48_dati" title="Dati della Richiesta - Art. 48" type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_art48_dati</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
-      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_c1'):
+    wftool.doActionFor(doc,'c1_dati_to_altri_soggetti')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
       <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoFieldClass">progress_bar</span></p>
 <p><span class="plominoSubformClass">base_sub_pulsantiera</span></p>
-<fieldset class="scheduler-border">
-<legend class="scheduler-border">COMUNICAZIONE</legend>
-<div>
-<span class="plominoLabelClass">comunicazione_opt</span><span class="plominoFieldClass">comunicazione_opt</span>
-</div>
-</fieldset>
-<fieldset class="scheduler-border">
-<legend class="scheduler-border">DICHIARAZIONI</legend>
-<div>
-<span class="plominoLabelClass">dichiarazioni_opt</span><span class="plominoFieldClass">dichiarazioni_opt</span>
-</div>
-</fieldset>
+<p><span class="plominoSubformClass">sub_art48_intervento</span></p>
 <p><span class="plominoSubformClass">sub_intervento_descrizione</span></p>
 ]]></FormLayout>
       <FormMethod type="Products.Archetypes.Field.TextField"><![CDATA[Auto]]></FormMethod>
@@ -57,78 +55,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
           <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
           <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
           <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-        </element>
-        <element id="dichiarazioni_opt" title="Dichiara che tali opere" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">dichiarazioni_opt</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['''risultano gia' accatastate all'epoca della loro esecuzione e munite di certificato di abitabilita'/agibilita'|1''','''non concretano variazioni in aumento della superficie della costruzione o dell'unita' immobiliare|2''','''concretano variazioni in aumento della superficie della costruzione o dell'unita' immobiliare|3''']</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-</param>
-</params>
-        </element>
-        <element id="comunicazione_opt" title="Comunica che:" type="PlominoField">
-          <id type="Products.Archetypes.Field.StringField">comunicazione_opt</id>
-          <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
-          <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[]]></Formula>
-          <FieldReadTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldRead</FieldReadTemplate>
-          <FieldEditTemplate type="Products.Archetypes.Field.StringField">SELECTIONFieldEdit</FieldEditTemplate>
-          <Mandatory type="Products.Archetypes.Field.BooleanField">True</Mandatory>
-          <ValidationFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></ValidationFormula>
-          <ToBeIndexed type="Products.Archetypes.Field.BooleanField">False</ToBeIndexed>
-          <IndexType type="Products.Archetypes.Field.StringField">DEFAULT</IndexType>
-          <HTMLAttributesFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></HTMLAttributesFormula>
-          <params>
-<param>
-<value><struct>
-<member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
-<name>selectionlistformula</name>
-<value><string>return ['che in data antecedente al 1 settembre 1967|1','che in corso di realizzazione alla data del 1 settembre 1967(con titolo edilizio rilasciato in data antecedente)|2']</string></value>
-</member>
-<member>
-<name>dynamictableparam</name>
-<value><string>'bPaginate': true,
-'bLengthChange': true,
-'bFilter': true,
-'bSort': true,
-'bInfo': true,
-'bAutoWidth': false</string></value>
-</member>
-</struct></value>
-</param>
-</params>
         </element>
       </elements>
     </element>

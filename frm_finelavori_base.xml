@@ -8,11 +8,11 @@
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
 from Products.CMFPlomino.PlominoUtils import json_loads,StringToDate
 from Products.CMFCore.utils import getToolByName
-from iol.gisweb.[nome_comune].IolPraticaWeb import IolWSPraticaWeb
+from iol.gisweb.ceriale.IolPraticaWeb import IolWSPraticaWeb
 
 doc = context
 
-url = "http://webservice.gisweb.it/wspraticaweb/[nome_comune].wsPraticaweb.php?wsdl"
+url = "http://webservice.gisweb.it/wspraticaweb/ceriale.wsPraticaweb.php?wsdl"
 
 wsDoc = IolWSPraticaWeb(context,url)
 #wsDoc.infoProcedimento()
@@ -124,12 +124,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>

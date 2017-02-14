@@ -78,15 +78,15 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''La tipologia delle opere da realizzare richiede la nomina di un progettista delle opere strutturali|1''',
 '''La tipologia delle opere da realizzare non richiede la nomina di un progettista delle opere strutturali|2'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

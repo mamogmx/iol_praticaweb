@@ -64,12 +64,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Il legale rappresentante utilizzerà la propria firma digitale|digitale''','''Il legale rappresentante firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|manuale''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|procura''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -54,10 +54,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <value><string>dlg_vincoli_suolo</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>id_atto,vincoli_elenco_opt,vincoli_vincolo,ente,vincoli_atti_assenso_opt,numero_protocollo_vincoli_suolo,data_protocollo_vincoli_suolo</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -79,6 +75,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,vincoli_elenco_opt,vincoli_vincolo,ente,vincoli_atti_assenso_opt,numero_protocollo_vincoli_suolo,data_protocollo_vincoli_suolo</string></value>
 </member>
 </struct></value>
 </param>

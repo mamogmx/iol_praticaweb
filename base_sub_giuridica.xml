@@ -418,10 +418,6 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['Non presente|no','Solo partita IVA|piva','Scheda completa della persona giuridica|giuridica']</string></value>
 </member>
@@ -432,6 +428,10 @@ except:
 <value><string>Solo partita IVA|piva</string></value>
 <value><string>Scheda completa della persona giuridica|giuridica</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

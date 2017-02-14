@@ -70,10 +70,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''in assenza di atti di assenso presupposti, in quanto l'intervento oggetto della denuncia non necessita di atti o pareri che non possono essere sostituiti dalle autocertificazioni, attestazioni e asseverazioni o certificazioni di tecnici abilitati. Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della denuncia, previa comunicazione ai sensi dell'articolo 26, comma 5 della l.r. n. 16/2008 e s.m..|1'''
 b = '''essendo già in possesso di tutti gli atti di assenso presupposti, comunque denominati, già rilasciati dalle competenti amministrazioni. Il titolare dichiara che i lavori avranno inizio non prima di 30 giorni dalla data di presentazione della denuncia previa comunicazione ai sensi dell'articolo 26, comma 5 della l.r. n. 16/2008 e s.m.|3'''
@@ -96,6 +92,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

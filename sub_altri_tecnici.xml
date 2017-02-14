@@ -51,10 +51,6 @@
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''non sono stati incaricati altri tecnici|1'''
 b = '''di aver incaricato in qualità di altri tecnici i seguenti soggetti|2'''
@@ -74,6 +70,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -108,10 +108,6 @@ return result[tipo]</string></value>
 <value><string>dlg_tecnico</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>tecnico_app,tecnico_cognome,tecnico_nome,tecnico_denominazione,tecnico_piva,tecnico_cf,tecnico_email,tecnico_pec,tecnico_albo,tecnico_albo_numero,tecnico_albo_sede,tecnico_sesso,tecnico_qualita,tecnico_qualita_altro,tecnico_comune_nato,tecnico_provincia_nato,tecnico_data_nato,tecnico_cod_cat_nato,tecnico_indirizzo,tecnico_civico,tecnico_comune,tecnico_provincia,tecnico_cap,tecnico_cciaa,tecnico_cciaa_numero,tecnico_cciaa_prov,tecnico_inail,tecnico_inps,tecnico_telefono,tecnico_cellulare,tecnico_fax,tecnico_comune_residenza,tecnico_provincia_residenza,tecnico_indirizzo_residenza,tecnico_civico_residenza,tecnico_legale_rappresentante,tecnico_abilitazioni</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Cognome" },
@@ -137,6 +133,10 @@ return result[tipo]</string></value>
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>tecnico_app,tecnico_cognome,tecnico_nome,tecnico_denominazione,tecnico_piva,tecnico_cf,tecnico_email,tecnico_pec,tecnico_albo,tecnico_albo_numero,tecnico_albo_sede,tecnico_sesso,tecnico_qualita,tecnico_qualita_altro,tecnico_comune_nato,tecnico_provincia_nato,tecnico_data_nato,tecnico_cod_cat_nato,tecnico_indirizzo,tecnico_civico,tecnico_comune,tecnico_provincia,tecnico_cap,tecnico_cciaa,tecnico_cciaa_numero,tecnico_cciaa_prov,tecnico_inail,tecnico_inps,tecnico_telefono,tecnico_cellulare,tecnico_fax,tecnico_comune_residenza,tecnico_provincia_residenza,tecnico_indirizzo_residenza,tecnico_civico_residenza,tecnico_legale_rappresentante,tecnico_abilitazioni</string></value>
 </member>
 </struct></value>
 </param>

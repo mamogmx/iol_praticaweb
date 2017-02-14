@@ -66,12 +66,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['non interessano parti di edifici con presenza di fibre di amianto|1','''interessano parti di edifici con presenza di fibre di amianto e che e' stato predisposto, ai sensi dei commi 2 e 5 dell’articolo 256 del d.lgs. n. 81/2008, il Piano di Lavoro di demolizione o rimozione dell'amianto|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -102,10 +102,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''sarà allegato alla presente relazione di asseverazione|1'''
 b = '''e stato presentato con atto:|2'''
@@ -125,6 +121,10 @@ elif tipo == 'dia':
 else:
     return []
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

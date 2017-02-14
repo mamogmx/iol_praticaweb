@@ -79,10 +79,6 @@ else:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>res = dict(sue= [
 '''Interventi di manutenzione straordinaria di cui all'art 7 e all'art. 21bis comma 01 della l.r. 6 giugno 2008, n. 16 e s.m.i.|1''',
@@ -97,6 +93,10 @@ suap = [
 '''Attività che rientrano nell'ambito del procedimento automatizzato ai sensi degli articoli 7 e 8 della l.r. n.10/2012 e s.m|7'''])
 invio = context.getItem('iol_tipo_proc','') or context.REQUEST.get('iol_tipo_proc','sue') 
 return res[invio]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -153,16 +153,16 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Non richiede aggiornamento catastale|1''',
 '''Richiede aggiornamento catastale ai cui relativi adempimenti si provvederà direttamente presso i competenti Uffici dell'Agenzia delle Entrate|2''',
 '''Richiede aggiornamento catastale e che, ai sensi dell'articolo 21, comma 01 della l.r. n. 16/2008 e s.m., si allega alla comunicazione di fine lavori la documentazione per la variazione catastale al fine del relativo inoltro all'Agenzia delle Entrate da parte del Comune|3'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -193,12 +193,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Che l'ultimazione dei lavori costituirà oggetto di apposita comunicazione nel termine stabilito dall'art 21 bis,  comma 01 L.R. 16/2008|ultimazione''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

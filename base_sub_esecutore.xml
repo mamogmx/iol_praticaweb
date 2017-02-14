@@ -286,15 +286,15 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Maschile</string></value>
 <value><string>Femminile</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -434,12 +434,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>startingyear</name>
 <value><string>1900</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 <member>
 <name>format</name>
@@ -914,10 +914,6 @@ return '']]></ValidationFormula>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>MULTISELECT</string></value>
-</member>
-<member>
 <name>selectionlist</name>
 <value><array><data>
 <value><string>Progettista|progettista</string></value>
@@ -929,6 +925,10 @@ return '']]></ValidationFormula>
 <value><string>Progettista C.A.|progettista_ca</string></value>
 <value><string>Collaudatore C.A.|collaudatore_ca</string></value>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>MULTISELECT</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -1028,10 +1028,6 @@ except:
 <value><string>sub_esecutore</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_indirizzo,esecutore_civico,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_app,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_inail,esecutore_inps,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_ruolo,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "Cognome"},
@@ -1056,6 +1052,10 @@ except:
         "height": 800
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>esecutore_cognome,esecutore_nome,esecutore_denominazione,esecutore_indirizzo,esecutore_civico,esecutore_piva,esecutore_cf,esecutore_email,esecutore_pec,esecutore_sesso,esecutore_qualita,esecutore_qualita_altro,esecutore_app,esecutore_comune_nato,esecutore_provincia_nato,esecutore_data_nato,esecutore_cod_cat_nato,esecutore_comune,esecutore_provincia,esecutore_cap,esecutore_cciaa,esecutore_cciaa_numero,esecutore_inail,esecutore_inps,esecutore_edile_numero,esecutore_edile_prov,esecutore_telefono,esecutore_cellulare,esecutore_fax,esecutore_ruolo,esecutore_comune_residenza,esecutore_provincia_residenza,esecutore_indirizzo_residenza,esecutore_civico_residenza</string></value>
 </member>
 </struct></value>
 </param>
@@ -1134,12 +1134,12 @@ except:
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''Il legale rappresentante utilizzerà la propria firma digitale|digitale''','''Il legale rappresentante firmerà manualmente i documenti ove necessario, che verranno inviati con la sola firma digitale del progettista|manuale''','''Tutti i documenti verranno firmati digitalmente dal solo progettista|procura''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

@@ -95,10 +95,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''non e' soggetto alle norme di prevenzione incendi|1''',
@@ -106,6 +102,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 '''presenta caratteristiche tali da non consentire l'integrale osservanza delle regole tecniche di prevenzione incendi e pertanto |3'''
 ]
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -149,10 +149,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria all'ottenimento della deroga|1'''
 b = '''la relativa deroga è stata ottenuta con atto:|2'''
@@ -171,6 +167,10 @@ elif tipo == 'dia':
 else:
     return []
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -240,10 +240,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>try:
     tipo = context.getItem('iol_tipo_app','') or context.getForm().id.split('_')[1]
@@ -267,6 +263,10 @@ result = dict(
 if not tipo in result.keys():
     tipo='default'
 return result[tipo]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -297,10 +297,6 @@ return result[tipo]</string></value>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>a = '''si allega la documentazione necessaria alla valutazione del progetto|1'''
 b = '''la valutazione del progetto è stata effettuata|2'''
@@ -322,6 +318,10 @@ else:
 
 
 </string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

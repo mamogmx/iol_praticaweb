@@ -69,12 +69,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non è soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia)|1''','''interessa un edificio privato aperto al pubblico e che le opere previste sono conformi all’articolo 82 del d.P.R. n. 380/2001 o della corrispondente normativa regionale come da relazione e schemi dimostrativi allegati al progetto|2''','''pur essendo soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia (l.r. 12 giugno 1989, n. 15 e s.m.), non rispetta la normativa in materia di barriere architettoniche|3''','''e' soggetto alle prescrizioni degli articoli 77 e seguenti del d.P.R. n. 380/2001 e del d.m. n. 236/1989 e della normativa regionale in materia  e, come da relazione e schemi dimostrativi allegati all'istanza, soddisfa il requisito di:|4''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -105,12 +105,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''accessibilità|accesibilita''','''visitabilità|visibilita''','''adattabilità|adattabilita''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -141,12 +141,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''si richiede la deroga, come meglio descritto nella relazione tecnica allegata e schemi dimostrativi allegati|1''','''la relativa deroga è stata ottenuta con atto:|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

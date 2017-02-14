@@ -55,10 +55,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''NON RIGUARDANO parti comuni|1''',
@@ -66,6 +62,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 '''riguardano parti comuni di un fabbricato con più proprietà, non costituito in condominio, e dichiara che l'intervento è stato approvato dai comproprietari delle parti comuni, come risulta da atto consegnato al progettista ovvero dalla sottoscrizione degli elaborati da parte di tutti i comproprietari corredata da copia di documento d'identità|3''',
 '''riguardano parti dell'edificio di proprietà comune ma non necessitano di assenso perchè, secondo l'art. 1102 c.c., apportano, a spese del titolare, le modificazioni necessarie per il miglior godimento delle parti comuni non alterandone la destinazione e senza impedire agli altri partecipanti di usufruirne secondo il loro diritto|4'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

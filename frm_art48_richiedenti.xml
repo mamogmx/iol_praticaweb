@@ -2,13 +2,29 @@
   <design>
     <element id="frm_art48_richiedenti" title="REGOLARIZZAZIONE SOTTO IL PROFILO AMMINISTRATIVO DI OPERE IN DIFFORMITA'  DA TITOLI EDILIZI RILASCIATI PRIMA DEL 1 SETTEMBRE 1967 AI  SENSI DELL'ART. 48 DELLA L.R. 16/08 E S.M.I." type="PlominoForm">
       <id type="Products.Archetypes.Field.StringField">frm_art48_richiedenti</id>
-      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
-      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
+      <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[context.frm_onCreateDocument()]]></onCreateDocument>
+      <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+url = "%s/EditDocument" %doc.absolute_url()
+if not doc.isEditMode():
+    doc.REQUEST.RESPONSE.redirect(url)]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
-      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSaveDocument>
+      <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[doc = context
+from Products.CMFPlone.utils import getToolByName
+wftool = getToolByName(doc,'portal_workflow')
+if doc.REQUEST.get('btn_a1'):
+    wftool.doActionFor(doc,'a1_richiedenti_to_ubicazione')
+elif doc.REQUEST.get('btn_g1'):
+    wftool.doActionFor(doc,'g1_completa')]]></onSaveDocument>
       <onDeleteDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onDeleteDocument>
       <onSearch type="Products.Archetypes.Field.TextField"><![CDATA[]]></onSearch>
-      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeCreateDocument>
+      <beforeCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[from Products.CMFCore.utils import getToolByName
+user=context.getCurrentUser().getMemberId()
+groups_tool = getToolByName(context, 'portal_groups')
+
+if 'Manager' not in context.getRoles(): 
+    if 'PlominoEditor' not in context.getRoles():
+        if 'utenti-praticaweb' not in [i.getId() for i in groups_tool.getGroupsByUserId(user)]:
+            return context.redirectTo('%s/utente-non-autorizzato-alla-presentazione-di-istanze-online' %(context.portal_url()))]]></beforeCreateDocument>
       <FormLayout type="Products.Archetypes.Field.TextField"><![CDATA[
 <p><span class="plominoFieldClass">progress_bar</span></p>
 <p><span class="plominoSubformClass">base_sub_pratica</span></p>
@@ -36,7 +52,7 @@ title = "Istanza n. %s del %s (%s)" %(doc.getId(),data,userFullname(db,db.getCur
 return title]]></DocumentTitle>
       <DynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</DynamicDocumentTitle>
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
-      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.[nome_comune].IolApp import IolApp
+      <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolApp import IolApp
 from Products.CMFPlomino.PlominoUtils import Now,DateToString
 doc = plominoDocument
 numero = str(IolApp(doc).NuovoNumeroPratica()).zfill(6)
@@ -99,7 +115,7 @@ bootstrap-responsive.css]]></ResourcesCSS>
           <id type="Products.Archetypes.Field.StringField">comune</id>
           <FieldType type="Products.Archetypes.Field.StringField">SELECTION</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">COMPUTEDONSAVE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '[cod_belfiore]']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'C510']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>
@@ -113,7 +129,7 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <member>
 <name>selectionlistformula</name>
 <value><string>return [
-'''[nome_comune]|[cod_belfiore]''']</string></value>
+'''ceriale|C510''']</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

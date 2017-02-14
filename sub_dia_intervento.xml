@@ -74,10 +74,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Interventi di cui all’articolo 23, comma 1 della l.r. 6 giugno 2008, n. 16  e s.m.(Interventi urbanistico-edilizi soggetti a DIA obbligatoria)|1''',
@@ -88,6 +84,10 @@ bootstrap-responsive.css]]></ResourcesCSS>
 '''Interventi di ampliamento di edifici esistenti di cui agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|6''',
 '''Varianti in corso d’opera di cui all’articolo 25, comma 3 della l.r. 6 giugno 2008, n. 16  e s.m. relative ad opere oggetto di titolo edilizio rilasciato con atto:|7'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -157,8 +157,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
+<name>separator</name>
+<value><string>&lt;p&gt;</string></value>
 </member>
 <member>
 <name>selectionlistformula</name>
@@ -175,8 +175,8 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 '''Interventi di ampliamento di edifici esistenti in deroga alle previsioni dello strumento urbanistico comunale in conformità agli articoli 3 e 4 della l.r. 3 novembre 2009, n. 49 e s.m.|11''','''Interventi in variante a precedente titolo edilizio di cui all'articolo 25, comma 3 l.r. n. 16/2008 e s.m.|12''']</string></value>
 </member>
 <member>
-<name>separator</name>
-<value><string>&lt;p&gt;</string></value>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

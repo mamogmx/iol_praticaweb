@@ -56,10 +56,6 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>ll = ['Comunicazione di Inizio Lavori|comunicazione_inizio_lavori.docx&amp;pdf=1&amp;app=praticaweb&amp;grp=autorizzazione&amp;form=frm_iniziolavori_stampa']
         
@@ -69,6 +65,10 @@ return ll</string></value>
 <name>selectionlist</name>
 <value><array><data>
 </data></array></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

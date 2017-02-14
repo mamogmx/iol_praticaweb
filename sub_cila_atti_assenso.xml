@@ -60,12 +60,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''NON PREVEDE altri atti di assenso|no_atti''','''PREVEDE altri atti di assenso|si_atti''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -96,15 +96,15 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return [
 '''Per la realizzazione delle opere sono necessari altri atti di assenso, già rilasciati dalle competenti amministrazioni|atti_rilasciati''',
 '''Per la realizzazione delle opere si richiede l'acquisizione d'ufficio, da parte dello sportello unico, degli atti di assenso necessari. Il titolare dichiara di essere a conoscenza che l'intervento può essere iniziato dopo la comunicazione, da parte dello sportello unico, dell'avvenuta acquisizione degli atti di assenso presupposti.|atti_acquisiti'''
 ]</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -188,12 +188,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -572,12 +572,12 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>JQUERY</string></value>
-</member>
-<member>
 <name>format</name>
 <value><string>%d/%m/%Y</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>JQUERY</string></value>
 </member>
 </struct></value>
 </param>
@@ -754,10 +754,6 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
 <value><string>sub_atti_assenso_edit</string></value>
 </member>
 <member>
-<name>field_mapping</name>
-<value><string>id_atto,tipo_atto,mod_rilascio,ente,num_protocollo,data_rilascio</string></value>
-</member>
-<member>
 <name>jssettings</name>
 <value><string>"aoColumns": [
     { "sTitle": "ID" , "bVisible": false},
@@ -778,6 +774,10 @@ data-datepicker-options='{"changeMonth": true, "changeYear": true, "minDate":"-1
         "height": 600
     }
 </string></value>
+</member>
+<member>
+<name>field_mapping</name>
+<value><string>id_atto,tipo_atto,mod_rilascio,ente,num_protocollo,data_rilascio</string></value>
 </member>
 </struct></value>
 </param>

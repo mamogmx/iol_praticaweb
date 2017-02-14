@@ -59,12 +59,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' soggetto al deposito del progetto e della relazione tecnica di cui all'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005|1''','''e' soggetto al deposito del progetto e della relazione tecnica di cui all' articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, pertanto si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla vigente normativa regionale (legge regionale n. 22/2007 e s.m. e regolamento regionale 13 novembre 2012 n. 6 e s.m.)|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -95,12 +95,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>CHECKBOX</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''si allega la relazione tecnica sul rispetto delle prescrizioni in materia di risparmio energetico e la documentazione richiesta dalla vigente normativa regionale (legge regionale n. 22/2007 e s.m. e regolamento regionale 13 novembre 2012 n. 6 e s.m.)|1''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>CHECKBOX</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -131,12 +131,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''non e' soggetto all'applicazione del d.lgs. n. 28/2011, in quanto non riguarda edifici di nuova costruzione o edifici sottoposti ad una ristrutturazione rilevante|1''','''e' soggetto all'applicazione del d.lgs. n. 28/2011|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>
@@ -167,12 +167,12 @@ bootstrap-responsive.css]]></ResourcesCSS>
 <param>
 <value><struct>
 <member>
-<name>widget</name>
-<value><string>RADIO</string></value>
-</member>
-<member>
 <name>selectionlistformula</name>
 <value><string>return ['''il rispetto delle prescrizioni in materia di utilizzo di fonti di energia rinnovabili e' indicato negli elaborati progettuali e nella relazione tecnica prevista dall'articolo 125 del d.P.R. n. 380/2001 e dal d.lgs. n. 192/2005 in materia di risparmio energetico|1''','''l'impossibilita' tecnica di ottemperare, in tutto o in parte, agli obblighi previsti, e' evidenziata nella relazione tecnica dovuta ai sensi dell'articolo 125 del d.P.R. n. 380/2001 e del d.lgs. n. 192/2005, con l'indicazione della non fattibilita' di tutte le diverse opzioni tecnologiche disponibili|2''']</string></value>
+</member>
+<member>
+<name>widget</name>
+<value><string>RADIO</string></value>
 </member>
 <member>
 <name>dynamictableparam</name>

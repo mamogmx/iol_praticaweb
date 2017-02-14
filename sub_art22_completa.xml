@@ -1,7 +1,7 @@
 <plominodatabase id="iol_praticaweb">
   <design>
-    <element id="sub_art48_completa" title="Sub Form in visualizzazione dell' Art. 48" type="PlominoForm">
-      <id type="Products.Archetypes.Field.StringField">sub_art48_completa</id>
+    <element id="sub_art22_completa" title="SubForm in visualizzazione dell' Art 22" type="PlominoForm">
+      <id type="Products.Archetypes.Field.StringField">sub_art22_completa</id>
       <onCreateDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onCreateDocument>
       <onOpenDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></onOpenDocument>
       <beforeSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[]]></beforeSaveDocument>
@@ -48,20 +48,20 @@
 </fieldset>
 <!-- END FORM -->
 <p> </p>
-<!--FORM DATI-->
-<p><span class="plominoSubformClass">sub_art48_intervento</span></p>
-<p><span class="plominoSubformClass">sub_intervento_descrizione</span></p>
+<!-- FORM DATI RICHIESTA -->
+<p><span class="plominoSubformClass">sub_epoca_opere</span></p>
 <!-- END FORM -->
 <p> </p>
-<!--FORM ALTRI SOGGETTI--><fieldset class="scheduler-border vvvv-content-title" title="Progettista">
-<legend class="scheduler-border">PROGETTISTA DELLE OPERE</legend> <span class="plominoSubformClass">sub_progettista</span>
+<p> </p>
+<!-- FORM ALTRI SOGGETTI --><fieldset class="scheduler-border vvvv-content-title" title="Progettista">
+<legend class="scheduler-border">Progettista delle opere architettoniche</legend>
+<p><span class="plominoSubformClass">base_sub_progettista</span></p>
 </fieldset>
-<!-- END FORM -->
-<p> </p>
-<!-- FORM ALLEGATI -->
-<p><span class="plominoSubformClass">sub_info_allegati</span></p>
+<!-- END FORM
+
+<p> </p><!-- FORM ALLEGATI -->
 <p><span class="plominoSubformClass">sub_allegati_doc_identita</span></p>
-<p><span class="plominoSubformClass">sub_allegati_art48</span></p>
+<p><span class="plominoSubformClass">sub_allegati_regolarizzazione</span></p>
 <p><span class="plominoSubformClass">sub_allegati_altro</span></p>
 <!-- END FORM -->
 ]]></FormLayout>
@@ -71,15 +71,19 @@
       <StoreDynamicDocumentTitle type="Products.Archetypes.Field.BooleanField">False</StoreDynamicDocumentTitle>
       <DocumentId type="Products.Archetypes.Field.TextField"><![CDATA[]]></DocumentId>
       <ActionBarPosition type="Products.Archetypes.Field.StringField">TOP</ActionBarPosition>
-      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">True</HideDefaultActions>
-      <HideInMenu type="Products.Archetypes.Field.BooleanField">True</HideInMenu>
+      <HideDefaultActions type="Products.Archetypes.Field.BooleanField">False</HideDefaultActions>
+      <HideInMenu type="Products.Archetypes.Field.BooleanField">False</HideInMenu>
       <isSearchForm type="Products.Archetypes.Field.BooleanField">False</isSearchForm>
       <isPage type="Products.Archetypes.Field.BooleanField">False</isPage>
       <SearchView type="Products.Archetypes.Field.StringField"/>
       <SearchFormula type="Products.Archetypes.Field.TextField"><![CDATA[]]></SearchFormula>
       <Position type="Products.Archetypes.Field.IntegerField"/>
-      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesJS>
-      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[]]></ResourcesCSS>
+      <ResourcesJS type="Products.Archetypes.Field.TextField"><![CDATA[http://maps.google.com/maps/api/js?sensor=false&libraries=drawing,geometry,places
+markerclusterer.js
+iolGoogleMap.js]]></ResourcesJS>
+      <ResourcesCSS type="Products.Archetypes.Field.TextField"><![CDATA[iol.css
+bootstrap.css
+bootstrap-responsive.css]]></ResourcesCSS>
       <excludeFromNav type="Products.Archetypes.Field.BooleanField">False</excludeFromNav>
       <elements>
         <element id="comunicazione_digitale" title="Comunicazione firmata digitalmente" type="PlominoField">
