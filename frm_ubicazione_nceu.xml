@@ -137,7 +137,7 @@ return context.services.elencoSezioni()</string></value>
           <id type="Products.Archetypes.Field.StringField">comune</id>
           <FieldType type="Products.Archetypes.Field.StringField">TEXT</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">EDITABLE</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return 'C510']]></Formula>
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[return '[cod_belfiore]']]></Formula>
           <FieldReadTemplate type="Products.Archetypes.Field.StringField"/>
           <FieldEditTemplate type="Products.Archetypes.Field.StringField"/>
           <Mandatory type="Products.Archetypes.Field.BooleanField">False</Mandatory>

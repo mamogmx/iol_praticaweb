@@ -8,11 +8,11 @@
       <onSaveDocument type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.utils.IolDocument import IolDocument
 from Products.CMFPlomino.PlominoUtils import json_loads,StringToDate
 from Products.CMFCore.utils import getToolByName
-from iol.gisweb.ceriale.IolPraticaWeb import IolWSPraticaWeb
+from iol.gisweb.[nome_comune.IolPraticaWeb import IolWSPraticaWeb
 
 doc = context
 
-url = "http://webservice.gisweb.it/wspraticaweb/ceriale.wsPraticaweb.php?wsdl"
+url = "http://webservice.gisweb.it/wspraticaweb/[nome_comune.wsPraticaweb.php?wsdl"
 
 wsDoc = IolWSPraticaWeb(context,url)
 #wsDoc.infoProcedimento()

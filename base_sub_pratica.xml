@@ -31,7 +31,7 @@
           <id type="Products.Archetypes.Field.StringField">progressivo_pratica</id>
           <FieldType type="Products.Archetypes.Field.StringField">NUMBER</FieldType>
           <FieldMode type="Products.Archetypes.Field.StringField">CREATION</FieldMode>
-          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.ceriale.IolApp import IolApp
+          <Formula type="Products.Archetypes.Field.TextField"><![CDATA[from iol.gisweb.[nome_comune.IolApp import IolApp
 
 doc = context
 return IolApp(doc).NuovoNumeroPratica() or 1]]></Formula>
